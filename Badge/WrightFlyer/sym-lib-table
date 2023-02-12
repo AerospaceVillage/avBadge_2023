@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name "Espressif")(type "KiCad")(uri "/Users/danallen/Documents/KiCad/Libraries/kicad-libraries-main/libraries/Espressif.kicad_sym")(options "")(descr ""))
+  (lib (name "avBadge_2022")(type "KiCad")(uri "/Users/danallen/Documents/KiCad/Libraries/Symbols/avBadge_2022.kicad_sym")(options "")(descr ""))
+)
