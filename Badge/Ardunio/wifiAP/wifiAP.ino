@@ -1,21 +1,25 @@
 /*
-  WiFiAccessPoint.ino creates a WiFi access point and provides a web server on it.
+  Aerospace Village Def Con Badge for 2023
+  Author: Dan Allen
 
-  Steps:
-  1. Connect to the access point "yourAp"
-  2. Point your web browser to http://192.168.4.1/H to turn the LED on or http://192.168.4.1/L to turn it off
-     OR
-     Run raw TCP "GET /H" and "GET /L" on PuTTY terminal with 192.168.4.1 as IP address and 80 as port
+  Idea: Celebrate the 120 year anniversary of first flight 12/7/1903 while at Def Con in 2023 (albeit a few months early).
 
-  Created for arduino-esp32 on 04 July, 2018
-  by Elochukwu Ifediora (fedy0)
+  Design:
+     - Spin 2 motors with attached laser cut propellers
+     - backlight some aspects of the board with LEDs
+     - Have a WiFi connection that people can login into the aircraft and make changes into EEPROM
+        - Have a manual override switch that can disable the WiFi portion, use as a teaching aid to aircraft design
+        - Have a switch that can turn on/off the wifi server - save battery life and improve securty posture
+
+  
 */
 
 #include <WiFi.h>
 #include <WiFiClient.h>
 #include <WiFiAP.h>
 
-#define LED_BUILTIN 2   // Set the GPIO pin where you connected your test LED or comment this line out if your dev board has a built-in LED
+#define led_pin 9
+#define motor_pin 10
 
 // Set these to your desired credentials.
 const char *ssid = "WrightFlyer";
@@ -27,11 +31,32 @@ IPAddress NMask(255, 255, 255, 0);
 
 WiFiServer server(80);
 
-int led_pin = 10;
+hw_timer_t *Timer0_Cfg = NULL;
+volatile boolean motorOn_interrupt = false;
+boolean motorOn_user = true;
 
+
+void IRAM_ATTR Timer0_ISR() {
+  if(motorOn_user == true){
+    digitalWrite(motor_pin, motorOn_interrupt);
+    if(motorOn_interrupt == true){    
+      timerAlarmWrite(Timer0_Cfg, 10000, true);    
+    }else{
+      timerAlarmWrite(Timer0_Cfg, 70000, true);
+    }
+    motorOn_interrupt = !motorOn_interrupt;    
+  }
+  Serial.println("Timer interrupt triggered");
+}
 
 void setup() {
   pinMode(led_pin, OUTPUT);
+  pinMode(motor_pin, OUTPUT);
+
+  Timer0_Cfg = timerBegin(0, 240, true);
+  timerAttachInterrupt(Timer0_Cfg, &Timer0_ISR, true);
+  timerAlarmWrite(Timer0_Cfg, 400000, true);
+  timerAlarmEnable(Timer0_Cfg);
 
   Serial.begin(115200);
   Serial.println();
@@ -40,15 +65,12 @@ void setup() {
   // You can remove the password parameter if you want the AP to be open.
   WiFi.softAP(ssid, password);
   WiFi.softAPConfig(Ip, Ip, NMask);
-  //IPAddress myIP = WiFi.softAPIP();
-  //Serial.print("AP IP address: ");
-  //Serial.println(myIP);
   server.begin();
 
   Serial.println("Server started");
 }
 
-void loop() {
+void process_client() {
   WiFiClient client = server.available();   // listen for incoming clients
 
   if (client) {                             // if you get a client,
@@ -70,8 +92,12 @@ void loop() {
             client.println();
 
             // the content of the HTTP response follows the header:
+            client.print("<html><head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"></head>");
             client.print("Click <a href=\"/H\">here</a> to turn ON the LED.<br>");
             client.print("Click <a href=\"/L\">here</a> to turn OFF the LED.<br>");
+            client.print("Click <a href=\"/M\">here</a> to turn ON the propellers.<br>");
+            client.print("Click <a href=\"/m\">here</a> to turn OFF the propellers.<br>");
+            client.print("</html>");
 
             // The HTTP response ends with another blank line:
             client.println();
@@ -91,10 +117,25 @@ void loop() {
         if (currentLine.endsWith("GET /L")) {
           digitalWrite(led_pin, LOW);                // GET /L turns the LED off
         }
+
+        if (currentLine.endsWith("GET /M")) {
+          motorOn_user = true;                
+        }
+
+        if (currentLine.endsWith("GET /m")) {
+          motorOn_user = false;
+          digitalWrite(motor_pin, motorOn_user);           
+        }
       }
     }
     // close the connection:
     client.stop();
     Serial.println("Client Disconnected.");
   }
+}
+
+void loop() {
+
+  process_client();
+  
 }

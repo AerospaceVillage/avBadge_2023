@@ -1,3 +1,4 @@
 (fp_lib_table
   (lib (name "Espressif")(type "KiCad")(uri "/Users/danallen/Documents/KiCad/Libraries/kicad-libraries-main/footprints/Espressif.pretty")(options "")(descr ""))
+  (lib (name "Badge_Libraries")(type "KiCad")(uri "${KIPRJMOD}/Badge_Libraries/Badge_Libraries.pretty")(options "")(descr ""))
 )
