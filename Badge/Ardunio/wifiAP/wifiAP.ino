@@ -20,10 +20,19 @@
 
 #define led_pin 9
 #define motor_pin 10
+#define wifi_on_off_pin 11
+
+// Motor on/off variables
+#define motor_on_duration 5000
+#define motor_off_duration 70000
 
 // Set these to your desired credentials.
-const char *ssid = "WrightFlyer";
-const char *password = "bicycles";
+const char* ssid = "WrightFlyer";
+const char* password = "bicycles";
+
+boolean wifi_isOn = false;
+boolean wifi_stateChanged = false;
+boolean wifi_switch_prev_state = LOW;
 
 IPAddress Ip(12, 12, 15, 59);
 IPAddress NMask(255, 255, 255, 0);
@@ -40,18 +49,25 @@ void IRAM_ATTR Timer0_ISR() {
   if(motorOn_user == true){
     digitalWrite(motor_pin, motorOn_interrupt);
     if(motorOn_interrupt == true){    
-      timerAlarmWrite(Timer0_Cfg, 10000, true);    
+      timerAlarmWrite(Timer0_Cfg, motor_on_duration, true);    
     }else{
-      timerAlarmWrite(Timer0_Cfg, 70000, true);
+      timerAlarmWrite(Timer0_Cfg, motor_off_duration, true);
     }
     motorOn_interrupt = !motorOn_interrupt;    
   }
-  Serial.println("Timer interrupt triggered");
+  //Serial.println("Timer interrupt triggered");
 }
+
+void disableWiFi();
+void enableWiFi();
+
+
 
 void setup() {
   pinMode(led_pin, OUTPUT);
   pinMode(motor_pin, OUTPUT);
+  pinMode(wifi_on_off_pin, INPUT);
+  digitalWrite(wifi_on_off_pin, LOW);
 
   Timer0_Cfg = timerBegin(0, 240, true);
   timerAttachInterrupt(Timer0_Cfg, &Timer0_ISR, true);
@@ -59,15 +75,9 @@ void setup() {
   timerAlarmEnable(Timer0_Cfg);
 
   Serial.begin(115200);
-  Serial.println();
-  Serial.println("Configuring access point...");
-
-  // You can remove the password parameter if you want the AP to be open.
-  WiFi.softAP(ssid, password);
-  WiFi.softAPConfig(Ip, Ip, NMask);
-  server.begin();
-
-  Serial.println("Server started");
+  
+  enableWiFi();
+   
 }
 
 void process_client() {
@@ -92,12 +102,25 @@ void process_client() {
             client.println();
 
             // the content of the HTTP response follows the header:
-            client.print("<html><head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"></head>");
-            client.print("Click <a href=\"/H\">here</a> to turn ON the LED.<br>");
-            client.print("Click <a href=\"/L\">here</a> to turn OFF the LED.<br>");
-            client.print("Click <a href=\"/M\">here</a> to turn ON the propellers.<br>");
-            client.print("Click <a href=\"/m\">here</a> to turn OFF the propellers.<br>");
-            client.print("</html>");
+            client.print("<html><head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
+            client.print("<!-- What is the significance of the ipv4 address of this webpage? Think you know... then talk to an Aerospace Village Staff Volunteer -->");
+            client.print("<!-- V2FudCB0byBrbm93IG1vcmUgYWJvdXQgTk9UQU1TIGFuZCB0aGUgd2Vic2l0ZSBvdXRhZ2UgdGhhdCBtYWRlIHRoZSBuZXdzIHJlY2VudGx5PwoKTGVhcm4gbW9yZSBhYm91dCB0aGUgb3V0YWdlIGhlcmU6Cmh0dHBzOi8vd3d3LmZhYS5nb3YvbmV3c3Jvb20vZmFhLW5vdGFtLXN0YXRlbWVudAoKVGhlIE5PVEFNUyB3ZWJzaXRlIGl0c2VsZiBpcyBoZXJlOgpodHRwczovL3d3dy5ub3RhbXMuZmFhLmdvdi9kaW5zUXVlcnlXZWIv -->");
+            client.print("<style>.button { background-color: #4CAF50; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; }");
+            client.print("h1 { color: white; } p { color: white; } a { color: white; } ul { color:white;}");
+            client.print("</style>");
+            client.print("<title>Aerospace Village Badge 2023</title>");
+            client.print("</head>");
+            client.print("<body bgcolor=\"black\">");
+            client.print("<h1>Aerospace Village</h1>");
+            client.print("<ul><li>Build</li><li>Inspire</li><li>Promote</li></ul>");
+            client.print("<p>Welcome to the Aerospace Village Badge for 2023. This badge has a number of Easter eggs, one of which you've found if you're reading this now.</p>");
+            client.print("<p>Turn <a href=\"/H\" class=\"button\">ON</a> the LED.</p><br>");
+            client.print("<p>Turn <a href=\"/L\" class=\"button\">OFF</a> the LED.</p><br>");
+            client.print("<p>Turn <a href=\"/M\" class=\"button\">ON</a> the propellers.</p><br>");
+            client.print("<p>Turn <a href=\"/m\" class=\"button\">OFF</a> the propellers.</p><br>");
+
+            client.print("<p>Learn more about the <a href=\"https://aerospacevillage.org\">Aerospace Village</a></p>");            
+            client.print("</body></html>");
 
             // The HTTP response ends with another blank line:
             client.println();
@@ -134,8 +157,59 @@ void process_client() {
   }
 }
 
+void check_wifi_state(){
+  int val = digitalRead(wifi_on_off_pin);
+  
+  if(val != wifi_switch_prev_state){
+    Serial.println("WiFi pin state change");
+    if(digitalRead(wifi_on_off_pin) == HIGH){
+      //Turn On the Wifi
+      enableWiFi();
+    }else{
+      //Turn Off the Wifi
+      disableWiFi();
+    }
+    wifi_switch_prev_state = val;
+  }
+}
+
 void loop() {
 
   process_client();
+
+  check_wifi_state();
   
+}
+
+
+void disableWiFi(){   
+    Serial.println("Turning the Wifi OFF");
+    WiFi.disconnect(true);  // Disconnect from the network
+    WiFi.mode(WIFI_OFF);    // Switch WiFi off
+    Serial.println("WiFi is turned OFF");
+}
+
+void enableWiFi(){
+
+    Serial.println("Configuring access point...");
+    Serial.print("SSID: ");
+    Serial.print(ssid);
+    Serial.print(" Password: ");
+    Serial.print(password);
+    Serial.print("\n");
+  
+    // You can remove the password parameter if you want the AP to be open.
+    //WiFi.mode(WIFI_AP);
+    //Serial.println("Wifi Mode set");
+
+    Serial.println("START WIFI");
+    
+    WiFi.softAP(ssid, password);
+    Serial.println("SoftAP set");
+  
+    WiFi.softAPConfig(Ip, Ip, NMask);
+    Serial.println("AP config set");
+    
+    server.begin();
+    Serial.println("Server started");
 }

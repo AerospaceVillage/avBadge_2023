@@ -1,0 +1,5 @@
+(fp_lib_table
+  (lib (name "space_shuttle_SAO")(type "KiCad")(uri "${KIPRJMOD}/space_shuttle_SAO.pretty")(options "")(descr ""))
+  (lib (name "aerospace_badge")(type "KiCad")(uri "/Users/danallen/Documents/AerospaceVillage/Badge_2023/libraries/aerospace_badge.pretty")(options "")(descr ""))
+  (lib (name "sunled")(type "KiCad")(uri "/Users/danallen/Documents/AerospaceVillage/Badge_2023/libraries/sunled.pretty")(options "")(descr ""))
+)
