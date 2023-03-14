@@ -333,7 +333,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "WrightFlyer.kicad_pro",
+    "filename": "WrightSpace.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -365,7 +365,7 @@
     "last_paths": {
       "gencad": "",
       "idf": "",
-      "netlist": "WrightFlyer.net",
+      "netlist": "WrightSpace.net",
       "specctra_dsn": "",
       "step": "",
       "vrml": ""
