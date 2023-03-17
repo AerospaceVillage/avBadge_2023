@@ -978,7 +978,6 @@
     )
   )
 
-
   (junction (at 170.18 130.81) (diameter 0) (color 0 0 0 0)
     (uuid 14d43051-0c04-4744-aca8-c6600c9a7f1d)
   )
@@ -1830,16 +1829,12 @@
     (pin "2" (uuid a233d301-1a30-448d-82d2-85f582deaf85))
   )
 
-  (symbol (lib_id "Device:R") (at 177.8 124.46 0) (unit 1)
+  (symbol (lib_id "Device:R") (at 177.8 124.46 90) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 08dbac3b-7d59-4f15-b56a-a80f68b11f9a)
-    (property "Reference" "R6" (id 0) (at 180.34 123.1899 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "4.7K" (id 1) (at 180.34 125.7299 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (id 2) (at 176.022 124.46 90)
+    (property "Reference" "R6" (id 0) (at 177.8 118.11 90))
+    (property "Value" "4.7K" (id 1) (at 177.8 120.65 90))
+    (property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (id 2) (at 177.8 126.238 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 177.8 124.46 0)
