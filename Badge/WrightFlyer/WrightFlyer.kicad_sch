@@ -978,6 +978,7 @@
     )
   )
 
+
   (junction (at 170.18 130.81) (diameter 0) (color 0 0 0 0)
     (uuid 14d43051-0c04-4744-aca8-c6600c9a7f1d)
   )
@@ -1832,7 +1833,7 @@
   (symbol (lib_id "Device:R") (at 177.8 124.46 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 08dbac3b-7d59-4f15-b56a-a80f68b11f9a)
-    (property "Reference" "R8" (id 0) (at 180.34 123.1899 0)
+    (property "Reference" "R6" (id 0) (at 180.34 123.1899 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "4.7K" (id 1) (at 180.34 125.7299 0)
@@ -1851,7 +1852,7 @@
   (symbol (lib_id "Device:R") (at 97.79 241.3 90) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 161c8a0a-4c68-4d9c-ac35-a7d41ec5c84f)
-    (property "Reference" "R5" (id 0) (at 97.79 234.95 90))
+    (property "Reference" "R3" (id 0) (at 97.79 234.95 90))
     (property "Value" "1K" (id 1) (at 97.79 237.49 90))
     (property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (id 2) (at 97.79 243.078 90)
       (effects (font (size 1.27 1.27)) hide)
@@ -1881,7 +1882,7 @@
   (symbol (lib_id "Switch:SW_SPDT") (at 355.6 36.83 180) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 3c5be875-faf4-4e89-b216-7177134b60e6)
-    (property "Reference" "SW4" (id 0) (at 354.33 31.75 0))
+    (property "Reference" "SW5" (id 0) (at 354.33 31.75 0))
     (property "Value" "SW_SPDT" (id 1) (at 354.33 29.21 0))
     (property "Footprint" "aerospace_badge:switch_JS202011SCQN" (id 2) (at 355.6 36.83 0)
       (effects (font (size 1.27 1.27)) hide)
@@ -2003,7 +2004,7 @@
   (symbol (lib_id "Device:LED") (at 280.67 208.28 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 66179041-e0e3-4d2b-aed2-2f66e3a1a7f0)
-    (property "Reference" "D1" (id 0) (at 279.0825 201.93 0))
+    (property "Reference" "D2" (id 0) (at 279.0825 201.93 0))
     (property "Value" "LED" (id 1) (at 279.0825 204.47 0))
     (property "Footprint" "sunled:XZDGK45WT-9" (id 2) (at 280.67 208.28 0)
       (effects (font (size 1.27 1.27)) hide)
@@ -2090,7 +2091,7 @@
   (symbol (lib_id "Device:R") (at 170.18 124.46 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 7fc30cd8-3c17-4588-ab21-6b76e88aaccf)
-    (property "Reference" "R7" (id 0) (at 172.72 123.1899 0)
+    (property "Reference" "R5" (id 0) (at 172.72 123.1899 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "4.7K" (id 1) (at 172.72 125.7299 0)
@@ -2125,7 +2126,7 @@
   (symbol (lib_id "Device:D") (at 120.65 257.81 270) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 872e4e21-51e3-4c1d-83f0-a45043fba108)
-    (property "Reference" "D2" (id 0) (at 123.19 256.5399 90)
+    (property "Reference" "D1" (id 0) (at 123.19 256.5399 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "D" (id 1) (at 123.19 259.0799 90)
@@ -2144,7 +2145,7 @@
   (symbol (lib_id "Switch:SW_SPDT") (at 116.84 227.33 270) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 891513c2-f6e9-43b7-aff8-75ec86c31031)
-    (property "Reference" "SW5" (id 0) (at 120.65 226.0599 90)
+    (property "Reference" "SW4" (id 0) (at 120.65 226.0599 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "SW_SPDT" (id 1) (at 120.65 228.5999 90)
@@ -2305,7 +2306,7 @@
   (symbol (lib_id "Device:R") (at 267.97 208.28 270) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid c1b844ba-bbc5-4960-b6a0-8a8b26027138)
-    (property "Reference" "R9" (id 0) (at 267.97 201.93 90))
+    (property "Reference" "R7" (id 0) (at 267.97 201.93 90))
     (property "Value" "330" (id 1) (at 267.97 204.47 90))
     (property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (id 2) (at 267.97 206.502 90)
       (effects (font (size 1.27 1.27)) hide)
@@ -2393,7 +2394,7 @@
   (symbol (lib_id "Device:R") (at 170.18 83.82 90) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid d2be8337-ecec-40fd-8fe4-4cf03ca8d021)
-    (property "Reference" "R6" (id 0) (at 170.18 77.47 90))
+    (property "Reference" "R4" (id 0) (at 170.18 77.47 90))
     (property "Value" "10K" (id 1) (at 170.18 80.01 90))
     (property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (id 2) (at 170.18 85.598 90)
       (effects (font (size 1.27 1.27)) hide)
@@ -2601,11 +2602,11 @@
     (path "/db60e576-9c61-45fc-bb5a-77b156db6514"
       (reference "C3") (unit 1) (value "10uF") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
-    (path "/66179041-e0e3-4d2b-aed2-2f66e3a1a7f0"
-      (reference "D1") (unit 1) (value "LED") (footprint "sunled:XZDGK45WT-9")
-    )
     (path "/872e4e21-51e3-4c1d-83f0-a45043fba108"
-      (reference "D2") (unit 1) (value "D") (footprint "Diode_SMD:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder")
+      (reference "D1") (unit 1) (value "D") (footprint "Diode_SMD:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder")
+    )
+    (path "/66179041-e0e3-4d2b-aed2-2f66e3a1a7f0"
+      (reference "D2") (unit 1) (value "LED") (footprint "sunled:XZDGK45WT-9")
     )
     (path "/05e2981d-027f-4cc4-a2c0-995a2f209fee"
       (reference "J1") (unit 1) (value "Conn_01x02") (footprint "aerospace_badge:motor_connector")
@@ -2638,19 +2639,19 @@
       (reference "R2") (unit 1) (value "5K") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
     (path "/161c8a0a-4c68-4d9c-ac35-a7d41ec5c84f"
-      (reference "R5") (unit 1) (value "1K") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+      (reference "R3") (unit 1) (value "1K") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
     (path "/d2be8337-ecec-40fd-8fe4-4cf03ca8d021"
-      (reference "R6") (unit 1) (value "10K") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+      (reference "R4") (unit 1) (value "10K") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
     (path "/7fc30cd8-3c17-4588-ab21-6b76e88aaccf"
-      (reference "R7") (unit 1) (value "4.7K") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+      (reference "R5") (unit 1) (value "4.7K") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
     (path "/08dbac3b-7d59-4f15-b56a-a80f68b11f9a"
-      (reference "R8") (unit 1) (value "4.7K") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+      (reference "R6") (unit 1) (value "4.7K") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
     (path "/c1b844ba-bbc5-4960-b6a0-8a8b26027138"
-      (reference "R9") (unit 1) (value "330") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+      (reference "R7") (unit 1) (value "330") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
     (path "/44109ef3-5a7b-4e30-9248-70d08966606c"
       (reference "SW1") (unit 1) (value "SW_SPDT") (footprint "aerospace_badge:switch_JS202011SCQN")
@@ -2661,10 +2662,10 @@
     (path "/d1782a43-a3cd-4181-a085-8c0008e69ba4"
       (reference "SW3") (unit 1) (value "SW_SPDT") (footprint "aerospace_badge:switch_JS202011SCQN")
     )
-    (path "/3c5be875-faf4-4e89-b216-7177134b60e6"
+    (path "/891513c2-f6e9-43b7-aff8-75ec86c31031"
       (reference "SW4") (unit 1) (value "SW_SPDT") (footprint "aerospace_badge:switch_JS202011SCQN")
     )
-    (path "/891513c2-f6e9-43b7-aff8-75ec86c31031"
+    (path "/3c5be875-faf4-4e89-b216-7177134b60e6"
       (reference "SW5") (unit 1) (value "SW_SPDT") (footprint "aerospace_badge:switch_JS202011SCQN")
     )
     (path "/ae86b69b-f1ab-4b8d-817c-3ae879d49bb8"
