@@ -1,4 +1,4 @@
-20383994316879735
+20389031277272892
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -86002,6 +86002,20 @@ NCD0805W2
 2
 2
 aerospace_badge
+QRC_smaller
+
+
+0
+0
+0
+aerospace_badge
+QRCode_to_Wright_Flyer_wiki
+
+
+0
+0
+0
+aerospace_badge
 SMT_Tooling_hole
 
 
@@ -86073,6 +86087,13 @@ svg2mod
 0
 aerospace_badge
 led_in-s124ar
+
+
+0
+2
+2
+aerospace_badge
+motor_connector
 
 
 0
