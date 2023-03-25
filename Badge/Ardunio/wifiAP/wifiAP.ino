@@ -17,10 +17,19 @@
 #include <WiFi.h>
 #include <WiFiClient.h>
 #include <WiFiAP.h>
+#include "Wire.h"
 
-#define led_pin 9
+#define led_pin_R 4
+#define led_pin_G 5
+#define led_pin_B 6
+
 #define motor_pin 10
-#define wifi_on_off_pin 11
+#define motor_pin_backup 11
+
+#define wifi_on_off_pin 12
+
+#define GPIO_1 13
+#define GPIO_2 14
 
 // Motor on/off variables
 #define motor_on_duration 5000
@@ -33,10 +42,10 @@ const char* password = "bicycles";
 boolean wifi_isOn = false;
 boolean wifi_stateChanged = false;
 boolean wifi_switch_prev_state = LOW;
+boolean led_isOn = true;
 
 IPAddress Ip(12, 12, 15, 59);
 IPAddress NMask(255, 255, 255, 0);
-
 
 WiFiServer server(80);
 
@@ -48,26 +57,46 @@ boolean motorOn_user = true;
 void IRAM_ATTR Timer0_ISR() {
   if(motorOn_user == true){
     digitalWrite(motor_pin, motorOn_interrupt);
-    if(motorOn_interrupt == true){    
-      timerAlarmWrite(Timer0_Cfg, motor_on_duration, true);    
-    }else{
-      timerAlarmWrite(Timer0_Cfg, motor_off_duration, true);
-    }
-    motorOn_interrupt = !motorOn_interrupt;    
   }
+
+  // Always write the motor_pin_backup value
+  digitalWrite(motor_pin_backup, motorOn_interrupt);
+
+  
+    
+  if(motorOn_interrupt == true){    
+      timerAlarmWrite(Timer0_Cfg, motor_on_duration, true);    
+  }else{
+      timerAlarmWrite(Timer0_Cfg, motor_off_duration, true);
+  }
+  motorOn_interrupt = !motorOn_interrupt;    
+  
   //Serial.println("Timer interrupt triggered");
 }
 
 void disableWiFi();
 void enableWiFi();
+void turnOnLEDs();
+void turnOffLEDs();
 
 
 
 void setup() {
-  pinMode(led_pin, OUTPUT);
+  pinMode(led_pin_R, OUTPUT);
+  pinMode(led_pin_G, OUTPUT);
+  pinMode(led_pin_B, OUTPUT);
+
+  
   pinMode(motor_pin, OUTPUT);
+  pinMode(motor_pin_backup, OUTPUT);
+  
   pinMode(wifi_on_off_pin, INPUT);
   digitalWrite(wifi_on_off_pin, LOW);
+
+  pinMode(GPIO_1, OUTPUT);
+  digitalWrite(GPIO_1, HIGH);
+  pinMode(GPIO_2, OUTPUT);
+  digitalWrite(GPIO_2, HIGH);
 
   Timer0_Cfg = timerBegin(0, 240, true);
   timerAttachInterrupt(Timer0_Cfg, &Timer0_ISR, true);
@@ -77,6 +106,8 @@ void setup() {
   Serial.begin(115200);
   
   enableWiFi();
+
+  Wire.begin(8, 9);   // More to follow on if/what we decide to do with I2C
    
 }
 
@@ -135,10 +166,12 @@ void process_client() {
 
         // Check to see if the client request was "GET /H" or "GET /L":
         if (currentLine.endsWith("GET /H")) {
-          digitalWrite(led_pin, HIGH);               // GET /H turns the LED on
+          led_isOn = true;
+          turnOnLEDs();                // GET /H turns the LED on
         }
         if (currentLine.endsWith("GET /L")) {
-          digitalWrite(led_pin, LOW);                // GET /L turns the LED off
+          led_isOn = false;
+          turnOffLEDs();                // GET /L turns the LED off
         }
 
         if (currentLine.endsWith("GET /M")) {
@@ -178,11 +211,17 @@ void loop() {
   process_client();
 
   check_wifi_state();
+  if(wifi_isOn == true && led_isOn == true){
+    turnOnLEDs();
+  }else{
+    turnOffLEDs();
+  }
   
 }
 
 
-void disableWiFi(){   
+void disableWiFi(){
+    wifi_isOn = false;
     Serial.println("Turning the Wifi OFF");
     WiFi.disconnect(true);  // Disconnect from the network
     WiFi.mode(WIFI_OFF);    // Switch WiFi off
@@ -190,7 +229,7 @@ void disableWiFi(){
 }
 
 void enableWiFi(){
-
+    wifi_isOn = true;
     Serial.println("Configuring access point...");
     Serial.print("SSID: ");
     Serial.print(ssid);
@@ -212,4 +251,16 @@ void enableWiFi(){
     
     server.begin();
     Serial.println("Server started");
+}
+
+void turnOnLEDs(){
+  digitalWrite(led_pin_R, HIGH);
+  digitalWrite(led_pin_G, HIGH);
+  digitalWrite(led_pin_B, HIGH);
+}
+
+void turnOffLEDs(){
+  digitalWrite(led_pin_R, LOW);
+  digitalWrite(led_pin_G, LOW);
+  digitalWrite(led_pin_B, LOW);
 }
