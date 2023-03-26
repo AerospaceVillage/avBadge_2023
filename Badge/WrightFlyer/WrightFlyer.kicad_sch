@@ -1207,6 +1207,7 @@
   (no_connect (at 278.13 107.95) (uuid 98cad39e-21d9-49c3-83e9-ea5a902b838e))
   (no_connect (at 191.77 146.05) (uuid a35c99d6-2518-4198-a9cf-8c8d4444b708))
   (no_connect (at 191.77 153.67) (uuid a35c99d6-2518-4198-a9cf-8c8d4444b709))
+  (no_connect (at 96.52 231.14) (uuid b3419868-36aa-43f7-a046-1f70f595b768))
   (no_connect (at 278.13 130.81) (uuid e0d7e685-5638-4abd-b916-fefddaee6696))
   (no_connect (at 278.13 138.43) (uuid e0d7e685-5638-4abd-b916-fefddaee6697))
   (no_connect (at 278.13 140.97) (uuid e0d7e685-5638-4abd-b916-fefddaee6698))
@@ -2049,31 +2050,6 @@
       (project "WrightFlyer"
         (path "/c6abefe2-409c-41ab-a39b-e8f38c4a4b8f"
           (reference "R2") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "power:GND") (at 96.52 231.14 90) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid 24732b1b-8fb0-41de-8451-c820aed29615)
-    (property "Reference" "#PWR03" (at 102.87 231.14 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "GND" (at 100.33 231.1401 90)
-      (effects (font (size 1.27 1.27)) (justify right))
-    )
-    (property "Footprint" "" (at 96.52 231.14 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 96.52 231.14 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid b6f23b57-d989-41a4-936d-b96e8adc221e))
-    (instances
-      (project "WrightFlyer"
-        (path "/c6abefe2-409c-41ab-a39b-e8f38c4a4b8f"
-          (reference "#PWR03") (unit 1)
         )
       )
     )
