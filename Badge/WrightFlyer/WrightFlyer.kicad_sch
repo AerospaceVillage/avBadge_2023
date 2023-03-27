@@ -2096,7 +2096,7 @@
     (property "Footprint" "aerospace_badge:JS203011SCQN" (at 46.355 224.155 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 46.355 224.155 0)
+    (property "Datasheet" "https://www.ckswitches.com/media/1422/js.pdf" (at 46.355 224.155 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "MPN" "JS203011SCQN" (at 62.23 222.25 0)
