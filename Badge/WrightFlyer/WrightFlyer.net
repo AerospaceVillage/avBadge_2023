@@ -1,7 +1,7 @@
 (export (version "E")
   (design
     (source "/Users/danallen/Documents/AerospaceVillage/Badge_2023/Badge/WrightFlyer/WrightFlyer.kicad_sch")
-    (date "2023 March 26, Sunday 17:31:12")
+    (date "2023 April 03, Monday 10:13:46")
     (tool "Eeschema 7.0.1-0")
     (sheet (number "1") (name "/") (tstamps "/")
       (title_block
@@ -310,6 +310,7 @@
     (comp (ref "SW2")
       (value "SW_DP3T")
       (footprint "aerospace_badge:JS203011SCQN")
+      (datasheet "https://www.ckswitches.com/media/1422/js.pdf")
       (fields
         (field (name "MPN") "JS203011SCQN"))
       (libsource (lib "Switch") (part "SW_DP3T") (description "Switch, three position, dual pole triple throw, 3 position switch, SP3T"))
@@ -362,7 +363,7 @@
       (tstamps "ae86b69b-f1ab-4b8d-817c-3ae879d49bb8"))
     (comp (ref "U2")
       (value "R1170H331B-T1-FE")
-      (footprint "Package_TO_SOT_SMD:SOT-89-5")
+      (footprint "aerospace_badge:R1170X-SOT-89-5")
       (datasheet "https://www.nisshinbo-microdevices.co.jp/en/pdf/datasheet/r1170-ea.pdf")
       (libsource (lib "av_Badge2023") (part "R1170H331B-T1-FE") (description ""))
       (property (name "Sheetname") (value ""))

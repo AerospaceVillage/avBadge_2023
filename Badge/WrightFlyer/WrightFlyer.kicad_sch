@@ -2756,7 +2756,7 @@
     (property "Value" "R1170H331B-T1-FE" (at 332.74 35.56 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Package_TO_SOT_SMD:SOT-89-5" (at 328.93 41.91 0)
+    (property "Footprint" "aerospace_badge:R1170X-SOT-89-5" (at 328.93 41.91 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "https://www.nisshinbo-microdevices.co.jp/en/pdf/datasheet/r1170-ea.pdf" (at 328.93 41.91 0)
