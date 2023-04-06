@@ -2,14 +2,14 @@
 <export version="E">
   <design>
     <source>/Users/danallen/Documents/AerospaceVillage/Badge_2023/Badge/WrightFlyer/WrightFlyer.kicad_sch</source>
-    <date>Friday, March 24, 2023 at 01:38:24 PM</date>
-    <tool>Eeschema (6.0.6-0)</tool>
+    <date>2023 April 05, Wednesday 15:55:16</date>
+    <tool>Eeschema 7.0.1-0</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>2023 Badge for AV Def Con</title>
         <company>Aerospace Village</company>
-        <rev>0.1</rev>
-        <date>2023-01-27</date>
+        <rev>02</rev>
+        <date>2023-03-25</date>
         <source>WrightFlyer.kicad_sch</source>
         <comment number="1" value="Author: Dan Allen"/>
         <comment number="2" value=""/>
@@ -27,56 +27,127 @@
     <comp ref="BT1">
       <value>Battery_Cell</value>
       <footprint>2479_battery_holder:2479</footprint>
+      <fields>
+        <field name="Type">AAA 3 Cell</field>
+      </fields>
       <libsource lib="Device" part="Battery_Cell" description="Single-cell battery"/>
+      <property name="Type" value="AAA 3 Cell"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
+      <property name="ki_description" value="Single-cell battery"/>
+      <property name="ki_keywords" value="battery cell"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>25d2965a-77e1-4867-a93c-f75b7ef5d2fd</tstamps>
     </comp>
     <comp ref="C1">
       <value>1uF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <fields>
+        <field name="MPN">CL21B105KAFNNNE</field>
+      </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="CL21B105KAFNNNE"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>05cf6c25-ce63-4f3a-b3af-782026fb9385</tstamps>
+      <tstamps>e20c5944-55eb-4499-b901-58e27cd00b19</tstamps>
     </comp>
     <comp ref="C2">
       <value>1uF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <fields>
+        <field name="MPN">CL21B105KAFNNNE</field>
+      </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="CL21B105KAFNNNE"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>b81e5fda-9f7a-44f8-a61d-741df64eb7ad</tstamps>
     </comp>
     <comp ref="C3">
       <value>10uF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <fields>
+        <field name="MPN">TCP0J106M8R</field>
+      </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="TCP0J106M8R"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>db60e576-9c61-45fc-bb5a-77b156db6514</tstamps>
     </comp>
-    <comp ref="D1">
-      <value>D</value>
-      <footprint>Diode_SMD:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
-      <libsource lib="Device" part="D" description="Diode"/>
+    <comp ref="C4">
+      <value>10uF</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <fields>
+        <field name="MPN">TCP0J106M8R</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="TCP0J106M8R"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>38f71c03-a4a6-4846-9a08-06c5f71b50ca</tstamps>
+    </comp>
+    <comp ref="C5">
+      <value>10uF</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <fields>
+        <field name="MPN">TCP0J106M8R</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MPN" value="TCP0J106M8R"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4c05d86a-b222-460a-b4c1-a2dc5d2d4cb6</tstamps>
+    </comp>
+    <comp ref="D1">
+      <value>D</value>
+      <footprint>aerospace_badge:PD3S140Q</footprint>
+      <fields>
+        <field name="MPN">PD3S140Q-7</field>
+        <field name="Sim.Device">D</field>
+        <field name="Sim.Pins">1=K 2=A</field>
+      </fields>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <property name="MPN" value="PD3S140Q-7"/>
+      <property name="Sim.Device" value="D"/>
+      <property name="Sim.Pins" value="1=K 2=A"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
+      <property name="ki_description" value="Diode"/>
+      <property name="ki_keywords" value="diode"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>872e4e21-51e3-4c1d-83f0-a45043fba108</tstamps>
     </comp>
     <comp ref="D2">
-      <value>LED</value>
-      <footprint>sunled:XZDGK45WT-9</footprint>
-      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <value>SunLED_RGB_ReverseMount</value>
+      <footprint>sunled:XZMDKCBDDG45S-9</footprint>
+      <datasheet>http://www.kingbrightusa.com/images/catalog/SPEC/APFA3010LSEEZGKQBKC.pdf</datasheet>
+      <fields>
+        <field name="MPN">XZMDKCBDDG45S-9</field>
+      </fields>
+      <libsource lib="LED" part="SunLED_RGB_ReverseMount" description="LED RGB, Common Anode, SMD, 3.0x1.5mm, Horizontal"/>
+      <property name="MPN" value="XZMDKCBDDG45S-9"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
+      <property name="ki_description" value="LED RGB, Common Anode, SMD, 3.0x1.5mm, Horizontal"/>
+      <property name="ki_keywords" value="LED RGB SMD Kingbright APFA3010 Horizontal"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>66179041-e0e3-4d2b-aed2-2f66e3a1a7f0</tstamps>
+      <tstamps>a6059ef1-c816-46b6-8970-2cc5c2f32b32</tstamps>
     </comp>
     <comp ref="J1">
       <value>Conn_01x02</value>
@@ -84,6 +155,8 @@
       <libsource lib="Connector_Generic" part="Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="ki_keywords" value="connector"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>05e2981d-027f-4cc4-a2c0-995a2f209fee</tstamps>
     </comp>
@@ -93,229 +166,265 @@
       <libsource lib="Connector_Generic" part="Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="ki_keywords" value="connector"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>c56a456d-ff02-489b-8cb1-39927d92c3a9</tstamps>
-    </comp>
-    <comp ref="J3">
-      <value>10118193-0001LF</value>
-      <footprint>10118193-0001LF:AMPHENOL_10118193-0001LF</footprint>
-      <fields>
-        <field name="MANUFACTURER">Amphenol FCI</field>
-        <field name="MAXIMUM_PACKAGE_HEIGHT">2.55 mm</field>
-        <field name="PARTREV">E</field>
-        <field name="STANDARD">Manufacturer Recommendations</field>
-      </fields>
-      <libsource lib="10118193-0001LF" part="10118193-0001LF" description=""/>
-      <property name="MAXIMUM_PACKAGE_HEIGHT" value="2.55 mm"/>
-      <property name="MANUFACTURER" value="Amphenol FCI"/>
-      <property name="PARTREV" value="E"/>
-      <property name="STANDARD" value="Manufacturer Recommendations"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>e0344422-cdc1-4fdf-a5dc-7521b1dfdeac</tstamps>
     </comp>
     <comp ref="J4">
       <value>Conn_02x03_Counter_Clockwise</value>
       <footprint>Connector_PinSocket_2.54mm:PinSocket_2x03_P2.54mm_Vertical</footprint>
-      <libsource lib="Connector_Generic" part="Conn_02x03_Counter_Clockwise" description="Generic connector, double row, 02x03, counter clockwise pin numbering scheme (similar to DIP packge numbering), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <libsource lib="Connector_Generic" part="Conn_02x03_Counter_Clockwise" description="Generic connector, double row, 02x03, counter clockwise pin numbering scheme (similar to DIP package numbering), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, double row, 02x03, counter clockwise pin numbering scheme (similar to DIP package numbering), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="ki_keywords" value="connector"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>a0e50a10-11eb-4d71-ad0a-afa98343c7dd</tstamps>
     </comp>
     <comp ref="J5">
       <value>Conn_02x03_Counter_Clockwise</value>
-      <footprint>Connector_PinSocket_2.54mm:PinSocket_2x03_P2.54mm_Vertical</footprint>
-      <libsource lib="Connector_Generic" part="Conn_02x03_Counter_Clockwise" description="Generic connector, double row, 02x03, counter clockwise pin numbering scheme (similar to DIP packge numbering), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <footprint>aerospace_badge:sao_1.69</footprint>
+      <libsource lib="Connector_Generic" part="Conn_02x03_Counter_Clockwise" description="Generic connector, double row, 02x03, counter clockwise pin numbering scheme (similar to DIP package numbering), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, double row, 02x03, counter clockwise pin numbering scheme (similar to DIP package numbering), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="ki_keywords" value="connector"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>6fad9dec-4857-46c3-aab9-fcc3ae0bc46c</tstamps>
     </comp>
     <comp ref="J6">
       <value>Conn_02x03_Counter_Clockwise</value>
-      <footprint>Connector_PinSocket_2.54mm:PinSocket_2x03_P2.54mm_Vertical</footprint>
-      <libsource lib="Connector_Generic" part="Conn_02x03_Counter_Clockwise" description="Generic connector, double row, 02x03, counter clockwise pin numbering scheme (similar to DIP packge numbering), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <footprint>aerospace_badge:sao_1.69</footprint>
+      <libsource lib="Connector_Generic" part="Conn_02x03_Counter_Clockwise" description="Generic connector, double row, 02x03, counter clockwise pin numbering scheme (similar to DIP package numbering), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, double row, 02x03, counter clockwise pin numbering scheme (similar to DIP package numbering), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="ki_keywords" value="connector"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>ef1e2fc5-eee8-4f0d-92eb-c99dcb6a3321</tstamps>
     </comp>
     <comp ref="Q1">
-      <value>BC817</value>
+      <value>MMSS8050HE3-L-TP</value>
       <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
       <datasheet>https://www.onsemi.com/pub/Collateral/BC818-D.pdf</datasheet>
       <libsource lib="Transistor_BJT" part="BC817" description="0.8A Ic, 45V Vce, NPN Transistor, SOT-23"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>8f606c70-1ca5-4bb1-b8ff-abf6b191cb16</tstamps>
-    </comp>
-    <comp ref="Q2">
-      <value>BC817</value>
-      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
-      <datasheet>https://www.onsemi.com/pub/Collateral/BC818-D.pdf</datasheet>
-      <libsource lib="Transistor_BJT" part="BC817" description="0.8A Ic, 45V Vce, NPN Transistor, SOT-23"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
+      <property name="ki_description" value="0.8A Ic, 45V Vce, NPN Transistor, SOT-23"/>
+      <property name="ki_keywords" value="NPN Transistor"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>c6e1f8c8-c976-4043-a741-b86d0ca8b499</tstamps>
     </comp>
     <comp ref="R1">
-      <value>1K</value>
+      <value>4.7K</value>
       <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="MPN">RC0805JR-074K7L</field>
+      </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC0805JR-074K7L"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>bd4ee40c-4229-4751-9ffe-ae19cddfbdff</tstamps>
+      <tstamps>0cdb7a5d-64dc-40e8-bf19-b9ca0a3ae936</tstamps>
     </comp>
     <comp ref="R2">
-      <value>5K</value>
-      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>6b12739d-767b-496c-b95d-6b5d2de52528</tstamps>
-    </comp>
-    <comp ref="R3">
       <value>1K</value>
       <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="MPN">RNCP0805FTD1K00</field>
+      </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RNCP0805FTD1K00"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>161c8a0a-4c68-4d9c-ac35-a7d41ec5c84f</tstamps>
     </comp>
-    <comp ref="R4">
-      <value>10K</value>
-      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>d2be8337-ecec-40fd-8fe4-4cf03ca8d021</tstamps>
-    </comp>
-    <comp ref="R5">
+    <comp ref="R3">
       <value>4.7K</value>
       <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="MPN">RC0805JR-074K7L</field>
+      </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC0805JR-074K7L"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>7fc30cd8-3c17-4588-ab21-6b76e88aaccf</tstamps>
     </comp>
-    <comp ref="R6">
+    <comp ref="R4">
       <value>4.7K</value>
       <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="MPN">RC0805JR-074K7L</field>
+      </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC0805JR-074K7L"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>08dbac3b-7d59-4f15-b56a-a80f68b11f9a</tstamps>
+      <tstamps>159cb19b-5cd7-4d7e-9b72-3b53c32474ed</tstamps>
+    </comp>
+    <comp ref="R5">
+      <value>10K</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="MPN">CR1206-FX-1002ELF</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="CR1206-FX-1002ELF"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d2be8337-ecec-40fd-8fe4-4cf03ca8d021</tstamps>
+    </comp>
+    <comp ref="R6">
+      <value>30</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="MPN">RC1206FR-07330RL</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC1206FR-07330RL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3fd86507-2499-4525-b437-2f6595f370f8</tstamps>
     </comp>
     <comp ref="R7">
-      <value>330</value>
+      <value>30</value>
       <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="MPN">RC1206FR-07330RL</field>
+      </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC1206FR-07330RL"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>c1b844ba-bbc5-4960-b6a0-8a8b26027138</tstamps>
+      <tstamps>ae8f2da4-56bb-4f65-895f-baa182dc379d</tstamps>
+    </comp>
+    <comp ref="R8">
+      <value>150</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="MPN">RC1206FR-07330RL</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="MPN" value="RC1206FR-07330RL"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d693c512-4488-45b8-8dc0-ebfb81126c8e</tstamps>
     </comp>
     <comp ref="SW1">
       <value>SW_SPDT</value>
       <footprint>aerospace_badge:switch_JS202011SCQN</footprint>
+      <fields>
+        <field name="MPN">JS202011SCQN</field>
+      </fields>
       <libsource lib="Switch" part="SW_SPDT" description="Switch, single pole double throw"/>
+      <property name="MPN" value="JS202011SCQN"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
+      <property name="ki_description" value="Switch, single pole double throw"/>
+      <property name="ki_keywords" value="switch single-pole double-throw spdt ON-ON"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>44109ef3-5a7b-4e30-9248-70d08966606c</tstamps>
+      <tstamps>4d5caca1-4b74-4829-aac1-124399194e03</tstamps>
     </comp>
     <comp ref="SW2">
-      <value>SW_SPDT</value>
-      <footprint>aerospace_badge:switch_JS202011SCQN</footprint>
-      <libsource lib="Switch" part="SW_SPDT" description="Switch, single pole double throw"/>
+      <value>SW_DP3T</value>
+      <footprint>aerospace_badge:JS203011SCQN</footprint>
+      <datasheet>https://www.ckswitches.com/media/1422/js.pdf</datasheet>
+      <fields>
+        <field name="MPN">JS203011SCQN</field>
+      </fields>
+      <libsource lib="Switch" part="SW_DP3T" description="Switch, three position, dual pole triple throw, 3 position switch, SP3T"/>
+      <property name="MPN" value="JS203011SCQN"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
+      <property name="ki_description" value="Switch, three position, dual pole triple throw, 3 position switch, SP3T"/>
+      <property name="ki_keywords" value="switch dp3t ON-ON-ON"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>7a34146e-26c7-47fc-b578-b4ebdd467f49</tstamps>
+      <tstamps>2b051b94-fe45-4f12-8c54-a891a753f70d</tstamps>
     </comp>
     <comp ref="SW3">
       <value>SW_SPDT</value>
       <footprint>aerospace_badge:switch_JS202011SCQN</footprint>
+      <fields>
+        <field name="MPN">JS202011SCQN</field>
+      </fields>
       <libsource lib="Switch" part="SW_SPDT" description="Switch, single pole double throw"/>
+      <property name="MPN" value="JS202011SCQN"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
+      <property name="ki_description" value="Switch, single pole double throw"/>
+      <property name="ki_keywords" value="switch single-pole double-throw spdt ON-ON"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>d1782a43-a3cd-4181-a085-8c0008e69ba4</tstamps>
+      <tstamps>9ab997b9-0063-4f81-828d-f9833cb4a2f5</tstamps>
     </comp>
     <comp ref="SW4">
       <value>SW_SPDT</value>
       <footprint>aerospace_badge:switch_JS202011SCQN</footprint>
+      <fields>
+        <field name="MPN">JS202011SCQN</field>
+      </fields>
       <libsource lib="Switch" part="SW_SPDT" description="Switch, single pole double throw"/>
+      <property name="MPN" value="JS202011SCQN"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
+      <property name="ki_description" value="Switch, single pole double throw"/>
+      <property name="ki_keywords" value="switch single-pole double-throw spdt ON-ON"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>891513c2-f6e9-43b7-aff8-75ec86c31031</tstamps>
-    </comp>
-    <comp ref="SW5">
-      <value>SW_SPDT</value>
-      <footprint>aerospace_badge:switch_JS202011SCQN</footprint>
-      <libsource lib="Switch" part="SW_SPDT" description="Switch, single pole double throw"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>3c5be875-faf4-4e89-b216-7177134b60e6</tstamps>
+      <tstamps>d8ee680b-1ed6-4757-8945-535945322e70</tstamps>
     </comp>
     <comp ref="U1">
-      <value>ESP32-S2-SOLO</value>
+      <value>ESP32-S2-SOLO-2-N4</value>
       <footprint>Espressif:ESP32-S2-SOLO</footprint>
       <datasheet>https://www.espressif.com/sites/default/files/documentation/esp32-s2-solo_esp32-s2-solo-u_datasheet_en.pdf</datasheet>
+      <fields>
+        <field name="MPN">ESP32-S2-SOLO-2-N4</field>
+      </fields>
       <libsource lib="Espressif" part="ESP32-S2-SOLO" description="ESP32-S2-SOLO and ESP32-S2-SOLO-U are two powerful, generic Wi-Fi MCU modules that have a rich set of peripherals."/>
+      <property name="MPN" value="ESP32-S2-SOLO-2-N4"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
+      <property name="ki_description" value="ESP32-S2-SOLO and ESP32-S2-SOLO-U are two powerful, generic Wi-Fi MCU modules that have a rich set of peripherals."/>
+      <property name="ki_keywords" value="esp32-s2 solo"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>ae86b69b-f1ab-4b8d-817c-3ae879d49bb8</tstamps>
     </comp>
     <comp ref="U2">
-      <value>HT75xx-1-SOT89</value>
-      <footprint>Package_TO_SOT_SMD:SOT-89-3</footprint>
-      <datasheet>https://www.holtek.com/documents/10179/116711/HT75xx-1v250.pdf</datasheet>
-      <libsource lib="Regulator_Linear" part="HT75xx-1-SOT89" description="100mA Low Dropout Voltage Regulator, Fixed Output, SOT89"/>
+      <value>R1170H331B-T1-FE</value>
+      <footprint>aerospace_badge:R1170X-SOT-89-5</footprint>
+      <datasheet>https://www.nisshinbo-microdevices.co.jp/en/pdf/datasheet/r1170-ea.pdf</datasheet>
+      <libsource lib="av_Badge2023" part="R1170H331B-T1-FE" description=""/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="WrightFlyer.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>85ad21e8-1a15-4956-98c2-acb12a173602</tstamps>
+      <tstamps>b85d7b12-ff59-4241-a4c2-3c3f9696b4b0</tstamps>
     </comp>
   </components>
   <libparts>
-    <libpart lib="10118193-0001LF" part="10118193-0001LF">
-      <fields>
-        <field name="Reference">J</field>
-        <field name="Value">10118193-0001LF</field>
-        <field name="Footprint">AMPHENOL_10118193-0001LF</field>
-        <field name="MAXIMUM_PACKAGE_HEIGHT">2.55 mm</field>
-        <field name="MANUFACTURER">Amphenol FCI</field>
-        <field name="PARTREV">E</field>
-        <field name="STANDARD">Manufacturer Recommendations</field>
-      </fields>
-      <pins>
-        <pin num="1" name="VUSB" type="passive"/>
-        <pin num="2" name="D-" type="passive"/>
-        <pin num="3" name="D+" type="passive"/>
-        <pin num="4" name="ID" type="passive"/>
-        <pin num="5" name="GND" type="passive"/>
-        <pin num="S1" name="SHIELD" type="passive"/>
-        <pin num="S2" name="SHIELD" type="passive"/>
-        <pin num="S3" name="SHIELD" type="passive"/>
-        <pin num="S4" name="SHIELD" type="passive"/>
-        <pin num="S5" name="SHIELD" type="passive"/>
-        <pin num="S6" name="SHIELD" type="passive"/>
-      </pins>
-    </libpart>
     <libpart lib="Connector_Generic" part="Conn_01x02">
       <description>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
       <docs>~</docs>
@@ -333,7 +442,7 @@
       </pins>
     </libpart>
     <libpart lib="Connector_Generic" part="Conn_02x03_Counter_Clockwise">
-      <description>Generic connector, double row, 02x03, counter clockwise pin numbering scheme (similar to DIP packge numbering), script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <description>Generic connector, double row, 02x03, counter clockwise pin numbering scheme (similar to DIP package numbering), script generated (kicad-library-utils/schlib/autogen/connector/)</description>
       <docs>~</docs>
       <footprints>
         <fp>Connector*:*_2x??_*</fp>
@@ -394,24 +503,8 @@
         <field name="Reference">D</field>
         <field name="Value">D</field>
         <field name="Datasheet">~</field>
-      </fields>
-      <pins>
-        <pin num="1" name="K" type="passive"/>
-        <pin num="2" name="A" type="passive"/>
-      </pins>
-    </libpart>
-    <libpart lib="Device" part="LED">
-      <description>Light emitting diode</description>
-      <docs>~</docs>
-      <footprints>
-        <fp>LED*</fp>
-        <fp>LED_SMD:*</fp>
-        <fp>LED_THT:*</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">D</field>
-        <field name="Value">LED</field>
-        <field name="Datasheet">~</field>
+        <field name="Sim.Device">D</field>
+        <field name="Sim.Pins">1=K 2=A</field>
       </fields>
       <pins>
         <pin num="1" name="K" type="passive"/>
@@ -487,22 +580,46 @@
         <pin num="41" name="GND" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="Regulator_Linear" part="HT75xx-1-SOT89">
-      <description>100mA Low Dropout Voltage Regulator, Fixed Output, SOT89</description>
-      <docs>https://www.holtek.com/documents/10179/116711/HT75xx-1v250.pdf</docs>
+    <libpart lib="LED" part="SunLED_RGB_ReverseMount">
+      <description>LED RGB, Common Anode, SMD, 3.0x1.5mm, Horizontal</description>
+      <docs>http://www.kingbrightusa.com/images/catalog/SPEC/APFA3010LSEEZGKQBKC.pdf</docs>
       <footprints>
-        <fp>SOT?89*</fp>
+        <fp>*Kingbright*APFA3010*3x1.5mm*Horizontal*</fp>
       </footprints>
       <fields>
-        <field name="Reference">U</field>
-        <field name="Value">HT75xx-1-SOT89</field>
-        <field name="Footprint">Package_TO_SOT_SMD:SOT-89-3</field>
-        <field name="Datasheet">https://www.holtek.com/documents/10179/116711/HT75xx-1v250.pdf</field>
+        <field name="Reference">D</field>
+        <field name="Value">SunLED_RGB_ReverseMount</field>
+        <field name="Footprint">LED_SMD:LED_Kingbright_APFA3010_3x1.5mm_Horizontal</field>
+        <field name="Datasheet">http://www.kingbrightusa.com/images/catalog/SPEC/APFA3010LSEEZGKQBKC.pdf</field>
       </fields>
       <pins>
-        <pin num="1" name="GND" type="power_in"/>
-        <pin num="2" name="VIN" type="power_in"/>
-        <pin num="3" name="VOUT" type="power_out"/>
+        <pin num="1" name="R" type="input"/>
+        <pin num="2" name="A" type="power_in"/>
+        <pin num="3" name="G" type="input"/>
+        <pin num="4" name="B" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="Switch" part="SW_DP3T">
+      <description>Switch, three position, dual pole triple throw, 3 position switch, SP3T</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>SW*</fp>
+        <fp>DP3T*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">SW_DP3T</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+        <pin num="4" name="4" type="passive"/>
+        <pin num="5" name="5" type="passive"/>
+        <pin num="6" name="6" type="passive"/>
+        <pin num="7" name="7" type="passive"/>
+        <pin num="8" name="8" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="Switch" part="SW_SPDT">
@@ -537,11 +654,20 @@
         <pin num="3" name="C" type="passive"/>
       </pins>
     </libpart>
+    <libpart lib="av_Badge2023" part="R1170H331B-T1-FE">
+      <fields>
+        <field name="Reference">U</field>
+      </fields>
+      <pins>
+        <pin num="1" name="CE" type="input"/>
+        <pin num="2" name="GND" type="input"/>
+        <pin num="3" name="NC" type="input"/>
+        <pin num="4" name="Vin" type="input"/>
+        <pin num="5" name="Vout" type="input"/>
+      </pins>
+    </libpart>
   </libparts>
   <libraries>
-    <library logical="10118193-0001LF">
-      <uri>/Users/danallen/Documents/AerospaceVillage/Badge_2023/libraries/10118193-0001LF/10118193-0001LF.lib</uri>
-    </library>
     <library logical="Connector_Generic">
       <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Connector_Generic.kicad_sym</uri>
     </library>
@@ -551,14 +677,17 @@
     <library logical="Espressif">
       <uri>/Users/danallen/Documents/KiCad/Libraries/kicad-libraries-main/libraries/Espressif.kicad_sym</uri>
     </library>
-    <library logical="Regulator_Linear">
-      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Regulator_Linear.kicad_sym</uri>
+    <library logical="LED">
+      <uri>/Users/danallen/Documents/AerospaceVillage/Badge_2023/libraries/LED.lib</uri>
     </library>
     <library logical="Switch">
       <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Switch.kicad_sym</uri>
     </library>
     <library logical="Transistor_BJT">
       <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Transistor_BJT.kicad_sym</uri>
+    </library>
+    <library logical="av_Badge2023">
+      <uri>/Users/danallen/Documents/AerospaceVillage/Badge_2023/Badge/WrightFlyer/Badge_Libraries/av_Badge2023.kicad_sym</uri>
     </library>
   </libraries>
   <nets>
@@ -569,7 +698,7 @@
     <net code="2" name="EN">
       <node ref="C1" pin="2" pintype="passive"/>
       <node ref="J4" pin="5" pinfunction="Pin_5" pintype="passive"/>
-      <node ref="R4" pin="2" pintype="passive"/>
+      <node ref="R5" pin="2" pintype="passive"/>
       <node ref="U1" pin="3" pinfunction="EN" pintype="bidirectional"/>
     </net>
     <net code="3" name="GND">
@@ -577,226 +706,212 @@
       <node ref="C1" pin="1" pintype="passive"/>
       <node ref="C2" pin="2" pintype="passive"/>
       <node ref="C3" pin="2" pintype="passive"/>
+      <node ref="C4" pin="1" pintype="passive"/>
+      <node ref="C5" pin="2" pintype="passive"/>
       <node ref="D1" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="J1" pin="2" pinfunction="Pin_2" pintype="passive"/>
       <node ref="J2" pin="1" pinfunction="Pin_1" pintype="passive"/>
-      <node ref="J3" pin="5" pinfunction="GND" pintype="passive"/>
       <node ref="J4" pin="3" pinfunction="Pin_3" pintype="passive"/>
       <node ref="J5" pin="2" pinfunction="Pin_2" pintype="passive"/>
       <node ref="J6" pin="2" pinfunction="Pin_2" pintype="passive"/>
-      <node ref="R7" pin="2" pintype="passive"/>
       <node ref="SW1" pin="3" pinfunction="C" pintype="passive"/>
       <node ref="U1" pin="1" pinfunction="GND" pintype="power_in"/>
       <node ref="U1" pin="40" pinfunction="GND" pintype="passive"/>
       <node ref="U1" pin="41" pinfunction="GND" pintype="passive"/>
-      <node ref="U2" pin="1" pinfunction="GND" pintype="power_in"/>
+      <node ref="U2" pin="2" pinfunction="GND" pintype="input"/>
     </net>
     <net code="4" name="GPIO1">
       <node ref="J5" pin="5" pinfunction="Pin_5" pintype="passive"/>
       <node ref="J6" pin="5" pinfunction="Pin_5" pintype="passive"/>
-      <node ref="U1" pin="18" pinfunction="GPIO10/TOUCH10/ADC1_CH9/FSPICS0/FSPIIO4" pintype="bidirectional"/>
+      <node ref="U1" pin="21" pinfunction="GPIO13/TOUCH13/ADC2_CH2/FSPIQ/FSPIIO7" pintype="bidirectional"/>
     </net>
     <net code="5" name="GPIO2">
       <node ref="J5" pin="6" pinfunction="Pin_6" pintype="passive"/>
       <node ref="J6" pin="6" pinfunction="Pin_6" pintype="passive"/>
+      <node ref="U1" pin="22" pinfunction="GPIO14/TOUCH14/ADC2_CH3/FSPIWP/FSPIDQS" pintype="bidirectional"/>
+    </net>
+    <net code="6" name="LED_B">
+      <node ref="R6" pin="2" pintype="passive"/>
+      <node ref="U1" pin="6" pinfunction="GPIO6/TOUCH6/ADC1_CH5" pintype="bidirectional"/>
+    </net>
+    <net code="7" name="LED_G">
+      <node ref="R7" pin="2" pintype="passive"/>
+      <node ref="U1" pin="5" pinfunction="GPIO5/TOUCH5/ADC1_CH4" pintype="bidirectional"/>
+    </net>
+    <net code="8" name="LED_R">
+      <node ref="R8" pin="2" pintype="passive"/>
+      <node ref="U1" pin="4" pinfunction="GPIO4/TOUCH4/ADC1_CH3" pintype="bidirectional"/>
+    </net>
+    <net code="9" name="MOTOR_CTRL_MCU">
+      <node ref="SW2" pin="4" pinfunction="4" pintype="passive"/>
+      <node ref="U1" pin="18" pinfunction="GPIO10/TOUCH10/ADC1_CH9/FSPICS0/FSPIIO4" pintype="bidirectional"/>
+    </net>
+    <net code="10" name="MOTOR_CTRL_MCU_BACKUP">
+      <node ref="SW2" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="U1" pin="19" pinfunction="GPIO11/TOUCH11/ADC2_CH0/FSPID/FSPIIO5" pintype="bidirectional"/>
     </net>
-    <net code="6" name="LED1">
-      <node ref="D2" pin="2" pinfunction="A" pintype="passive"/>
-      <node ref="U1" pin="20" pinfunction="GPIO12/TOUCH12/ADC2_CH1/FSPICLK/FSPIIO6" pintype="bidirectional"/>
-    </net>
-    <net code="7" name="MOTOR_CTRL_MCU">
-      <node ref="SW3" pin="1" pinfunction="A" pintype="passive"/>
-      <node ref="U1" pin="16" pinfunction="GPIO46" pintype="input"/>
-    </net>
-    <net code="8" name="MOTOR_CTRL_MCU_BACKUP">
-      <node ref="R1" pin="1" pintype="passive"/>
-      <node ref="U1" pin="35" pinfunction="MTMS/GPIO42" pintype="bidirectional"/>
-    </net>
-    <net code="9" name="Net-(BT1-Pad1)">
-      <node ref="BT1" pin="1" pinfunction="+" pintype="passive"/>
-      <node ref="SW5" pin="3" pinfunction="C" pintype="passive"/>
-    </net>
-    <net code="10" name="Net-(D1-Pad1)">
+    <net code="11" name="Net-(D1-K)">
       <node ref="D1" pin="1" pinfunction="K" pintype="passive"/>
       <node ref="J1" pin="1" pinfunction="Pin_1" pintype="passive"/>
       <node ref="J2" pin="2" pinfunction="Pin_2" pintype="passive"/>
-      <node ref="Q2" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="Q1" pin="2" pinfunction="E" pintype="passive"/>
     </net>
-    <net code="11" name="Net-(D2-Pad1)">
-      <node ref="D2" pin="1" pinfunction="K" pintype="passive"/>
+    <net code="12" name="Net-(D2-B)">
+      <node ref="D2" pin="4" pinfunction="B" pintype="input"/>
+      <node ref="R6" pin="1" pintype="passive"/>
+    </net>
+    <net code="13" name="Net-(D2-G)">
+      <node ref="D2" pin="3" pinfunction="G" pintype="input"/>
       <node ref="R7" pin="1" pintype="passive"/>
     </net>
-    <net code="12" name="Net-(J3-Pad2)">
-      <node ref="J3" pin="2" pinfunction="D-" pintype="passive"/>
-      <node ref="U1" pin="13" pinfunction="GPIO19/U1RTS/ADC2_CH8/CLK_OUT2/USB_D-" pintype="bidirectional"/>
+    <net code="14" name="Net-(D2-R)">
+      <node ref="D2" pin="1" pinfunction="R" pintype="input"/>
+      <node ref="R8" pin="1" pintype="passive"/>
     </net>
-    <net code="13" name="Net-(J3-Pad3)">
-      <node ref="J3" pin="3" pinfunction="D+" pintype="passive"/>
-      <node ref="U1" pin="14" pinfunction="GPIO20/U1CTS/ADC2_CH9/CLK_OUT1/USB_D+" pintype="bidirectional"/>
+    <net code="15" name="Net-(Q1-B)">
+      <node ref="Q1" pin="1" pinfunction="B" pintype="input"/>
+      <node ref="SW3" pin="1" pinfunction="A" pintype="passive"/>
     </net>
-    <net code="14" name="Net-(J3-PadS1)">
-      <node ref="J3" pin="S1" pinfunction="SHIELD" pintype="passive"/>
-      <node ref="J3" pin="S2" pinfunction="SHIELD" pintype="passive"/>
-      <node ref="J3" pin="S3" pinfunction="SHIELD" pintype="passive"/>
-      <node ref="J3" pin="S4" pinfunction="SHIELD" pintype="passive"/>
-      <node ref="J3" pin="S5" pinfunction="SHIELD" pintype="passive"/>
-      <node ref="J3" pin="S6" pinfunction="SHIELD" pintype="passive"/>
+    <net code="16" name="Net-(R2-Pad1)">
+      <node ref="R2" pin="1" pintype="passive"/>
+      <node ref="SW2" pin="3" pinfunction="3" pintype="passive"/>
     </net>
-    <net code="15" name="Net-(J4-Pad1)">
-      <node ref="J4" pin="1" pinfunction="Pin_1" pintype="passive"/>
-      <node ref="U1" pin="37" pinfunction="U0TXD/GPIO43/CLK_OUT1" pintype="bidirectional"/>
+    <net code="17" name="Net-(SW3-B)">
+      <node ref="R2" pin="2" pintype="passive"/>
+      <node ref="SW3" pin="2" pinfunction="B" pintype="passive"/>
     </net>
-    <net code="16" name="Net-(J4-Pad2)">
+    <net code="18" name="Net-(SW4-B)">
+      <node ref="SW4" pin="2" pinfunction="B" pintype="passive"/>
+      <node ref="U2" pin="1" pinfunction="CE" pintype="input"/>
+    </net>
+    <net code="19" name="Programming_RX">
       <node ref="J4" pin="2" pinfunction="Pin_2" pintype="passive"/>
       <node ref="U1" pin="36" pinfunction="U0RXD/GPIO44/CLK_OUT2" pintype="bidirectional"/>
     </net>
-    <net code="17" name="Net-(Q1-Pad1)">
-      <node ref="Q1" pin="1" pinfunction="B" pintype="input"/>
-      <node ref="R1" pin="2" pintype="passive"/>
+    <net code="20" name="Programming_TX">
+      <node ref="J4" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U1" pin="37" pinfunction="U0TXD/GPIO43/CLK_OUT1" pintype="bidirectional"/>
     </net>
-    <net code="18" name="Net-(Q1-Pad2)">
-      <node ref="Q1" pin="2" pinfunction="E" pintype="passive"/>
-      <node ref="SW2" pin="1" pinfunction="A" pintype="passive"/>
-    </net>
-    <net code="19" name="Net-(Q2-Pad1)">
-      <node ref="Q2" pin="1" pinfunction="B" pintype="input"/>
-      <node ref="R3" pin="2" pintype="passive"/>
-    </net>
-    <net code="20" name="Net-(Q2-Pad3)">
-      <node ref="Q2" pin="3" pinfunction="C" pintype="passive"/>
-      <node ref="SW4" pin="3" pinfunction="C" pintype="passive"/>
-    </net>
-    <net code="21" name="Net-(R2-Pad2)">
-      <node ref="R2" pin="2" pintype="passive"/>
-      <node ref="SW1" pin="1" pinfunction="A" pintype="passive"/>
-    </net>
-    <net code="22" name="Net-(R3-Pad1)">
-      <node ref="R3" pin="1" pintype="passive"/>
-      <node ref="SW3" pin="2" pinfunction="B" pintype="passive"/>
-    </net>
-    <net code="23" name="Net-(SW2-Pad2)">
-      <node ref="SW2" pin="2" pinfunction="B" pintype="passive"/>
-      <node ref="SW3" pin="3" pinfunction="C" pintype="passive"/>
-    </net>
-    <net code="24" name="SCL">
+    <net code="21" name="SCL">
       <node ref="J5" pin="4" pinfunction="Pin_4" pintype="passive"/>
       <node ref="J6" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="R4" pin="2" pintype="passive"/>
       <node ref="U1" pin="17" pinfunction="GPIO9/TOUCH9/ADC1_CH8/FSPIHD" pintype="bidirectional"/>
     </net>
-    <net code="25" name="SDA">
+    <net code="22" name="SDA">
       <node ref="J5" pin="3" pinfunction="Pin_3" pintype="passive"/>
       <node ref="J6" pin="3" pinfunction="Pin_3" pintype="passive"/>
-      <node ref="R5" pin="2" pintype="passive"/>
+      <node ref="R3" pin="2" pintype="passive"/>
       <node ref="U1" pin="12" pinfunction="GPIO8/TOUCH8/ADC1_CH7" pintype="bidirectional"/>
     </net>
-    <net code="26" name="VBUS">
+    <net code="23" name="VBUS">
+      <node ref="BT1" pin="1" pinfunction="+" pintype="passive"/>
+      <node ref="C5" pin="1" pintype="passive"/>
       <node ref="J4" pin="4" pinfunction="Pin_4" pintype="passive"/>
       <node ref="Q1" pin="3" pinfunction="C" pintype="passive"/>
-      <node ref="SW2" pin="3" pinfunction="C" pintype="passive"/>
-      <node ref="SW4" pin="2" pinfunction="B" pintype="passive"/>
-      <node ref="SW5" pin="2" pinfunction="B" pintype="passive"/>
-      <node ref="U2" pin="2" pinfunction="VIN" pintype="power_in"/>
+      <node ref="SW2" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="SW4" pin="1" pinfunction="A" pintype="passive"/>
+      <node ref="U2" pin="4" pinfunction="Vin" pintype="input"/>
     </net>
-    <net code="27" name="VDD33">
+    <net code="24" name="VDD33">
       <node ref="C2" pin="1" pintype="passive"/>
       <node ref="C3" pin="1" pintype="passive"/>
+      <node ref="C4" pin="2" pintype="passive"/>
+      <node ref="D2" pin="2" pinfunction="A" pintype="power_in"/>
       <node ref="J5" pin="1" pinfunction="Pin_1" pintype="passive"/>
       <node ref="J6" pin="1" pinfunction="Pin_1" pintype="passive"/>
-      <node ref="R2" pin="1" pintype="passive"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+      <node ref="R3" pin="1" pintype="passive"/>
       <node ref="R4" pin="1" pintype="passive"/>
       <node ref="R5" pin="1" pintype="passive"/>
       <node ref="U1" pin="2" pinfunction="3V3" pintype="power_in"/>
-      <node ref="U2" pin="3" pinfunction="VOUT" pintype="power_out"/>
+      <node ref="U2" pin="5" pinfunction="Vout" pintype="input"/>
     </net>
-    <net code="28" name="VUSB">
-      <node ref="J3" pin="1" pinfunction="VUSB" pintype="passive"/>
-      <node ref="SW5" pin="1" pinfunction="A" pintype="passive"/>
-    </net>
-    <net code="29" name="WiFi_On{slash}Off">
+    <net code="25" name="WiFi_On{slash}Off">
+      <node ref="R1" pin="1" pintype="passive"/>
       <node ref="SW1" pin="2" pinfunction="B" pintype="passive"/>
-      <node ref="U1" pin="26" pinfunction="GPIO45" pintype="bidirectional"/>
+      <node ref="U1" pin="20" pinfunction="GPIO12/TOUCH12/ADC2_CH1/FSPICLK/FSPIIO6" pintype="bidirectional"/>
     </net>
-    <net code="30" name="unconnected-(J3-Pad4)">
-      <node ref="J3" pin="4" pinfunction="ID" pintype="passive+no_connect"/>
+    <net code="26" name="unconnected-(SW1-A-Pad1)">
+      <node ref="SW1" pin="1" pinfunction="A" pintype="passive+no_connect"/>
     </net>
-    <net code="31" name="unconnected-(R6-Pad1)">
-      <node ref="R6" pin="1" pintype="passive"/>
+    <net code="27" name="unconnected-(SW3-C-Pad3)">
+      <node ref="SW3" pin="3" pinfunction="C" pintype="passive+no_connect"/>
     </net>
-    <net code="32" name="unconnected-(R6-Pad2)">
-      <node ref="R6" pin="2" pintype="passive"/>
+    <net code="28" name="unconnected-(SW4-C-Pad3)">
+      <node ref="SW4" pin="3" pinfunction="C" pintype="passive+no_connect"/>
     </net>
-    <net code="33" name="unconnected-(SW4-Pad1)">
-      <node ref="SW4" pin="1" pinfunction="A" pintype="passive+no_connect"/>
+    <net code="29" name="unconnected-(U1-GPIO1{slash}TOUCH1{slash}ADC1_CH0-Pad39)">
+      <node ref="U1" pin="39" pinfunction="GPIO1/TOUCH1/ADC1_CH0" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="34" name="unconnected-(U1-Pad4)">
-      <node ref="U1" pin="4" pinfunction="GPIO4/TOUCH4/ADC1_CH3" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="35" name="unconnected-(U1-Pad5)">
-      <node ref="U1" pin="5" pinfunction="GPIO5/TOUCH5/ADC1_CH4" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="36" name="unconnected-(U1-Pad6)">
-      <node ref="U1" pin="6" pinfunction="GPIO6/TOUCH6/ADC1_CH5" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="37" name="unconnected-(U1-Pad7)">
-      <node ref="U1" pin="7" pinfunction="GPIO7/TOUCH7/ADC1_CH6" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="38" name="unconnected-(U1-Pad8)">
-      <node ref="U1" pin="8" pinfunction="GPIO15/U0RTS/ADC2_CH4/XTAL_32K_P" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="39" name="unconnected-(U1-Pad9)">
-      <node ref="U1" pin="9" pinfunction="GPIO16/U0CTS/ADC2_CH5/XTAL_32K_N" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="40" name="unconnected-(U1-Pad10)">
-      <node ref="U1" pin="10" pinfunction="GPIO17/U1TXD/ADC2_CH6/DAC_1" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="41" name="unconnected-(U1-Pad11)">
-      <node ref="U1" pin="11" pinfunction="GPIO18/U1RXD/ADC2_CH7/DAC_2/CLK_OUT3" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="42" name="unconnected-(U1-Pad15)">
-      <node ref="U1" pin="15" pinfunction="GPIO3/TOUCH3/ADC1_CH2" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="43" name="unconnected-(U1-Pad21)">
-      <node ref="U1" pin="21" pinfunction="GPIO13/TOUCH13/ADC2_CH2/FSPIQ/FSPIIO7" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="44" name="unconnected-(U1-Pad22)">
-      <node ref="U1" pin="22" pinfunction="GPIO14/TOUCH14/ADC2_CH3/FSPIWP/FSPIDQS" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="45" name="unconnected-(U1-Pad23)">
-      <node ref="U1" pin="23" pinfunction="GPIO21" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="46" name="unconnected-(U1-Pad24)">
-      <node ref="U1" pin="24" pinfunction="SPIIO4/GPIO33/FSPIHD" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="47" name="unconnected-(U1-Pad25)">
-      <node ref="U1" pin="25" pinfunction="SPIIO5/GPIO34/FSPICS0" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="48" name="unconnected-(U1-Pad28)">
-      <node ref="U1" pin="28" pinfunction="SPIIO6/GPIO35/FSPID" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="49" name="unconnected-(U1-Pad29)">
-      <node ref="U1" pin="29" pinfunction="SPIIO7/GPIO36/FSPICLK" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="50" name="unconnected-(U1-Pad30)">
-      <node ref="U1" pin="30" pinfunction="SPIDQS/GPIO37/FSPIQ" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="51" name="unconnected-(U1-Pad31)">
-      <node ref="U1" pin="31" pinfunction="GPIO38/FSPIWP" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="52" name="unconnected-(U1-Pad32)">
-      <node ref="U1" pin="32" pinfunction="MTCK/GPIO39/CLK_OUT3" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="53" name="unconnected-(U1-Pad33)">
-      <node ref="U1" pin="33" pinfunction="MTDO/GPIO40/CLK_OUT2" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="54" name="unconnected-(U1-Pad34)">
-      <node ref="U1" pin="34" pinfunction="MTDI/GPIO41/CLK_OUT1" pintype="bidirectional+no_connect"/>
-    </net>
-    <net code="55" name="unconnected-(U1-Pad38)">
+    <net code="30" name="unconnected-(U1-GPIO2{slash}TOUCH2{slash}ADC1_CH1-Pad38)">
       <node ref="U1" pin="38" pinfunction="GPIO2/TOUCH2/ADC1_CH1" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="56" name="unconnected-(U1-Pad39)">
-      <node ref="U1" pin="39" pinfunction="GPIO1/TOUCH1/ADC1_CH0" pintype="bidirectional+no_connect"/>
+    <net code="31" name="unconnected-(U1-GPIO3{slash}TOUCH3{slash}ADC1_CH2-Pad15)">
+      <node ref="U1" pin="15" pinfunction="GPIO3/TOUCH3/ADC1_CH2" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="32" name="unconnected-(U1-GPIO7{slash}TOUCH7{slash}ADC1_CH6-Pad7)">
+      <node ref="U1" pin="7" pinfunction="GPIO7/TOUCH7/ADC1_CH6" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="33" name="unconnected-(U1-GPIO15{slash}U0RTS{slash}ADC2_CH4{slash}XTAL_32K_P-Pad8)">
+      <node ref="U1" pin="8" pinfunction="GPIO15/U0RTS/ADC2_CH4/XTAL_32K_P" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="34" name="unconnected-(U1-GPIO16{slash}U0CTS{slash}ADC2_CH5{slash}XTAL_32K_N-Pad9)">
+      <node ref="U1" pin="9" pinfunction="GPIO16/U0CTS/ADC2_CH5/XTAL_32K_N" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="35" name="unconnected-(U1-GPIO17{slash}U1TXD{slash}ADC2_CH6{slash}DAC_1-Pad10)">
+      <node ref="U1" pin="10" pinfunction="GPIO17/U1TXD/ADC2_CH6/DAC_1" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="36" name="unconnected-(U1-GPIO18{slash}U1RXD{slash}ADC2_CH7{slash}DAC_2{slash}CLK_OUT3-Pad11)">
+      <node ref="U1" pin="11" pinfunction="GPIO18/U1RXD/ADC2_CH7/DAC_2/CLK_OUT3" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="37" name="unconnected-(U1-GPIO19{slash}U1RTS{slash}ADC2_CH8{slash}CLK_OUT2{slash}USB_D--Pad13)">
+      <node ref="U1" pin="13" pinfunction="GPIO19/U1RTS/ADC2_CH8/CLK_OUT2/USB_D-" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="38" name="unconnected-(U1-GPIO20{slash}U1CTS{slash}ADC2_CH9{slash}CLK_OUT1{slash}USB_D+-Pad14)">
+      <node ref="U1" pin="14" pinfunction="GPIO20/U1CTS/ADC2_CH9/CLK_OUT1/USB_D+" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="39" name="unconnected-(U1-GPIO21-Pad23)">
+      <node ref="U1" pin="23" pinfunction="GPIO21" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="40" name="unconnected-(U1-GPIO38{slash}FSPIWP-Pad31)">
+      <node ref="U1" pin="31" pinfunction="GPIO38/FSPIWP" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="41" name="unconnected-(U1-GPIO45-Pad26)">
+      <node ref="U1" pin="26" pinfunction="GPIO45" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="42" name="unconnected-(U1-GPIO46-Pad16)">
+      <node ref="U1" pin="16" pinfunction="GPIO46" pintype="input+no_connect"/>
+    </net>
+    <net code="43" name="unconnected-(U1-MTCK{slash}GPIO39{slash}CLK_OUT3-Pad32)">
+      <node ref="U1" pin="32" pinfunction="MTCK/GPIO39/CLK_OUT3" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="44" name="unconnected-(U1-MTDI{slash}GPIO41{slash}CLK_OUT1-Pad34)">
+      <node ref="U1" pin="34" pinfunction="MTDI/GPIO41/CLK_OUT1" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="45" name="unconnected-(U1-MTDO{slash}GPIO40{slash}CLK_OUT2-Pad33)">
+      <node ref="U1" pin="33" pinfunction="MTDO/GPIO40/CLK_OUT2" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="46" name="unconnected-(U1-MTMS{slash}GPIO42-Pad35)">
+      <node ref="U1" pin="35" pinfunction="MTMS/GPIO42" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="47" name="unconnected-(U1-SPIDQS{slash}GPIO37{slash}FSPIQ-Pad30)">
+      <node ref="U1" pin="30" pinfunction="SPIDQS/GPIO37/FSPIQ" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="48" name="unconnected-(U1-SPIIO4{slash}GPIO33{slash}FSPIHD-Pad24)">
+      <node ref="U1" pin="24" pinfunction="SPIIO4/GPIO33/FSPIHD" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="49" name="unconnected-(U1-SPIIO5{slash}GPIO34{slash}FSPICS0-Pad25)">
+      <node ref="U1" pin="25" pinfunction="SPIIO5/GPIO34/FSPICS0" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="50" name="unconnected-(U1-SPIIO6{slash}GPIO35{slash}FSPID-Pad28)">
+      <node ref="U1" pin="28" pinfunction="SPIIO6/GPIO35/FSPID" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="51" name="unconnected-(U1-SPIIO7{slash}GPIO36{slash}FSPICLK-Pad29)">
+      <node ref="U1" pin="29" pinfunction="SPIIO7/GPIO36/FSPICLK" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="52" name="unconnected-(U2-NC-Pad3)">
+      <node ref="U2" pin="3" pinfunction="NC" pintype="input+no_connect"/>
     </net>
   </nets>
 </export>

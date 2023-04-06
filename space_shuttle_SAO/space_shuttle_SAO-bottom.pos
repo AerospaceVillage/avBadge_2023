@@ -1,0 +1,10 @@
+### Footprint positions - created on 2023 March 27, Monday 15:27:15 ###
+### Printed by KiCad version 7.0.1-0
+## Unit = mm, Angle = deg.
+## Side : bottom
+# Ref     Val           Package                                  PosX       PosY       Rot  Side
+BT1       Battery_Cell  BatteryHolder_Keystone_3034_1x20mm   136.2180   -99.8468  -30.0000  bottom
+D1        LED           XZMYK45WT-9                          165.7364  -107.1861  -45.0000  bottom
+R1        330           R_1206_3216Metric                    171.5877  -111.4747   45.0000  bottom
+SW1       SW_SPDT       switch_JS202011SCQN                  155.5883  -105.3850  -45.0000  bottom
+## End

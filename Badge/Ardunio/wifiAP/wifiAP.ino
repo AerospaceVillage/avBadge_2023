@@ -253,13 +253,13 @@ void enableWiFi(){
     Serial.println("Server started");
 }
 
-void turnOnLEDs(){
+void turnOffLEDs(){
   digitalWrite(led_pin_R, HIGH);
   digitalWrite(led_pin_G, HIGH);
   digitalWrite(led_pin_B, HIGH);
 }
 
-void turnOffLEDs(){
+void turnOnLEDs(){
   digitalWrite(led_pin_R, LOW);
   digitalWrite(led_pin_G, LOW);
   digitalWrite(led_pin_B, LOW);

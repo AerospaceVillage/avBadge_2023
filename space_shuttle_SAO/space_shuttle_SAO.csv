@@ -1,0 +1,6 @@
+"Reference","Value","Footprint","Datasheet","MPN","Qty"
+"BT1","Battery_Cell","Battery:BatteryHolder_Keystone_3034_1x20mm","https://www.keyelco.com/userAssets/file/M65p9.pdf","3034","1"
+"D1","LED","sunled:XZMYK45WT-9","https://www.sunledusa.com/products/spec/XZMYK45WT-9.pdf","XZMYK45WT-9","1"
+"J1","SAO_1.69","space_shuttle_SAO:sao_1.69","","","1"
+"R1","330","Resistors_SMD:R_1206_3216Metric","https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf","RC1206FR-07330RL","1"
+"SW1","SW_SPDT","aerospace_badge:switch_JS202011SCQN","https://www.ckswitches.com/media/1422/js.pdf","SWITCH SLIDE DPDT 300MA 6V","1"

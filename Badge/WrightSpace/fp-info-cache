@@ -1,4 +1,4 @@
-21712464273281284
+21714145968603994
 2479_battery_holder
 2479
 
@@ -34,6 +34,13 @@ svg2mod
 0
 0
 0
+Badge_Libraries
+Wright X3
+Converted using: svg2mod -c -p .5 --format latest 'Wright X3.svg'
+svg2mod
+0
+6
+6
 Badge_Libraries
 Wright_Flyer
 Converted using: svg2mod Wright_Flyer.svg
@@ -90384,6 +90391,13 @@ SOT-23
 3
 3
 aerospace_badge
+Wright X3
+Converted using: svg2mod -c -p 1 --format latest 'Wright X3.svg'
+svg2mod
+0
+0
+0
+aerospace_badge
 aerospace_logo_new
 Converted using: svg2mod -i aerospace_logo_new.svg
 svg2mod
@@ -90502,13 +90516,6 @@ svg2mod
 0
 0
 0
-aerospace_badge
-switch_JS202011SCQN
-
-
-0
-6
-3
 aerospace_badge
 warning
 Converted using: svg2mod -i warning.svg
