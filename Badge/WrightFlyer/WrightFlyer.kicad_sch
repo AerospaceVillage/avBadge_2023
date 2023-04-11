@@ -2544,7 +2544,7 @@
     (property "Value" "Conn_02x03_Counter_Clockwise" (at 391.16 166.37 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_2x03_P2.54mm_Vertical" (at 389.89 172.72 0)
+    (property "Footprint" "aerospace_badge:esp32_programming_connector" (at 389.89 172.72 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 389.89 172.72 0)

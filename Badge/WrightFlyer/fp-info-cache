@@ -1,4 +1,4 @@
-21707420481188253
+21712528236049148
 2479_battery_holder
 2479
 
@@ -90356,6 +90356,13 @@ QRCode_to_Wright_Flyer_wiki
 0
 0
 aerospace_badge
+R1170X-SOT-89-5
+SOT-89-5, http://www.e-devices.ricoh.co.jp/en/products/product_power/pkg/sot-89-5.pdf
+SOT-89-5
+0
+5
+5
+aerospace_badge
 SMT_Tooling_hole
 
 
@@ -90369,6 +90376,13 @@ SOT-23
 0
 3
 3
+aerospace_badge
+Wright X3
+Converted using: svg2mod -c -p 1 --format latest 'Wright X3.svg'
+svg2mod
+0
+0
+0
 aerospace_badge
 aerospace_logo_new
 Converted using: svg2mod -i aerospace_logo_new.svg
@@ -90425,6 +90439,13 @@ svg2mod
 0
 0
 0
+aerospace_badge
+esp32_programming_connector
+
+
+0
+6
+6
 aerospace_badge
 led_in-s124ar
 

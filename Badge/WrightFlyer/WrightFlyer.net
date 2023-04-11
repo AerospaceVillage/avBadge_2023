@@ -1,7 +1,7 @@
 (export (version "E")
   (design
     (source "/Users/danallen/Documents/AerospaceVillage/Badge_2023/Badge/WrightFlyer/WrightFlyer.kicad_sch")
-    (date "2023 April 03, Monday 10:13:46")
+    (date "2023 April 10, Monday 19:27:17")
     (tool "Eeschema 7.0.1-0")
     (sheet (number "1") (name "/") (tstamps "/")
       (title_block
@@ -151,7 +151,7 @@
       (tstamps "c56a456d-ff02-489b-8cb1-39927d92c3a9"))
     (comp (ref "J4")
       (value "Conn_02x03_Counter_Clockwise")
-      (footprint "Connector_PinSocket_2.54mm:PinSocket_2x03_P2.54mm_Vertical")
+      (footprint "aerospace_badge:esp32_programming_connector")
       (libsource (lib "Connector_Generic") (part "Conn_02x03_Counter_Clockwise") (description "Generic connector, double row, 02x03, counter clockwise pin numbering scheme (similar to DIP package numbering), script generated (kicad-library-utils/schlib/autogen/connector/)"))
       (property (name "Sheetname") (value ""))
       (property (name "Sheetfile") (value "WrightFlyer.kicad_sch"))
