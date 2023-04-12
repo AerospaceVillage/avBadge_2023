@@ -1,4 +1,4 @@
-21716245690114342
+21717926995225580
 2479_battery_holder
 2479
 
@@ -27,6 +27,13 @@ audio belton reverb
 0
 7
 7
+Badge_Libraries
+DC_31_logo
+Converted using: svg2mod -c -p .5 --format latest DC_31_logo.svg
+svg2mod
+0
+0
+0
 Badge_Libraries
 Wright X2
 Converted using: svg2mod -c -p .5 --format latest 'Wright X2.svg'
