@@ -3,7 +3,7 @@
   (lib (name "Espressif")(type "KiCad")(uri "/Users/danallen/Documents/KiCad/Libraries/kicad-libraries-main/libraries/Espressif.kicad_sym")(options "")(descr ""))
   (lib (name "avBadge_2022")(type "KiCad")(uri "/Users/danallen/Documents/KiCad/Libraries/Symbols/avBadge_2022.kicad_sym")(options "")(descr ""))
   (lib (name "10118193-0001LF")(type "Legacy")(uri "/Users/danallen/Documents/AerospaceVillage/Badge_2023/libraries/10118193-0001LF/10118193-0001LF.lib")(options "")(descr ""))
-  (lib (name "LED")(type "Legacy")(uri "/Users/danallen/Documents/AerospaceVillage/Badge_2023/libraries/LED.lib")(options "")(descr ""))
+  (lib (name "LED")(type "KiCad")(uri "/Users/danallen/Documents/AerospaceVillage/Badge_2023/libraries/LED.kicad_sym")(options "")(descr ""))
   (lib (name "WrightStuff")(type "KiCad")(uri "${KIPRJMOD}/Badge_Libraries/WrightStuff.kicad_sym")(options "")(descr ""))
   (lib (name "avBadge_symbols")(type "Legacy")(uri "/Users/danallen/Documents/AerospaceVillage/Badge_2023/libraries/avBadge_symbols.lib")(options "")(descr ""))
   (lib (name "av_Badge2023")(type "KiCad")(uri "/Users/danallen/Documents/AerospaceVillage/Badge_2023/libraries/av_Badge2023.kicad_sym")(options "")(descr ""))
