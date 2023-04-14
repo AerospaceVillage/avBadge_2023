@@ -5,7 +5,7 @@
       "Application": "Pcbnew",
       "Version": "7.0.1-0"
     },
-    "CreationDate": "2023-04-14T08:17:48-04:00"
+    "CreationDate": "2023-04-14T16:50:01-04:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
@@ -34,47 +34,47 @@
   ],
   "FilesAttributes": [
     {
-      "Path": "WrightSpace-F_Cu.gbr",
+      "Path": "WrightSpace-F_Cu.gtl",
       "FileFunction": "Copper,L1,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "WrightSpace-B_Cu.gbr",
+      "Path": "WrightSpace-B_Cu.gbl",
       "FileFunction": "Copper,L2,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "WrightSpace-F_Paste.gbr",
+      "Path": "WrightSpace-F_Paste.gtp",
       "FileFunction": "SolderPaste,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "WrightSpace-B_Paste.gbr",
+      "Path": "WrightSpace-B_Paste.gbp",
       "FileFunction": "SolderPaste,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "WrightSpace-F_Silkscreen.gbr",
+      "Path": "WrightSpace-F_Silkscreen.gto",
       "FileFunction": "Legend,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "WrightSpace-B_Silkscreen.gbr",
+      "Path": "WrightSpace-B_Silkscreen.gbo",
       "FileFunction": "Legend,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "WrightSpace-F_Mask.gbr",
+      "Path": "WrightSpace-F_Mask.gts",
       "FileFunction": "SolderMask,Top",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "WrightSpace-B_Mask.gbr",
+      "Path": "WrightSpace-B_Mask.gbs",
       "FileFunction": "SolderMask,Bot",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "WrightSpace-Edge_Cuts.gbr",
+      "Path": "WrightSpace-Edge_Cuts.gm1",
       "FileFunction": "Profile",
       "FilePolarity": "Positive"
     }
