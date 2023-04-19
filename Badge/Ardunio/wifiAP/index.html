@@ -1,0 +1,293 @@
+<!--
+
+                                                                     ////////                       
+                                                                 ////(     ./                       
+                                                              (///.        (/                       
+                                          .&&&&&&&&&&&&    ////*       *  ,(                        
+                                    .&&&&&&&&&&&&&&&&&&&#///(.         (//(/*,                      
+                                 &&&&&&&%   &&&%&&%&&&////%&&&&&&      ////*                        
+                              ,&&&&&*     %&&% .&& ,////     /&&&&&,   /*                           
+                            .&&&&&       &&&   .&/////&&&       &&&&&                               
+                           &&&&&       &&&     ////*    &&&       &&&&&                             
+                          &&&&        &&&    ///(%       &&&       .&&&&                            
+                         &&&&        &&&   ////.&&        &&&        &&&&                           
+                        ,&&&#       %&&  ////  .&&         &&#       %&&&.                          
+                        &&&&        &&&///(    .&&         &&&        &&&&                          
+                        &&&&&&&&&&&&&///(%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&                          
+                        %&&&,      ////*       .&&         &&&       *&&&#                          
+                         &&&&    .////&/       .&&        (&&        &&&&                           
+                         *&&&&  //// *&&,      .&&       *&&,       &&&&,                           
+                          *&&&(//(    .&&%     .&&      %&&        &&&&,                            
+                            &///(       &&&    .&&     &&&       &&&&&                              
+                           ,//(&&&&      *&&&  .&&   &&&,      &&&&&.                               
+                          (//*  &&&&&&*    &&&%.&& &&&%    *&&&&&&                                  
+                         ///       &&&&&&&&&%&&&&&&&&%&&&&&&&&&                                     
+                        ///            (&&&&&&&&&&&&&&&&&&(                                         
+                       ///                                                                          
+                      ///         ,(                                                                
+                      //       //                                                                   
+                      .///(//.  
+
+                           Aero Space Village
+-->
+<head>
+   <style> 
+      body {
+      background: skyblue;
+      }
+      .b{
+      display: block;
+      margin-left: auto;
+      width:10%;
+      }
+      .plane-mov {
+      position: absolute;
+      top: 0px;
+      right: -500px;
+      animation: plane 10s linear 0s infinite reverse;
+      z-index: 99;
+      }
+      @keyframes plane {
+      from {right:-500px;}
+      to {right: 100%;}
+      }
+      /*Plane: Animation*/
+      .plane-continer {
+      -webkit-animation: plane-scoping 2s alternate infinite;
+      -moz-animation: plane-scoping 2s alternate infinite;
+      animation: plane-scoping 2s alternate infinite;
+      -webkit-animation-timing-function: linear;
+      -moz-animation-timing-function: linear;
+      animation-timing-function: linear;
+      }
+      @-webkit-keyframes plane-scoping {
+      0% {
+      -webkit-transform: translateY(0px);
+      -moz-transform: translateY(0px);
+      transform: translateY(0px);
+      }
+      100% {
+      -webkit-transform: translateY(100px);
+      -moz-transform: translateY(100px);
+      transform: translateY(100px);
+      }
+      }
+      .plane {
+      -webkit-animation-timing-function: ease-in-out;
+      -moz-animation-timing-function: ease-in-out;
+      animation-timing-function: ease-in-out;
+      -webkit-animation: plane-soaring 4s forwards infinite;
+      -moz-animation: plane-soaring 4s forwards infinite;
+      animation: plane-soaring 4s forwards infinite;
+      }
+      @-webkit-keyframes plane-soaring {
+      0% {
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      transform: rotate(0deg);
+      }
+      40% {
+      -webkit-transform: rotate(15deg);
+      -moz-transform: rotate(15deg);
+      transform: rotate(15deg);
+      }
+      50% {
+      -webkit-transform: rotate(15deg);
+      -moz-transform: rotate(15deg);
+      transform: rotate(15deg);
+      }
+      60% {
+      -webkit-transform: rotate(-10deg);
+      -moz-transform: rotate(-10deg);
+      transform: rotate(-10deg);
+      }
+      70% {
+      -webkit-transform: rotate(-10deg);
+      -moz-transform: rotate(-10deg);
+      transform: rotate(-10deg);
+      }
+      100% {
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      transform: rotate(0deg);
+      }
+      }
+      /**
+      * Clouds
+      */
+      .clouds {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+      transform: translateZ(0);
+      }
+      .cloud {
+      position: absolute;
+      top: 20%;
+      width: 300px;
+      right: 0;
+      opacity: 1;
+      }
+      .cloud.front {
+      z-index: 9;
+      }
+      .cloud.distant {
+      z-index: 1;
+      }
+      .cloud.background {
+      z-index: 1;
+      }
+      /*Cloud Sizing*/
+      .cloud.smaller {
+      margin-right: 400px;
+      width: 100px;
+      margin-top: 50px;
+      }
+      .cloud.small {
+      margin-right: 200px;
+      width: 150px;
+      }
+      .cloud.big {
+      width: 500px;
+      margin-top: 50px;
+      margin-right: 150px;
+      }
+      .cloud.massive {
+      width: 600px;
+      margin-top: 20px;
+      margin-right: 0px;
+      }
+      /*Cloud: Animation*/
+      .cloud {
+      -webkit-animation-name: cloud-movement;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-direction: forwards;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-duration: 8s;
+      -moz-animation-name: cloud-movement;
+      -moz-animation-timing-function: linear;
+      -moz-animation-direction: forwards;
+      -moz-animation-iteration-count: infinite;
+      -moz-animation-duration: 8s;
+      animation-name: cloud-movement;
+      animation-timing-function: linear;
+      animation-direction: forwards;
+      animation-iteration-count: infinite;
+      animation-duration: 8s;
+      }
+      .slow {
+      -webkit-animation-duration: 9.2s;
+      -moz-animation-duration: 9.2s;
+      animation-duration: 9.2s;
+      }
+      .slower {
+      -webkit-animation-duration: 11.2s;
+      -moz-animation-duration: 11.2s;
+      animation-duration: 11.2s;
+      }
+      .slowest {
+      -webkit-animation-duration: 13.5s;
+      -moz-animation-duration: 13.5s;
+      animation-duration: 13.5s;
+      }
+      .super-slow {
+      -webkit-animation-duration: 20.5s;
+      -moz-animation-duration: 20.5s;
+      animation-duration: 20.5s;
+      }
+      @-webkit-keyframes cloud-movement {
+      0% {
+      opacity: 0.1;
+      -webkit-transform: translateX(300px);
+      -moz-transform: translateX(300px);
+      transform: translateX(300px);
+      }
+      10% {
+      opacity: 0.7;
+      }
+      90% {
+      opacity: 0;
+      }
+      100% {
+      opacity: 0;
+      -webkit-transform: translateX(-1000px);
+      -moz-transform: translateX(-1000px);
+      transform: translateX(-1000px);
+      }
+      }
+   </style>
+</head>
+<div class=plane-mov>
+   <div class="plane-continer">
+      <img class="plane" src=https://images.fineartamerica.com/images/artworkimages/medium/3/a-us-air-force-f-22-raptor-fifth-generation-stealth-air-superiority-fighter-tom-hill-transparent.png />
+   </div>
+</div>
+<div>
+   <svg
+   xmlns=http://www.w3.org/2000/svg
+   shape-rendering="geometricPrecision"
+   text-rendering="geometricPrecision"
+   image-rendering="optimizeQuality"
+   fill-rule="evenodd"
+   clip-rule="evenodd"
+   viewBox="0 0 221 512.028"
+   class="b"
+   style="visibility:hidden;"
+   > 
+   <path
+      fill="#E30713"
+      d="M110.64 0C171.672 0 221 58.943 221 131.68c0 67.164-45.122 147.569-102.964 152.27l16.988 25.713c6.689 11.566 2.927 14.77-8.499 14.77H89.2c-8.223-.12-7.627-8.312-4.06-14.073l16.802-25.45C43.801 281.926 0 198.983 0 131.68 0 58.943 49.467 0 110.36 0h.28z"
+      />
+   <path
+      fill="#fff"
+      fill-rule="nonzero"
+      d="M130.545 43.849a6.306 6.306 0 015.972-11.105c10.563 5.685 21.147 14.145 30.358 23.682 9.505 9.844 17.623 20.931 22.811 31.384a6.303 6.303 0 01-2.863 8.439 6.303 6.303 0 01-8.439-2.863c-4.613-9.296-11.942-19.269-20.59-28.225-8.337-8.633-17.842-16.249-27.249-21.312z"
+      />
+   <path
+      fill-rule="nonzero"
+      d="M85.424 294.146c2.539-.847 4.931-2.006 7.49-3.414-5.355-2.365-10.559-4.547-16.856-6.002-2.175-.502-4.315-.831-6.174-.838-1.589-.005-2.963.206-3.892.736-.708.404-1.259 1.179-1.553 2.446l-.033.133a10.03 10.03 0 00-.213 2.034c-.004 1.082.144 2.033.418 2.855.478 1.436 1.449 2.395 2.698 2.987 1.644.779 3.817 1.105 6.173 1.115 4.007.015 8.379-.863 11.942-2.052zm40.099 8.776c-3.525-1.174-6.537-2.64-9.678-4.381 13.41 35.128 8.186 63.493 2.372 95.072-5.684 30.873-11.961 64.963-.719 111.684a5.466 5.466 0 01-10.633 2.531c-11.785-48.979-5.291-84.248.59-116.187 5.855-31.803 11.075-60.167-4.38-95.412-4.756 2.786-8.716 5.031-13.707 6.693-4.651 1.553-10.458 2.7-15.928 2.678-4.096-.017-8.066-.677-11.403-2.258-3.733-1.77-6.602-4.558-7.973-8.665-.529-1.585-.813-3.394-.805-5.436.004-1.427.137-2.691.375-3.8l.043-.209c.92-3.965 3.171-6.687 6.269-8.457 2.878-1.644 6.329-2.297 9.98-2.284 2.968.01 6.032.455 8.962 1.131 8.054 1.861 14.214 4.597 20.754 7.5 2.046.907 4.138 1.837 6.308 2.742a5.67 5.67 0 011.072.548c.268-.004.535.011.798.044.31-.209.642-.383.989-.527 2.214-.932 4.349-1.881 6.438-2.807 6.541-2.903 12.7-5.637 20.757-7.5 2.93-.678 5.992-1.121 8.96-1.131 3.651-.013 7.102.64 9.98 2.284 3.098 1.77 5.351 4.492 6.269 8.456l.046.224c.236 1.109.369 2.369.373 3.786.008 2.042-.275 3.851-.805 5.436-1.371 4.107-4.239 6.895-7.972 8.665-3.337 1.581-7.306 2.241-11.402 2.258-5.471.022-11.277-1.125-15.93-2.678zm-3.544-12.19c2.558 1.41 4.95 2.567 7.489 3.414 3.564 1.189 7.934 2.067 11.94 2.052 2.356-.01 4.527-.335 6.173-1.115 1.25-.592 2.221-1.551 2.699-2.987.274-.822.422-1.773.418-2.855a10.164 10.164 0 00-.21-2.03l-.035-.135c-.293-1.269-.845-2.044-1.553-2.448-.928-.531-2.303-.741-3.892-.736-1.86.007-3.999.336-6.175.838-6.294 1.455-11.498 3.637-16.854 6.002z"
+      />
+   </svg>
+</div>
+</div>
+</div>
+<div class="clouds">
+   <svg version="1.1" xmlns=http://www.w3.org/2000/svg xmlns:xlink=http://www.w3.org/1999/xlink x="0px" y="0px" width="762px"
+      height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud big front slowest">
+      <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+         c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+         C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+         S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
+   </svg>
+   <svg version="1.1" xmlns=http://www.w3.org/2000/svg xmlns:xlink=http://www.w3.org/1999/xlink x="0px" y="0px" width="762px"
+      height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud distant smaller">
+      <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+         c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+         C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+         S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
+   </svg>
+   <svg version="1.1" xmlns=http://www.w3.org/2000/svg xmlns:xlink=http://www.w3.org/1999/xlink x="0px" y="0px" width="762px"
+      height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud small slow">
+      <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+         c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+         C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+         S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
+   </svg>
+   <svg version="1.1" xmlns=http://www.w3.org/2000/svg xmlns:xlink=http://www.w3.org/1999/xlink x="0px" y="0px" width="762px"
+      height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud distant super-slow massive">
+      <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+         c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+         C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+         S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
+   </svg>
+   <svg version="1.1" xmlns=http://www.w3.org/2000/svg xmlns:xlink=http://www.w3.org/1999/xlink x="0px" y="0px" width="762px"
+      height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud slower">
+      <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+         c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+         C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+         S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
+   </svg>
+</div>
