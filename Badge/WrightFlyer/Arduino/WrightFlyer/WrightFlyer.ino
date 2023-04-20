@@ -106,6 +106,7 @@ void setup() {
   Serial.begin(115200);
   
   enableWiFi();
+  turnOnLEDs();
 
   Wire.begin(8, 9);   // More to follow on if/what we decide to do with I2C
    
@@ -253,14 +254,16 @@ void enableWiFi(){
     Serial.println("Server started");
 }
 
-void turnOffLEDs(){
+void turnOnLEDs(){
   digitalWrite(led_pin_R, HIGH);
   digitalWrite(led_pin_G, HIGH);
   digitalWrite(led_pin_B, HIGH);
+  Serial.println("LEDs On");
 }
 
-void turnOnLEDs(){
+void turnOffLEDs(){
   digitalWrite(led_pin_R, LOW);
   digitalWrite(led_pin_G, LOW);
   digitalWrite(led_pin_B, LOW);
+  Serial.println("LEDs Off");
 }
