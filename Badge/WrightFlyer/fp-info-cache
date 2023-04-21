@@ -1,4 +1,4 @@
-21712881573202533
+21712888787429026
 2479_battery_holder
 2479
 
@@ -29,7 +29,7 @@ audio belton reverb
 7
 Badge_Libraries
 Wright_Flyer
-Converted using: svg2mod Wright_Flyer.svg
+Converted using: svg2mod -c -p .5 --format latest Wright_Flyer.svg
 svg2mod
 0
 0

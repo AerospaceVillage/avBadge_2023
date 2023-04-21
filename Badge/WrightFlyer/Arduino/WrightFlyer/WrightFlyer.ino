@@ -32,7 +32,7 @@
 #define GPIO_2 14
 
 // Motor on/off variables
-#define motor_on_duration 5000
+#define motor_on_duration 2500
 #define motor_off_duration 70000
 
 // Set these to your desired credentials.
@@ -212,11 +212,6 @@ void loop() {
   process_client();
 
   check_wifi_state();
-  if(wifi_isOn == true && led_isOn == true){
-    turnOnLEDs();
-  }else{
-    turnOffLEDs();
-  }
   
 }
 
@@ -254,16 +249,16 @@ void enableWiFi(){
     Serial.println("Server started");
 }
 
-void turnOnLEDs(){
+void turnOffLEDs(){
   digitalWrite(led_pin_R, HIGH);
   digitalWrite(led_pin_G, HIGH);
   digitalWrite(led_pin_B, HIGH);
-  Serial.println("LEDs On");
+  Serial.println("LEDs Off");
 }
 
-void turnOffLEDs(){
+void turnOnLEDs(){
   digitalWrite(led_pin_R, LOW);
   digitalWrite(led_pin_G, LOW);
   digitalWrite(led_pin_B, LOW);
-  Serial.println("LEDs Off");
+  Serial.println("LEDs On");
 }
