@@ -1,4 +1,4 @@
-21717928987178693
+21717929253981189
 2479_battery_holder
 2479
 
@@ -43,7 +43,7 @@ svg2mod
 0
 Badge_Libraries
 Wright X3
-Converted using: svg2mod -c -p .5 --format latest 'Wright X3.svg'
+Converted using: svg2mod -c --format latest -p .25 'Wright X3.svg'
 svg2mod
 0
 6

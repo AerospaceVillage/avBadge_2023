@@ -148,8 +148,7 @@ void process_client() {
             client.print("<p>Welcome to the Aerospace Village Badge for 2023. This badge has a number of Easter eggs, one of which you've found if you're reading this now.</p>");
             client.print("<p>Turn <a href=\"/H\" class=\"button\">ON</a> the LED.</p><br>");
             client.print("<p>Turn <a href=\"/L\" class=\"button\">OFF</a> the LED.</p><br>");
-            client.print("<p>Turn <a href=\"/M\" class=\"button\">ON</a> the propellers.</p><br>");
-            client.print("<p>Turn <a href=\"/m\" class=\"button\">OFF</a> the propellers.</p><br>");
+            client.print("<p><a href=\"/M\" class=\"button\">TOGGLE</a> the propellers.</p><br>");
 
             client.print("<p>Learn more about the <a href=\"https://aerospacevillage.org\">Aerospace Village</a></p>");            
             client.print("</body></html>");
@@ -176,7 +175,7 @@ void process_client() {
         }
 
         if (currentLine.endsWith("GET /M")) {
-          motorOn_user = true;                
+          motorOn_user = !motorOn_user;                
         }
 
         if (currentLine.endsWith("GET /m")) {
