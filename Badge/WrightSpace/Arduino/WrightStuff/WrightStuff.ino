@@ -1,17 +1,18 @@
 /*
   Aerospace Village Def Con Badge for 2023
   Author: Dan Allen
+  Title: The Wright Stuff
 
-  Idea: Celebrate the 120 year anniversary of first flight 12/7/1903 while at Def Con in 2023 (albeit a few months early).
+  Idea: Enjoy the nostalgia of 120 years of avaition with a heavy space theme
 
   Design:
-     - Spin 2 motors with attached laser cut propellers
-     - backlight some aspects of the board with LEDs
-     - Have a WiFi connection that people can login into the aircraft and make changes into EEPROM
-        - Have a manual override switch that can disable the WiFi portion, use as a teaching aid to aircraft design
-        - Have a switch that can turn on/off the wifi server - save battery life and improve securty posture
-
-  
+     - Artowrk by flysurreal.com
+     - Twinkle some starts and other LEDs
+     - Have a WiFi connection that people can login into the spacefract and make changes into EEPROM
+        - Have a manual override switch that can enable/disable the WiFi for battery saving
+     - Utilize the touch capacitance of the ESP32-S2 MCU fro some user based interactions
+     - Be very verbose/spammy on the Serial line for user intaction options.
+     - Perhaps use I2C in a creative way?  
 */
 
 #include <WiFi.h>
@@ -25,7 +26,12 @@
 #define touch4 4
 #define touch5 5
 
-#define threshold 80000
+#define threshold_1 60000
+#define threshold_2 60000
+#define threshold_3 60000
+#define threshold_4 20000
+#define threshold_5 20000
+
 
 #define led1_R 12
 #define led1_G 13
@@ -41,15 +47,22 @@
 #define led4 33
 #define led5 34
 #define led6 35
+#define led7 36
 
 #define wifi_on_off_pin 18
 
 #define GPIO_1 10
 #define GPIO_2 11
 
-// Set these to your desired credentials.
+// The WiFi Credentials
 const char* ssid = "WrightStuff";
 const char* password = "1SmallStep";
+
+// The webserver specifications, ipv4
+IPAddress Ip(7, 20, 19, 69);  // Date of first moon landing
+IPAddress NMask(255, 255, 255, 0);
+WiFiServer server(80);
+
 
 boolean wifi_isOn = true;
 boolean wifi_stateChanged = false;
@@ -60,13 +73,10 @@ boolean wifi_switch_prev_state = LOW;
 volatile boolean led_isRed = false;
 volatile short sat_color = 1;
 
-IPAddress Ip(7, 20, 19, 69);
-IPAddress NMask(255, 255, 255, 0);
-
-WiFiServer server(80);
 
 hw_timer_t *Timer0_Cfg = NULL;
 
+// Function definitions
 void disableWiFi();
 void enableWiFi();
 void turnOnLEDs();
@@ -84,26 +94,36 @@ void IRAM_ATTR Timer0_ISR() {
 }
 
 
-
-void process_touch5(){
+void process_touch1(){
   sat_color = 1;
-}
-
-void process_touch4(){
-  sat_color = 2;
-}
-
-void process_touch3(){
-  sat_color = 3;
 }
 
 void process_touch2(){
   sat_color = 4;
 }
 
+void process_touch3(){
+  sat_color = 3;
+}
+
+void process_touch4(){
+  sat_color = 2;
+}
+
+void process_touch5(){
+  sat_color = 1;
+}
+
+
 
 
 void setup() {
+
+  Serial.begin(115200);
+  delay(500); // allow time for the Serial line to get up to speed  
+
+  
+  // Setup and initialize all the LED pins for this board
   pinMode(led1_R, OUTPUT);
   pinMode(led1_G, OUTPUT);
   pinMode(led1_B, OUTPUT);
@@ -118,25 +138,30 @@ void setup() {
   pinMode(led4, OUTPUT);
   pinMode(led5, OUTPUT);
   pinMode(led6, OUTPUT);
+  pinMode(led7, OUTPUT);
   
-  
-  //pinMode(wifi_on_off_pin, INPUT);
-  //digitalWrite(wifi_on_off_pin, LOW);
-
+  // GPIOs used for SAO interactions. More to do here maybe.
   pinMode(GPIO_1, OUTPUT);
   digitalWrite(GPIO_1, HIGH);
   pinMode(GPIO_2, OUTPUT);
   digitalWrite(GPIO_2, HIGH);
 
+  // Wifi Pin configuration
+  pinMode(wifi_on_off_pin, INPUT);
+
+  // Setup the WiFi based upon the setting of the switch 
+  if(digitalRead(wifi_on_off_pin) == HIGH){
+    wifi_switch_prev_state = LOW;
+    enableWiFi();
+  }else{
+    wifi_switch_prev_state = HIGH;
+    disableWiFi();
+  }
+
   Timer0_Cfg = timerBegin(0, 240, true);
   timerAttachInterrupt(Timer0_Cfg, &Timer0_ISR, true);
   timerAlarmWrite(Timer0_Cfg, 100000, true);
   timerAlarmEnable(Timer0_Cfg);
-
-  Serial.begin(115200);
-  
-  enableWiFi();
-  
 
   Wire.begin(8, 9);   // More to follow on if/what we decide to do with I2C
 
@@ -144,10 +169,13 @@ void setup() {
   led2_Blue();
   twinkle_stars();
 
-  touchAttachInterrupt(touch5, process_touch5, threshold);
-  touchAttachInterrupt(touch4, process_touch4, threshold);
-  touchAttachInterrupt(touch3, process_touch3, threshold);
-  touchAttachInterrupt(touch2, process_touch2, threshold);
+  touchAttachInterrupt(touch1, process_touch1, threshold_1);
+  touchAttachInterrupt(touch2, process_touch2, threshold_2);
+  touchAttachInterrupt(touch3, process_touch3, threshold_3);
+  touchAttachInterrupt(touch4, process_touch4, threshold_4);
+  touchAttachInterrupt(touch5, process_touch5, threshold_5);
+  
+  
 }
 
 void process_client() {
@@ -238,13 +266,7 @@ void loop() {
 
   process_client();
 
-  //check_wifi_state();
-  if(wifi_isOn == true){
-    //turnOnLEDs();
-  }else{
-    //turnOffLEDs();
-  }
-
+  check_wifi_state();
   
   /*
   Serial.println("\n\n");
@@ -281,16 +303,6 @@ void loop() {
     led2_Yellow();
   }
 
-  //twinkle_stars();
-  //delay(150);
-
-  //turnOffLEDs();
-
-  //touchValue = touchRead(touch3);
-  //Serial.println(touchValue);
-  //delay(250);
-  
-  
 }
 
 
@@ -304,16 +316,12 @@ void disableWiFi(){
 
 void enableWiFi(){
     wifi_isOn = true;
-    Serial.println("Configuring access point...");
+    Serial.println("Configuring access point...");    
     Serial.print("SSID: ");
     Serial.print(ssid);
     Serial.print(" Password: ");
     Serial.print(password);
     Serial.print("\n");
-  
-    // You can remove the password parameter if you want the AP to be open.
-    //WiFi.mode(WIFI_AP);
-    //Serial.println("Wifi Mode set");
 
     Serial.println("START WIFI");
     
@@ -342,6 +350,7 @@ void turnOnLEDs(){
   digitalWrite(led4, HIGH);
   digitalWrite(led5, HIGH);
   digitalWrite(led6, HIGH);
+  digitalWrite(led7, HIGH);
 }
 
 void turnOffLEDs(){
@@ -349,9 +358,9 @@ void turnOffLEDs(){
   digitalWrite(led1_G, LOW);
   digitalWrite(led1_B, LOW);
 
-  digitalWrite(led2_R, HIGH);
-  digitalWrite(led2_G, HIGH);
-  digitalWrite(led2_B, HIGH);
+  digitalWrite(led2_R, LOW);
+  digitalWrite(led2_G, LOW);
+  digitalWrite(led2_B, LOW);
 
   digitalWrite(led1, LOW);
   digitalWrite(led2, LOW);
@@ -359,6 +368,7 @@ void turnOffLEDs(){
   digitalWrite(led4, LOW);
   digitalWrite(led5, LOW);
   digitalWrite(led6, LOW);  
+  digitalWrite(led7, LOW);  
 }
 
 
@@ -397,4 +407,5 @@ void twinkle_stars(){
   analogWrite(led4, random(min_val,max_val));
   analogWrite(led5, random(min_val,max_val));
   analogWrite(led6, random(min_val,max_val));
+  analogWrite(led7, random(min_val,max_val));
 }
