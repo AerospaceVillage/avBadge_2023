@@ -19,6 +19,7 @@
 #include <WiFiClient.h>
 #include <WiFiAP.h>
 #include "Wire.h"
+#include "index_html.h"
 
 #define touch1 1
 #define touch2 2
@@ -197,28 +198,11 @@ void process_client() {
             // and a content-type so the client knows what's coming, then a blank line:
             client.println("HTTP/1.1 200 OK");
             client.println("Content-type:text/html");
-            client.println();
+            client.println(); // Finish the header on the newline
 
-            // the content of the HTTP response follows the header:
-            client.print("<html><head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
-            client.print("<!-- What is the significance of the ipv4 address of this webpage? Think you know... then talk to an Aerospace Village Staff Volunteer -->");
-            client.print("<!-- V2FudCB0byBrbm93IG1vcmUgYWJvdXQgTk9UQU1TIGFuZCB0aGUgd2Vic2l0ZSBvdXRhZ2UgdGhhdCBtYWRlIHRoZSBuZXdzIHJlY2VudGx5PwoKTGVhcm4gbW9yZSBhYm91dCB0aGUgb3V0YWdlIGhlcmU6Cmh0dHBzOi8vd3d3LmZhYS5nb3YvbmV3c3Jvb20vZmFhLW5vdGFtLXN0YXRlbWVudAoKVGhlIE5PVEFNUyB3ZWJzaXRlIGl0c2VsZiBpcyBoZXJlOgpodHRwczovL3d3dy5ub3RhbXMuZmFhLmdvdi9kaW5zUXVlcnlXZWIv -->");
-            client.print("<style>.button { background-color: #4CAF50; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; }");
-            client.print("h1 { color: white; } p { color: white; } a { color: white; } ul { color:white;}");
-            client.print("</style>");
-            client.print("<title>The Wright Stuff</title>");
-            client.print("</head>");
-            client.print("<body bgcolor=\"black\">");
-            client.print("<h1>Aerospace Village</h1>");
-            client.print("<ul><li>Build</li><li>Inspire</li><li>Promote</li></ul>");
-            client.print("<p>Welcome to the Aerospace Village Badge for 2023. This badge has a number of Easter eggs, one of which you've found if you're reading this now.</p>");
-            client.print("<p>Turn <a href=\"/H\" class=\"button\">ON</a> the LED.</p><br>");
-            client.print("<p>Turn <a href=\"/L\" class=\"button\">OFF</a> the LED.</p><br>");
-            client.print("<p>Turn <a href=\"/M\" class=\"button\">ON</a> the propellers.</p><br>");
-            client.print("<p>Turn <a href=\"/m\" class=\"button\">OFF</a> the propellers.</p><br>");
+            client.println(index_html_code);
 
-            client.print("<p>Learn more about the <a href=\"https://aerospacevillage.org\">Aerospace Village</a></p>");            
-            client.print("</body></html>");
+            
 
             // The HTTP response ends with another blank line:
             client.println();
