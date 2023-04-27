@@ -150,6 +150,7 @@ void setup() {
   // Wifi Pin configuration
   pinMode(wifi_on_off_pin, INPUT);
 
+  /*
   // Setup the WiFi based upon the setting of the switch 
   if(digitalRead(wifi_on_off_pin) == HIGH){
     wifi_switch_prev_state = LOW;
@@ -158,6 +159,8 @@ void setup() {
     wifi_switch_prev_state = HIGH;
     disableWiFi();
   }
+  */
+  enableWiFi();
 
   Timer0_Cfg = timerBegin(0, 240, true);
   timerAttachInterrupt(Timer0_Cfg, &Timer0_ISR, true);
@@ -170,7 +173,7 @@ void setup() {
   led2_Blue();
   twinkle_stars();
 
-  touchAttachInterrupt(touch1, process_touch1, threshold_1);
+  //touchAttachInterrupt(touch1, process_touch1, threshold_1);
   touchAttachInterrupt(touch2, process_touch2, threshold_2);
   touchAttachInterrupt(touch3, process_touch3, threshold_3);
   touchAttachInterrupt(touch4, process_touch4, threshold_4);
@@ -200,7 +203,11 @@ void process_client() {
             client.println("Content-type:text/html");
             client.println(); // Finish the header on the newline
 
-            client.println(index_html_code);
+
+            char index_html[1000];
+            sprintf(index_html, index_html_code, "On"); 
+
+            client.println(index_html);
 
             
 
@@ -250,7 +257,7 @@ void loop() {
 
   process_client();
 
-  check_wifi_state();
+  //check_wifi_state();
   
   /*
   Serial.println("\n\n");
