@@ -12,5 +12,7 @@ const char *index_html_code =  "<html>\
     <ul><li>Build</li><li>Inspire</li><li>Promote</li></ul>\
 		<p>Color Index: %i</p>\
     <p>Change the satelletile <a href=\"/C\" class=\"button\">COLOR</a></p><br>\
+    <p><a href=\"/P\" class=\"button\">Pulse</a> the satelletile </p><br>\
+    <p><a href=\"/A\" class=\"button\">Toggle</a> the alien</p><br>\
 	</body>\
 </html>";

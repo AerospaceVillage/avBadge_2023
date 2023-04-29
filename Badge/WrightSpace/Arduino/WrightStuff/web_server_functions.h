@@ -52,6 +52,14 @@ void process_client() {
             color_index = 0;
           }          
         }
+
+        if (currentLine.endsWith("GET /A")) {
+          alienFound = !alienFound; 
+        }
+
+        if (currentLine.endsWith("GET /P")) {
+          pulse = !pulse; 
+        }
       }
     }
     // close the connection:
@@ -81,6 +89,8 @@ void enableWiFi(){
     
     WiFi.softAP(ssid, password);
     Serial.println("SoftAP set");
+
+    WiFi.setSleep(false);
   
     WiFi.softAPConfig(Ip, Ip, NMask);
     Serial.println("AP config set");
