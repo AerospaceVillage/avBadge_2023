@@ -5,13 +5,13 @@
       "Application": "Pcbnew",
       "Version": "7.0.1-0"
     },
-    "CreationDate": "2023-04-22T13:11:18-04:00"
+    "CreationDate": "2023-04-30T15:52:07-04:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
       "Name": "WrightFlyer",
       "GUID": "57726967-6874-4466-9c79-65722e6b6963",
-      "Revision": "v04"
+      "Revision": "v05"
     },
     "Size": {
       "X": 180.0,
