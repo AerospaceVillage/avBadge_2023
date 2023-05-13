@@ -2,6 +2,11 @@
  * Functions to register all the touch point functions
  */
 
+volatile short touch_sum = 0;
+volatile boolean color_lock = false;
+volatile boolean touch5_released = false;
+
+
 void process_touch1(){
   // The XOR in the interrupt helps reset the function when the touch sensor is released
   touch_sum = touch_sum ^ 1;
@@ -47,8 +52,11 @@ void service_touch_events(){
 	    // Reset all the things that can be toyed with
 	    percentage = 100;
 	    color_index = 0;
+      color_ring_color = color_array[color_index];
+      alien_color = color_array[color_index];
 	    scale = 1;
 	    pulse = false;
+      alienFound = false;
 	}
 
 
@@ -71,8 +79,7 @@ void service_touch_events(){
 		  color_index = 0;
 		}
 
-		//Serial.print("Color Index: ");
-		//Serial.println(color_index);
+		color_ring_color = color_array[color_index];
 
 		touch5_released = false;
 	}
