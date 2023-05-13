@@ -1,3 +1,4 @@
+<html>
 <!--
 
                                                                      ////////                       
@@ -32,194 +33,228 @@
 -->
 <head>
    <style> 
-      body {
-      background: skyblue;
-      }
-      .b{
-      display: block;
-      margin-left: auto;
-      width:10%;
-      }
-      .plane-mov {
-      position: absolute;
-      top: 0px;
-      right: -500px;
-      animation: plane 10s linear 0s infinite reverse;
-      z-index: 99;
-      }
-      @keyframes plane {
-      from {right:-500px;}
-      to {right: 100%;}
-      }
-      /*Plane: Animation*/
-      .plane-continer {
-      -webkit-animation: plane-scoping 2s alternate infinite;
-      -moz-animation: plane-scoping 2s alternate infinite;
-      animation: plane-scoping 2s alternate infinite;
-      -webkit-animation-timing-function: linear;
-      -moz-animation-timing-function: linear;
-      animation-timing-function: linear;
-      }
-      @-webkit-keyframes plane-scoping {
-      0% {
-      -webkit-transform: translateY(0px);
-      -moz-transform: translateY(0px);
-      transform: translateY(0px);
-      }
-      100% {
-      -webkit-transform: translateY(100px);
-      -moz-transform: translateY(100px);
-      transform: translateY(100px);
-      }
-      }
-      .plane {
-      -webkit-animation-timing-function: ease-in-out;
-      -moz-animation-timing-function: ease-in-out;
-      animation-timing-function: ease-in-out;
-      -webkit-animation: plane-soaring 4s forwards infinite;
-      -moz-animation: plane-soaring 4s forwards infinite;
-      animation: plane-soaring 4s forwards infinite;
-      }
-      @-webkit-keyframes plane-soaring {
-      0% {
-      -webkit-transform: rotate(0deg);
-      -moz-transform: rotate(0deg);
-      transform: rotate(0deg);
-      }
-      40% {
-      -webkit-transform: rotate(15deg);
-      -moz-transform: rotate(15deg);
-      transform: rotate(15deg);
-      }
-      50% {
-      -webkit-transform: rotate(15deg);
-      -moz-transform: rotate(15deg);
-      transform: rotate(15deg);
-      }
-      60% {
-      -webkit-transform: rotate(-10deg);
-      -moz-transform: rotate(-10deg);
-      transform: rotate(-10deg);
-      }
-      70% {
-      -webkit-transform: rotate(-10deg);
-      -moz-transform: rotate(-10deg);
-      transform: rotate(-10deg);
-      }
-      100% {
-      -webkit-transform: rotate(0deg);
-      -moz-transform: rotate(0deg);
-      transform: rotate(0deg);
-      }
-      }
-      /**
-      * Clouds
-      */
-      .clouds {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+	  body {
+	  background: skyblue;
+	  }
+	  .b{
+	  display: block;
+	  margin-left: auto;
+	  width:10%;
+	  }
+	  .plane-mov {
+	  position: absolute;
+	  top: 0px;
+	  right: 0px;
+	  animation: plane 10s linear 0s infinite reverse;
+	  z-index: 99;
       overflow: hidden;
-      transform: translateZ(0);
-      }
-      .cloud {
-      position: absolute;
-      top: 20%;
-      width: 300px;
-      right: 0;
-      opacity: 1;
-      }
-      .cloud.front {
-      z-index: 9;
-      }
-      .cloud.distant {
-      z-index: 1;
-      }
-      .cloud.background {
-      z-index: 1;
-      }
-      /*Cloud Sizing*/
-      .cloud.smaller {
-      margin-right: 400px;
-      width: 100px;
-      margin-top: 50px;
-      }
-      .cloud.small {
-      margin-right: 200px;
-      width: 150px;
-      }
-      .cloud.big {
-      width: 500px;
-      margin-top: 50px;
-      margin-right: 150px;
-      }
-      .cloud.massive {
-      width: 600px;
-      margin-top: 20px;
-      margin-right: 0px;
-      }
-      /*Cloud: Animation*/
-      .cloud {
-      -webkit-animation-name: cloud-movement;
-      -webkit-animation-timing-function: linear;
-      -webkit-animation-direction: forwards;
-      -webkit-animation-iteration-count: infinite;
-      -webkit-animation-duration: 8s;
-      -moz-animation-name: cloud-movement;
-      -moz-animation-timing-function: linear;
-      -moz-animation-direction: forwards;
-      -moz-animation-iteration-count: infinite;
-      -moz-animation-duration: 8s;
-      animation-name: cloud-movement;
-      animation-timing-function: linear;
-      animation-direction: forwards;
-      animation-iteration-count: infinite;
-      animation-duration: 8s;
-      }
-      .slow {
-      -webkit-animation-duration: 9.2s;
-      -moz-animation-duration: 9.2s;
-      animation-duration: 9.2s;
-      }
-      .slower {
-      -webkit-animation-duration: 11.2s;
-      -moz-animation-duration: 11.2s;
-      animation-duration: 11.2s;
-      }
-      .slowest {
-      -webkit-animation-duration: 13.5s;
-      -moz-animation-duration: 13.5s;
-      animation-duration: 13.5s;
-      }
-      .super-slow {
-      -webkit-animation-duration: 20.5s;
-      -moz-animation-duration: 20.5s;
-      animation-duration: 20.5s;
-      }
-      @-webkit-keyframes cloud-movement {
-      0% {
-      opacity: 0.1;
-      -webkit-transform: translateX(300px);
-      -moz-transform: translateX(300px);
-      transform: translateX(300px);
-      }
-      10% {
-      opacity: 0.7;
-      }
-      90% {
-      opacity: 0;
-      }
-      100% {
-      opacity: 0;
-      -webkit-transform: translateX(-1000px);
-      -moz-transform: translateX(-1000px);
-      transform: translateX(-1000px);
-      }
-      }
+
+	  }
+	  @keyframes plane {
+	  from {left: 100%;}
+	  to {left: -50%;}
+	  }
+	  /*Plane: Animation*/
+	  .plane-continer {
+	  -webkit-animation: plane-scoping 2s alternate infinite;
+	  -moz-animation: plane-scoping 2s alternate infinite;
+	  animation: plane-scoping 2s alternate infinite;
+	  -webkit-animation-timing-function: linear;
+	  -moz-animation-timing-function: linear;
+	  animation-timing-function: linear;
+	  }
+	  @-webkit-keyframes plane-scoping {
+	  0% {
+	  -webkit-transform: translateY(0px);
+	  -moz-transform: translateY(0px);
+	  transform: translateY(0px);
+	  }
+	  100% {
+	  -webkit-transform: translateY(100px);
+	  -moz-transform: translateY(100px);
+	  transform: translateY(100px);
+	  }
+	  }
+	  .plane {
+	  -webkit-animation-timing-function: ease-in-out;
+	  -moz-animation-timing-function: ease-in-out;
+	  animation-timing-function: ease-in-out;
+	  -webkit-animation: plane-soaring 4s forwards infinite;
+	  -moz-animation: plane-soaring 4s forwards infinite;
+	  animation: plane-soaring 4s forwards infinite;
+	  }
+	  @-webkit-keyframes plane-soaring {
+	  0% {
+	  -webkit-transform: rotate(0deg);
+	  -moz-transform: rotate(0deg);
+	  transform: rotate(0deg);
+	  }
+	  40% {
+	  -webkit-transform: rotate(15deg);
+	  -moz-transform: rotate(15deg);
+	  transform: rotate(15deg);
+	  }
+	  50% {
+	  -webkit-transform: rotate(15deg);
+	  -moz-transform: rotate(15deg);
+	  transform: rotate(15deg);
+	  }
+	  60% {
+	  -webkit-transform: rotate(-10deg);
+	  -moz-transform: rotate(-10deg);
+	  transform: rotate(-10deg);
+	  }
+	  70% {
+	  -webkit-transform: rotate(-10deg);
+	  -moz-transform: rotate(-10deg);
+	  transform: rotate(-10deg);
+	  }
+	  100% {
+	  -webkit-transform: rotate(0deg);
+	  -moz-transform: rotate(0deg);
+	  transform: rotate(0deg);
+	  }
+	  }
+	  /**
+	  * Clouds
+	  */
+	  .clouds {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  right: 0;
+	  bottom: 0;
+	  overflow: hidden;
+	  transform: translateZ(0);
+	  }
+	  .cloud {
+	  position: absolute;
+	  top: 20%;
+	  width: 300px;
+	  right: 0;
+	  opacity: 1;
+	  }
+	  .cloud.front {
+	  z-index: 9;
+	  }
+	  .cloud.distant {
+	  z-index: 1;
+	  }
+	  .cloud.background {
+	  z-index: 1;
+	  }
+	  /*Cloud Sizing*/
+	  .cloud.smaller {
+	  margin-right: 400px;
+	  width: 100px;
+	  margin-top: 50px;
+	  }
+	  .cloud.small {
+	  margin-right: 200px;
+	  width: 150px;
+	  }
+	  .cloud.big {
+	  width: 500px;
+	  margin-top: 50px;
+	  margin-right: 150px;
+	  }
+	  .cloud.massive {
+	  width: 600px;
+	  margin-top: 20px;
+	  margin-right: 0px;
+	  }
+	  /*Cloud: Animation*/
+	  .cloud {
+	  -webkit-animation-name: cloud-movement;
+	  -webkit-animation-timing-function: linear;
+	  -webkit-animation-direction: forwards;
+	  -webkit-animation-iteration-count: infinite;
+	  -webkit-animation-duration: 8s;
+	  -moz-animation-name: cloud-movement;
+	  -moz-animation-timing-function: linear;
+	  -moz-animation-direction: forwards;
+	  -moz-animation-iteration-count: infinite;
+	  -moz-animation-duration: 8s;
+	  animation-name: cloud-movement;
+	  animation-timing-function: linear;
+	  animation-direction: forwards;
+	  animation-iteration-count: infinite;
+	  animation-duration: 8s;
+	  }
+	  .slow {
+	  -webkit-animation-duration: 9.2s;
+	  -moz-animation-duration: 9.2s;
+	  animation-duration: 9.2s;
+	  }
+	  .slower {
+	  -webkit-animation-duration: 11.2s;
+	  -moz-animation-duration: 11.2s;
+	  animation-duration: 11.2s;
+	  }
+	  .slowest {
+	  -webkit-animation-duration: 13.5s;
+	  -moz-animation-duration: 13.5s;
+	  animation-duration: 13.5s;
+	  }
+	  .super-slow {
+	  -webkit-animation-duration: 20.5s;
+	  -moz-animation-duration: 20.5s;
+	  animation-duration: 20.5s;
+	  }
+	  @-webkit-keyframes cloud-movement {
+	  0% {
+	  opacity: 0.1;
+	  -webkit-transform: translateX(300px);
+	  -moz-transform: translateX(300px);
+	  transform: translateX(300px);
+	  }
+	  10% {
+	  opacity: 0.7;
+	  }
+	  90% {
+	  opacity: 0;
+	  }
+	  100% {
+	  opacity: 0;
+	  -webkit-transform: translateX(-1000px);
+	  -moz-transform: translateX(-1000px);
+	  transform: translateX(-1000px);
+	  }
+	  }
+	  .button-color {
+		background-color: red;
+		color: white;
+		height: 200px;
+		width: 200px;
+		border-width: 10px;
+		border-color: black;
+		border-style: outsets;
+		border-radius: 20%;
+		font-size: 16px;
+		cursor: pointer;
+
+	  }
+	  .button-dock {
+		height: 405px;
+		width: 405px;	
+		border-radius: 10%;
+		background-color: gray;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		border-style: dotted;
+		border-color: black;
+		border-width: 45px;
+		padding: 10px 10px;
+	  }
    </style>
 </head>
+<body>
+
+
+
 <div class=plane-mov>
    <div class="plane-continer">
       <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="600px" height="375px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -433,3 +468,76 @@
          S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
    </svg>
 </div>
+
+<div class=button-dock >
+
+<button id="button1" class="button-color" onclick="checkServer1()">B1 Status</button>
+<button id="button2" class="button-color" onclick="checkServer2()">B2 Status</button>
+<button id="button3" class="button-color" onclick="checkServer3()">B3 Status</button>
+<button id="button4" class="button-color" onclick="checkServer4()">B4 Status</button>
+
+</div>
+<script type="text/javascript">
+	function checkServer1() {
+		var xhr = new XMLHttpRequest();
+		xhr.open("GET", "/status/B1", true);
+		xhr.onload = function () {
+			if (xhr.status === 200) {
+			var response = JSON.parse(xhr.responseText);
+				if (response.status === 1) {
+					document.getElementById('myStatusCircle').style.backgroundColor = 'green';
+				} else {
+					document.getElementById('myStatusCircle').style.backgroundColor = 'red';
+				}
+			}
+		};
+		xhr.send(null);
+	}
+		function checkServer2() {
+		var xhr = new XMLHttpRequest();
+		xhr.open("GET", "/status/B2", true);
+		xhr.onload = function () {
+			if (xhr.status === 200) {
+			var response = JSON.parse(xhr.responseText);
+				if (response.status === 1) {
+					document.getElementById('myStatusCircle').style.backgroundColor = 'green';
+				} else {
+					document.getElementById('myStatusCircle').style.backgroundColor = 'red';
+				}
+			}
+		};
+		xhr.send(null);
+	}
+		function checkServer3() {
+		var xhr = new XMLHttpRequest();
+		xhr.open("GET", "/status/B3", true);
+		xhr.onload = function () {
+			if (xhr.status === 200) {
+			var response = JSON.parse(xhr.responseText);
+				if (response.status === 1) {
+					document.getElementById('myStatusCircle').style.backgroundColor = 'green';
+				} else {
+					document.getElementById('myStatusCircle').style.backgroundColor = 'red';
+				}
+			}
+		};
+		xhr.send(null);
+	}
+		function checkServer4() {
+		var xhr = new XMLHttpRequest();
+		xhr.open("GET", "/status/B4", true);
+		xhr.onload = function () {
+			if (xhr.status === 200) {
+			var response = JSON.parse(xhr.responseText);
+				if (response.status === 1) {
+					document.getElementById('myStatusCircle').style.backgroundColor = 'green';
+				} else {
+					document.getElementById('myStatusCircle').style.backgroundColor = 'red';
+				}
+			}
+		};
+		xhr.send(null);
+	}
+</script>
+</body>
+</html>
