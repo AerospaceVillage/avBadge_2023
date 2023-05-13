@@ -2,6 +2,36 @@
  * Functions for the LEDs
  */
 
+typedef struct{
+  short red;
+  short green;
+  short blue;
+} RGB;
+ 
+
+// Function Definitions
+void twinkle_stars(short percetage);
+void pulse_center();
+void led2_color(RGB rgb, float scale);
+void alien_LED_isOn(boolean on_off);
+void set_alien_color(RGB value);
+
+
+short white_leds [7] = {led1, led2, led3, led4, led5, led6, led7};
+
+RGB color_array[] = {{125,0,0}, {0,125,0}, {0,0,125}, {125,125,0}, {0,125,125}, {125,0,125}, {125,90,0}};
+
+RGB color_ring_color = color_array[0];
+RGB alien_color = color_array[0];
+volatile short color_index = 0;
+
+volatile boolean pulse = false;
+volatile float scale = 1;
+volatile short scale_dir = -1;
+
+volatile boolean alienFound = false;
+volatile short percentage = 92;
+
 
 void twinkle_stars(short percent){
   for(int i=0; i<7; i++){
@@ -28,14 +58,20 @@ void pulse_center(){
 }
 
 
-void led2_color(RGB value, float scale){
+void set_center_color(RGB value, float scale){
   analogWrite(led2_R, (short)(value.red*scale));
   analogWrite(led2_G, (short)(value.green*scale));
   analogWrite(led2_B, (short)(value.blue*scale));
 }
 
-void alien_LED(boolean on_off){
-  digitalWrite(led1_R, on_off);
-  digitalWrite(led1_G, on_off);
-  digitalWrite(led1_B, on_off);
+void set_alien_color(RGB value){
+  if(alienFound == true){
+    analogWrite(led1_R, value.red);
+    analogWrite(led1_G, value.green);
+    analogWrite(led1_B, value.blue);
+  }else{
+    analogWrite(led1_R, 0);
+    analogWrite(led1_G, 0);
+    analogWrite(led1_B, 0);
+  }
 }

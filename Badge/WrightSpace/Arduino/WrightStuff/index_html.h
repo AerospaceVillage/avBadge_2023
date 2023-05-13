@@ -14,5 +14,7 @@ const char *index_html_code =  "<html>\
     <p>Change the satelletile <a href=\"/C\" class=\"button\">COLOR</a></p><br>\
     <p><a href=\"/P\" class=\"button\">Pulse</a> the satelletile </p><br>\
     <p><a href=\"/A\" class=\"button\">Toggle</a> the alien</p><br>\
+    <form><input type='color' id='favcolor' name='favcolor' value='#ff0000'><br><input type='submit'>\
+    <p><a href=\"/\" class=\"button\">HOME</a></p><br>\
 	</body>\
 </html>";

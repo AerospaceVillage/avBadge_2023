@@ -56,55 +56,13 @@
 #define GPIO_1 10
 #define GPIO_2 11
 
-// The WiFi Credentials
-const char* ssid = "WrightStuff";
-const char* password = "1SmallStep";
-
-// The webserver specifications, ipv4
-IPAddress Ip(7, 20, 19, 69);  // Date of first moon landing
-IPAddress NMask(255, 255, 255, 0);
-WiFiServer server(80);
-
-typedef struct{
-  short red;
-  short green;
-  short blue;
-} RGB;
-
-RGB color_array[] = {{125,0,0}, {0,125,0}, {0,0,125}, {125,125,0}, {0,125,125}, {125,0,125}, {125,90,0}};
-
-volatile short touch_sum = 0;
-volatile short color_index = 0;
-volatile boolean color_lock = false;
-volatile boolean touch5_released = false;
-
-volatile boolean pulse = false;
-volatile float scale = 1;
-volatile short scale_dir = -1;
-
-volatile boolean alienFound = false;
-volatile short percentage = 92;
-
-boolean wifi_isOn = true;
-boolean wifi_stateChanged = false;
-boolean wifi_switch_prev_state = LOW;
-
-
-short white_leds [7] = {led1, led2, led3, led4, led5, led6, led7};
+#include "led_functions.h"
+#include "touch_functions.h"
+#include "web_server_functions.h"
 
 
 hw_timer_t *Timer0_Cfg = NULL;
 
-
-// Function Definitions
-void twinkle_stars(short percetage);
-void pulse_center();
-void led2_color(RGB rgb, float scale);
-void alien_LED(boolean on_off);
-
-#include "web_server_functions.h"
-#include "led_functions.h"
-#include "touch_functions.h"
 
 void IRAM_ATTR Timer0_ISR() {
   // This function is called as freqently as the 
@@ -173,7 +131,9 @@ void setup() {
   touchAttachInterrupt(touch4, process_touch4, threshold_4);
   touchAttachInterrupt(touch5, process_touch5, threshold_5);
 
-  led2_color(color_array[color_index], scale);
+  set_center_color(color_array[color_index], scale);
+
+  set_alien_color(color_array[color_index]);
   
 }
 
@@ -190,10 +150,10 @@ void loop() {
   //Process the result of any button press
   service_touch_events();
 
-  //Set the Alien LED as it may have changed
-  alien_LED(alienFound);
-
   //Set the center ring as it may have been changed
-  led2_color(color_array[color_index], scale);
+  set_center_color(color_ring_color, scale);
+
+  //Set the Alien LED as it may have changed
+  set_alien_color(alien_color);
 
 }
