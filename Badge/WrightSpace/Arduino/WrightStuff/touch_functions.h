@@ -20,8 +20,8 @@ void process_touch2(){
 void process_touch3(){
   
   touch_sum = touch_sum ^ 4;
-  if(percentage >= 80){
-    percentage -= 1;
+  if(twinkle_percentage >= 80){
+    twinkle_percentage -= 1;
   }
   
 }
@@ -29,8 +29,8 @@ void process_touch3(){
 void process_touch4(){
     
   touch_sum = touch_sum ^ 8;
-  if(percentage <= 100){
-    percentage += 1;
+  if(twinkle_percentage <= 100){
+    twinkle_percentage += 1;
   }
 }
 
@@ -50,7 +50,7 @@ void process_touch5(){
 void service_touch_events(){
 	if(touch_sum == 1){
 	    // Reset all the things that can be toyed with
-	    percentage = 100;
+	    twinkle_percentage = 100;
 	    color_index = 0;
       color_ring_color = color_array[color_index];
       alien_color = color_array[color_index];

@@ -66,7 +66,7 @@ hw_timer_t *Timer0_Cfg = NULL;
 
 void IRAM_ATTR Timer0_ISR() {
   // This function is called as freqently as the 
-  twinkle_stars(percentage);
+  twinkle_stars(twinkle_percentage);
 
   if(pulse == true){
     pulse_center();

@@ -11,10 +11,11 @@ const char *index_html_code =  "<html>\
 		<h1>Aerospace Village</h1>\
     <ul><li>Build</li><li>Inspire</li><li>Promote</li></ul>\
 		<p>Color Index: %i</p>\
-    <p>Change the satelletile <a href=\"/C\" class=\"button\">COLOR</a></p><br>\
-    <p><a href=\"/P\" class=\"button\">Pulse</a> the satelletile </p><br>\
-    <p><a href=\"/A\" class=\"button\">Toggle</a> the alien</p><br>\
-    <form><input type='color' id='favcolor' name='favcolor' value='#ff0000'><br><input type='submit'>\
-    <p><a href=\"/\" class=\"button\">HOME</a></p><br>\
+    <p>Change the satelletile <a href=\"/C\" class=\"button\">COLOR</a></p>\
+    <p><a href=\"/P\" class=\"button\">Pulse</a> the satelletile </p>\
+    <p><a href=\"/A\" class=\"button\">Toggle</a> the alien</p>\
+    <form action='' method='post'><input type='color' id='favcolor' name='favcolor' value='#ff0000'><input type='submit' class='button'></form>\
+    <p><a href=\"/\" class=\"button\">HOME</a></p>\
+    <form action=\"/\" method=\"post\"><input type='hidden' name='twinkle_value' value='5'></input><input type='submit' value='Twinkle' class='button'></input></form>\
 	</body>\
 </html>";

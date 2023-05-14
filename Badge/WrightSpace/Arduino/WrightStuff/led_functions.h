@@ -30,7 +30,7 @@ volatile float scale = 1;
 volatile short scale_dir = -1;
 
 volatile boolean alienFound = false;
-volatile short percentage = 92;
+volatile short twinkle_percentage = 92;
 
 
 void twinkle_stars(short percent){
