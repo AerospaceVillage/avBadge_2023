@@ -1,0 +1,79 @@
+<html>
+<head>
+  <!-- Email wrightflyer@aerospacevillage.org so that we can thank you for your sponsoring of the village. -->
+   <meta name='viewport' content='width=device-width, initial-scale=1'>
+ 	 <title>The Wright Flyer Badge</title>
+
+   <style>
+    .button { background-color: #00FF00; border: none; color: black; padding: 8px 8px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; }
+	  body { background: black;}
+    h1 {color: #00FF00}
+    h2 {color: #00FF00}
+    h3 {color: #00FF00; text-decoration: underline;}
+    p, li {color: #00FF00}
+    a {color: #00FF00}
+    em {font-weight:bold;}
+    strong { font-weight:bold; }
+    div.container {
+      width: 90%;
+      outline: 2px solid green;
+      padding: 10px;
+      margin: 5px;
+    }
+    div.ep {
+      width: 90%;
+      outline: 2px dashed green;
+      text-align: center;
+      margin: 5px;
+      padding: 5px;
+    }
+    div.ep.p{align: center;}
+
+   </style>
+</head>
+<body>
+
+  <h1>Aerospace Village</h1>
+      <p>Celebrating 120 years of aviation and 5 years of the <a href="https://www.aerospacevillage.org/">Aerospace Village</a>! We hope you enjoy learning about the history of the <a href='https://en.wikipedia.org/wiki/Wright_Flyer'>Wright Flyer</a> and appreciation for how much has been accomplished since then!</p>
+
+      <div class="container">
+        <h2>System Operations</h2>
+        <p>Power is provided by x3 AAA alkaline batteries providing a nominal 4.5V. This power is then regulated down to 3.3V for the microcontroller and other systems.</p>
+        <p>Thrust is provided by 2 counter rotating propellers. The counter rotating aspect is important to negate any undesired torque.
+          The spinning of the propellers can be turned off wihout affecting any other operation by selecting the Propeller switch to Off.
+        The Propeller Modes switch has 3 positions:
+        <ul><li><strong>Normal:</strong> Connects the motors to the a WiFi enabled controller with pulse width modulation for controlled spinning.
+        <li><strong>Backup:</strong> Connects the motors to a backup pulse width modulated control that functions regardless of WiFi control or state.
+        <li><strong>Full:</strong> In this mode the motors are directly wired to the batteries, bypassing even the voltage regulator to ensure that the
+          pilot gets all availble power desired. Furthermore in this emergecency mode even the Power switch has no effect, although the Propeller switch will still function.
+        </ul></p>
+        <p>WiFi on this badge is controller by the switch labeled WiFi. When not needed battery power can be saved by selecting this mode to off.
+        Be adivsed though, that when selected to Off, others will be unable to hack your motor control via WiFi. &#128540;</p>
+
+
+
+      </div>
+
+      <div class="container">
+        <h2>Emergency Procedures</h2>
+        <p>The following emergency procudures should be memorized for quick pilot reaction time in the event of hacking!<br>
+        <div class="ep">
+          <h3>Motor control Loss via WiFi hacking</h3>
+          <p><strong>1. Propeller Mode Switch - Backup</strong></p>
+          <p>NOTE: This will isolate the motor from being controlled via WiFi.</p>
+        </div>
+
+        <div class="ep">
+          <h3>Loss of Engine Power</h3>
+          <p><strong>1. Propeller Mode Switch - Full</strong></p>
+          <p>NOTE: This will remove the microcontroller control of the motor and go to full battery mode, bypassing the POWER switch entirely.</p><br>
+        </div>
+    </div>
+
+    <div class="container">
+      <h2>Badge Controls</h2>
+      <form action='' method='post'><p>Change the Color of the Wright Brother <input type='color' id='favcolor' name='favcolor' value='#ff0000'> <input type='submit' class='button' value="Change Color"></p></form>
+      <form action='' method='post'><p>Toggle the Motor on/off <input type='hidden' name='motor' value='1'><input type='submit' class='button' value="Toggle Motor"></p></form>
+    </div>
+</body>
+</html>
