@@ -7,7 +7,7 @@ const char* ssid = "WrightFlyer";
 const char* password = "bicycles";
 
 // The webserver specifications, ipv4
-IPAddress Ip(12, 12, 15, 59);     // Time in seconds of each of the first 4 flights made on 12/3/1903
+IPAddress Ip(12, 12, 15, 59);     // Time in seconds of each of the first 4 flights made on 12/3/1903 - https://en.wikipedia.org/wiki/Wright_Flyer#Flight_trials_at_Kitty_Hawk
 IPAddress NMask(255, 255, 255, 0);
 
 WiFiServer server(80);
@@ -164,7 +164,7 @@ void send_header(WiFiClient client, boolean withCookie){
   client.println("HTTP/1.1 200 OK");
   client.println("Content-type:text/html");
   if(withCookie == true){
-    client.println("Set-Cookie:aerospacevillage=@cybertestpilot thanks you for your particiaption and support of the Aerospace Village. Let me know what you thought of the challenges!");
+    client.println("Set-Cookie:aerospacevillage=@cybertestpilot thanks you for your participation and support of the Aerospace Village. Let me know what you thought of the challenges!");
     with_cookie = false;
   }  
   client.println(); // Finish the header on the newline
