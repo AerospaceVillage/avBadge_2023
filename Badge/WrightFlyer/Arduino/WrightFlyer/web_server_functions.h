@@ -35,10 +35,21 @@ void process_client() {
     while (client.connected()) {            // loop while the client's connected
       if (client.available()) {             // if there's bytes to read from the client,
         char c = client.read();             // read a byte, then
-        Serial.write(c);                    // print it out the serial monitor
+        //Serial.write(c);                    // print it out the serial monitor
 
         
         if (c == '\n') {                    // if the byte is a newline character
+
+          //Have to process GET requests before possible processing of the requestBody (i.e. POST methods)
+          if (currentLine.indexOf("/blueprints") > 0){
+              Serial.println("Blueprints link called");
+              send_header(client, false);
+              client.println(blueprint_html_code);
+              client.println();
+              
+              // break out of the while loop:
+              break;
+          }
 
           // if the current line is blank, you got two newline characters in a row.
           // that's the end of the client HTTP request, so send a response:
@@ -59,9 +70,8 @@ void process_client() {
               process_custom_color(requestBody);
             }else if(requestBody.indexOf("motor") > 0){
               motorOn_user = !motorOn_user;
-            }
+            }            
             
-
             //Possibly set a cookie
             send_header(client, with_cookie);
     
@@ -70,6 +80,7 @@ void process_client() {
 
             // The HTTP response ends with another blank line:
             client.println();
+   
             
             // break out of the while loop:
             break;

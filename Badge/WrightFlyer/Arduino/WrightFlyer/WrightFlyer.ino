@@ -11,13 +11,14 @@
         - Have a manual override switch that can disable the WiFi portion, use as a teaching aid to aircraft design and safety backups
         - Have a switch that can turn on/off the wifi server - save battery life and improve securty posture
 
-  
+
 */
 
 #include <WiFi.h>
 #include <WiFiClient.h>
 #include <WiFiAP.h>
 #include "index_html.h"
+#include "blueprint_html.h"
 
 #define software_version 1.0
 
@@ -57,15 +58,15 @@ void IRAM_ATTR Timer0_ISR() {
   // Always write the motor_pin_backup value
   digitalWrite(motor_pin_backup, motorOn_interrupt);
 
-  
-    
-  if(motorOn_interrupt == true){    
-      timerAlarmWrite(Timer0_Cfg, motor_on_duration, true);    
+
+
+  if(motorOn_interrupt == true){
+      timerAlarmWrite(Timer0_Cfg, motor_on_duration, true);
   }else{
       timerAlarmWrite(Timer0_Cfg, motor_off_duration, true);
   }
-  motorOn_interrupt = !motorOn_interrupt;    
-  
+  motorOn_interrupt = !motorOn_interrupt;
+
   //Serial.println("Timer interrupt triggered");
 }
 
@@ -77,7 +78,7 @@ void setup() {
 
   Serial.print("Software Version: ");
   Serial.println(software_version);
-  
+
   //Setup and initialize all the LED pins
   pinMode(led_pin_R, OUTPUT);
   pinMode(led_pin_G, OUTPUT);
@@ -86,7 +87,7 @@ void setup() {
   //Setup and initialize the motor pins
   pinMode(motor_pin, OUTPUT);
   pinMode(motor_pin_backup, OUTPUT);
-  
+
   // GPIOs used for SAO interactions. More to do here maybe.
   pinMode(GPIO_1, OUTPUT);
   digitalWrite(GPIO_1, HIGH);
@@ -97,19 +98,19 @@ void setup() {
   Timer0_Cfg = timerBegin(0, 240, true);
   timerAttachInterrupt(Timer0_Cfg, &Timer0_ISR, false);
   timerAlarmWrite(Timer0_Cfg, 400000, true);
-  timerAlarmEnable(Timer0_Cfg);  
-  
+  timerAlarmEnable(Timer0_Cfg);
+
   // Wifi Pin configuration
   pinMode(wifi_on_off_pin, INPUT);
-  
-  // Setup the WiFi based upon the setting of the switch 
+
+  // Setup the WiFi based upon the setting of the switch
   if(digitalRead(wifi_on_off_pin) == HIGH){
     wifi_switch_prev_state = LOW;
     enableWiFi();
   }else{
     wifi_switch_prev_state = HIGH;
     disableWiFi();
-  }   
+  }
 }
 
 
@@ -123,5 +124,5 @@ void loop() {
 
   //Set the center ring as it may have been changed
   set_Wright_color(color_ring_color);
-  
+
 }

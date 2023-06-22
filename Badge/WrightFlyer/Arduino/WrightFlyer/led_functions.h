@@ -10,7 +10,7 @@ typedef struct{
 
 RGB color_array[] = {{125,0,0}, {0,125,0}, {0,0,125}, {125,125,0}, {0,125,125}, {125,0,125}, {125,90,0}};
 
-RGB color_ring_color = color_array[0];
+RGB color_ring_color = {200,200,200};
 volatile short color_index = 0;
 
 
