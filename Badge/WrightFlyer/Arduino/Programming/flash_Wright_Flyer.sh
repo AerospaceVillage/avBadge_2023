@@ -1,0 +1,1 @@
+esptool.py --chip esp32s2 --port /dev/cu.usbserial-144101 --baud 921600 --before no_reset --after hard_reset write_flash -z --flash_mode dio --flash_freq 80m --flash_size 4MB 0x1000 bin/WrightFlyer.ino.bootloader.bin 0x8000 bin/WrightFlyer.ino.partitions.bin 0xe000 bin/boot_app0.bin 0x10000 bin/WrightFlyer.ino.bin
