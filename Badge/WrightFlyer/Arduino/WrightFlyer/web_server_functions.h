@@ -175,7 +175,7 @@ void send_header(WiFiClient client, boolean withCookie){
   client.println("HTTP/1.1 200 OK");
   client.println("Content-type:text/html");
   if(withCookie == true){
-    client.println("Set-Cookie:aerospacevillage=@cybertestpilot thanks you for your participation and support of the Aerospace Village. Let me know what you thought of the challenges!");
+    client.println("Set-Cookie:aerospacevillage=@cybertestpilot thanks you for your participation and support of the Aerospace Village!");
     with_cookie = false;
   }  
   client.println(); // Finish the header on the newline

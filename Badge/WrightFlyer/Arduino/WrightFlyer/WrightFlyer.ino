@@ -20,7 +20,7 @@
 #include "index_html.h"
 #include "blueprint_html.h"
 
-#define software_version 1.0
+#define software_version 1.1
 
 #define led_pin_R 4
 #define led_pin_G 5
