@@ -1,6 +1,6 @@
 /*
   Aerospace Village Def Con Badge for 2023
-  Author: Dan Allen
+  Author: @cybertestpilot
 
   Idea: Celebrate the 120 year anniversary of first flight 12/7/1903 while at Def Con in 2023 (albeit a few months early).
 
@@ -20,7 +20,7 @@
 #include "index_html.h"
 #include "blueprint_html.h"
 
-#define software_version 1.1
+char software_version[4] = "1.2";
 
 #define led_pin_R 4
 #define led_pin_G 5

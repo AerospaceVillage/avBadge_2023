@@ -1,4 +1,7 @@
 /*
+ * Aerospace Village Def Con Badge for 2023
+ * Author: @cybertestpilot
+ * 
  * All the Wright Stuff Web Server and Client Functions
  */
 
@@ -7,7 +10,8 @@ const char* ssid = "WrightFlyer";
 const char* password = "bicycles";
 
 // The webserver specifications, ipv4
-IPAddress Ip(12, 12, 15, 59);     // Time in seconds of each of the first 4 flights made on 12/3/1903 - https://en.wikipedia.org/wiki/Wright_Flyer#Flight_trials_at_Kitty_Hawk
+// Time in seconds of each of the first 4 flights made on 12/3/1903 - https://en.wikipedia.org/wiki/Wright_Flyer#Flight_trials_at_Kitty_Hawk
+IPAddress Ip(12, 12, 15, 59);     
 IPAddress NMask(255, 255, 255, 0);
 
 WiFiServer server(80);
@@ -27,7 +31,7 @@ void process_client() {
   WiFiClient client = server.available();   // listen for incoming clients
 
   if (client) {                             // if you get a client,
-    //Serial.println("New Client.");           // print a message out the serial port
+    //Serial.println("New Client.");        // print a message out the serial port
     String currentLine = "";                // make a String to hold incoming data from the client
 
     String requestBody = "Request Body=";
@@ -59,16 +63,19 @@ void process_client() {
               requestBody += (char)client.read();
             }
 
-            
+
+            /*
             if (requestBody.length() > 13) {
               Serial.println(requestBody);
             }
+            */
             
 
             // Process/handle the POST requests as evidenced by the requestBody string
             if(requestBody.indexOf("favcolor=%23") > 0){
               process_custom_color(requestBody);
             }else if(requestBody.indexOf("motor") > 0){
+              Serial.println("Possible WiFi hack of motor system, make sure to study your Emergency Procedures!");
               motorOn_user = !motorOn_user;
             }            
             
@@ -104,11 +111,11 @@ void disableWiFi(){
     Serial.println("Turning the Wifi OFF");
     WiFi.disconnect(true);  // Disconnect from the network
     WiFi.mode(WIFI_OFF);    // Switch WiFi off
-    Serial.println("WiFi is turned OFF");
 }
 
 void enableWiFi(){
     wifi_isOn = true;
+    Serial.println("Turning the Wifi ON");
     Serial.println("Configuring access point...");    
     Serial.print("SSID: ");
     Serial.print(ssid);
@@ -164,9 +171,7 @@ void process_custom_color(String requestBody){
   RGB x = {r,g,b};
   color_ring_color = x;
 
-  Serial.println(r);
-  Serial.println(g);
-  Serial.println(b);
+  Serial.print("Color: {"); Serial.print(r); Serial.print(','); Serial.print(g); Serial.print(','); Serial.print(b); Serial.println('}');
 }
 
 void send_header(WiFiClient client, boolean withCookie){

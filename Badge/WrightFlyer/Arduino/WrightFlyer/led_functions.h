@@ -1,4 +1,7 @@
 /*
+ * Aerospace Village Def Con Badge for 2023
+ * Author: @cybertestpilot
+ * 
  * Functions for the LEDs
  */
 
