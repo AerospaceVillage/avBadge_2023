@@ -1,20 +1,237 @@
-
-const char *index_html_code =  "<html>\
-	<head>\
-		<meta name='viewport' content='width=device-width, initial-scale=1'>\
- 	  <title>The Wright Stuff</title>\
-    <style>\
-      .button { background-color: #4CAF50; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; }\
-    </style>\
-	</head>\
-	<body bgcolor='white'>\
-		<h1>Aerospace Village</h1>\
-    <ul><li>Build</li><li>Inspire</li><li>Promote</li></ul>\
-		<p>Color Index: %i</p>\
-    <p>Change the satelletile <a href=\"/C\" class=\"button\">COLOR</a></p><br>\
-    <p><a href=\"/P\" class=\"button\">Pulse</a> the satelletile </p><br>\
-    <p><a href=\"/A\" class=\"button\">Toggle</a> the alien</p><br>\
-    <form><input type='color' id='favcolor' name='favcolor' value='#ff0000'><br><input type='submit'>\
-    <p><a href=\"/\" class=\"button\">HOME</a></p><br>\
-	</body>\
-</html>";
+const char *index_html_code =  "<html><head>\
+\
+  <!-- Email wrightstuff@aerospacevillage.org so that we can thank you for your sponsorship of the village. -->\
+\
+  <!--\
+\
+  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWN0xo:'......:OWMMM\
+\
+  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWXkl;.....,cooc..'kWMM\
+\
+  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWXkl,....,cx0NWMMNo..lNMM\
+\
+  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNOl,....'lkXWMMMMMMWx..oWMM\
+\
+  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWKd;.....:xXWMMMMMMMMMNl.'kMMM\
+\
+  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNkc'....,o0WMMMMMMMMMMMM0;.lNMMM\
+\
+  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWWNXXKKKKKKKXXNNWWMMMMMMMMMWKd;.....;xXWMMMMMMMMWWMMMWd.;0MMMM\
+\
+  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWXKOxolc;,,'......''',,:cldONMMMW0o'.....ckNMMMMMMMMMMWxlOWMO,'kWMMMM\
+\
+  MMMMMMMMMMMMMMMMMMMMMMMMMMWN0xo:,........................cOWMNOc'.....lOWMMMMMMMMMMMMNl.'okc'xWMMMMM\
+\
+  MMMMMMMMMMMMMMMMMMMMMMMNKxc,...........................lOWMNOc.....'l0WMMMMMMMMMMMMMMXc.....,dkkO0NM\
+\
+  MMMMMMMMMMMMMMMMMMMMN0d:.............','.............l0WMNk:.....'l0WMN0KWMMMMMMMMMMMK:.........ckNM\
+\
+  MMMMMMMMMMMMMMMMMWXx:..........':ldk00d,.........',l0WMNk:.....'l0WMXx;.'ckNMMMMMMMMM0,......'lONMMM\
+\
+  MMMMMMMMMMMMMMMWKo,.........:oOKWMMW0c....;o,...lKNWMNk:.....'l0WMNk;......;xXMMMMMMMO'....;dKWMMMMM\
+\
+  MMMMMMMMMMMMMWKo'........:xKWMMMMMNx,...'oXK:.:ONMMNO:......c0WMMMXx;........,xXWMMMWx...ckNMMMMMMMM\
+\
+  MMMMMMMMMMMMXd,.......,o0WMMMMMMMKc....:OWMXxkNMWOdc......cOWMMMMMMMNOl'.......;kNMMWx;o0WMMMMMMMMMM\
+\
+  MMMMMMMMMMWO:.......,dXWMMMMMMMWO;....oXMMMWWMW0l.......:kNMWNWMMMMMMMWKo,.......cKWWXXWMMMMMMMMMMMM\
+\
+  MMMMMMMMMNd'......,dXWMMMMMMMMNd'...,kWMMMMMWKo'......,xXMW0l:kWMMMMMMMMWKo'......,kWMMMMMMMMMMMMMMM\
+\
+  MMMMMMMMXl.......cKWMMMMMMMMMXo....:0WMMMMMXd,......'oKWMWk'..'xNMMMMMMMMMWO:.......dNMMMMMMMMMMMMMM\
+\
+  MMMMMMMKc......'xNMMMMMMMMMMXl....lXMMMMMNk;......,l0WMMMMK:....dNMMMMMMMMMMXo.......oXMMMMMMMMMMMMM\
+\
+  MMMMMMKc......;OWMMMMMMMMMMXc....oNMMMMW0c......:OXWMMMMMMMXl....oNMMMMMMMMMMWk,......oNMMMMMMMMMMMM\
+\
+  MMMMMXl......;0WMMMMMMMMMMXl....oNMMMWKo'.....,xXMMMMMMMMMMMXl....dNMMMMMMMMMMWk,......dWMMMMMMMMMMM\
+\
+  MMMMWx......,OWMMMMMMMMMMNd....lNMMMNx,......oKWMMMMMMMMMMMMMXc...'kWMMMMMMMMMMWk'.....'kWMMMMMMMMMM\
+\
+  MMMM0;.....'xWMMMMMMMMMMWk'...cXMMW0c......:OWMNXWMMMMMMMMMMMM0;...;0MMMMMMMMMMMNd......:KMMMMMMMMMM\
+\
+  MMMNo......lNMMMMMMMMMMMXc...cKMMXo'.....,xNMWO:lXMMMMMMMMMMMMWk'...lNMMMMMMMMMMMX:......xWMMMMMMMMM\
+\
+  MMM0;.....,OMMMMMMMMMMMWx..,xNMWO;......lKWWKo..cXMMMMMMMMMMMMMNl...,OMMMMMMMMMMMWx......cXMMMMMMMMM\
+\
+  MMMx......cXMMMMMMMMMMMXc.c0WMKl......;kNMMXc...cXMMMMMMMMMMMMMMO'...oNMMMMMMMMMMMK:.....,OMMMMMMMMM\
+\
+  MMNo......dWMMMMMMMMMMM0lxNMNk;.....'oXMMMMK;...cXMMMMMMMMMMMMMMX:...:KMMMMMMMMMMMNo......xWMMMMMMMM\
+\
+  MMXc......:dddddddddddx0XWMKl......:OWMXkddl'...,lddddddddddddddo,....cdddddddddddo;......oWMMMMMMMM\
+\
+  MMXc.................'xNMNk;.....'dXMWO:..................................................oWMMMMMMMM\
+\
+  MMXc......',,;;,,;;;l0WMXo......:0WMWOc;;;,'.....,;;;;,;;;;;;;;;,.....';;;;;;;;;;;,.......oWMMMMMMMM\
+\
+  MMNl......dNNNNNNNNNWMWO;.....'dNMMMMWNNNNN0;...:KNNNNNNNNNNNNNNK:...;ONNNNNNNNNNNXl......dWMMMMMMMM\
+\
+  MMWd......oNMMMMMMMMMXd'.....c0WMMMMMMMMMMMK:...cXMMMMMMMMMMMMMM0,...cNMMMMMMMMMMMXc.....'kMMMMMMMMM\
+\
+  MMMO,.....;KMMMMMMMW0c.....'dNMMMMMMMMMMMMMK:...cXMMMMMMMMMMMMMWd....xWMMMMMMMMMMMO,.....;KMMMMMMMMM\
+\
+  MMMXc......dWMMMMMNk,.....;OWMMMMMMMMMMMMMMK:...cXMMMMMMMMMMMMM0;...:KMMMMMMMMMMMNl......oWMMMMMMMMM\
+\
+  MMMWk'.....,0MMMMXo......oXMW0ONMMMMMMMMMMMK:...cXMMMMMMMMMMMMXl...'kWMMMMMMMMMMWk'.....,0MMMMMMMMMM\
+\
+  MMMMNl......dWMM0:.....,kWMNd''kWMMMMMMMMMMK:...cXMMMMMMMMMMMNd....oNMMMMMMMMMMMK:......dWMMMMMMMMMM\
+\
+  MMMMM0;....oXWWk,.....cKWMWd...,OWMMMMMMMMMK:...cXMMMMMMMMMMWx'...cXMMMMMMMMMMMKc......cXMMMMMMMMMMM\
+\
+  MMMMMWO,.'xNMNx'....'dNMMMWO;...,OWMMMMMMMMK:...cXMMMMMMMMMWx'...:KMMMMMMMMMMMKc......:0MMMMMMMMMMMM\
+\
+  MMMMMMWklkWMXo.....;OWMMMMMWO;...,kWMMMMMMMK:...cXMMMMMMMMNd'...:0MMMMMMMMMMW0:......;0WMMMMMMMMMMMM\
+\
+  MMMMMMMWWWMKc.....lKWMMMMMMMW0;...'dNMMMMMMK:...cXMMMMMMMXo....cKMMMMMMMMMMNx,......:0WMMMMMMMMMMMMM\
+\
+  MMMMMMMMMW0:....'dNMMMMMMMMMMWKc....lXMMMMMK:...cXMMMMMW0c....lXMMMMMMMMMW0c.......lKMMMMMMMMMMMMMMM\
+\
+  MMMMMMMMWO;....,kWMXOKWMMMMMMMMXl....:OWMMMK;...cXMMMMNk,...'dNMMMMMMMMW0l'......'dNMMMMMMMMMMMMMMMM\
+\
+  MMMMMMMWk,....:0WWKc.'o0WMMMMMMMNx,...'dXMMK:...cXMMMXo....;OWMMMMMMMNOl'.......c0WMMMMMMMMMMMMMMMMM\
+\
+  MMMMMMWk'....cKMWO;.....:xKWMMMMMW0c....:0WK:...cXMWk;....lKMMMMMMWKx:........;kNMMMMMMMMMMMMMMMMMMM\
+\
+  MMMMMWx'....oXMMXl........'cx0NMMMMNd'...'dO;...cOOo....,xNMMMWN0d:'........;xNMMMMMMMMMMMMMMMMMMMMM\
+\
+  MMMMWx'....dNMMMMXk:..........;lxOXNW0c....'.....'.....lKWNKOdc,.........'ckNMMMMMMMMMMMMMMMMMMMMMMM\
+\
+  MMMWk'...'xWMMMMMMMN0o;...........';col,..............;loc;'...........:dKWMMMMMMMMMMMMMMMMMMMMMMMMM\
+\
+  MMWO,...,kWMMMMMMMMMMMN0d:'........................................':d0NMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+\
+  MM0;...,kWMMMMMMMMMMMMMMMWKko:'................................,cokXWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+\
+  MXc...'kWMMMMMMMMMMMMMMMMMMMWNX0xol:,'..................',:ldk0XWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+\
+  Nd...'xWMMMMMMMMMMMMMMMMMMNKKNMMMMMWNK0OkxdddooodddxxkO0XNWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+\
+  O,...dNMMMMMMMMMMMMMMMMWKkOKWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+\
+  c...cXMMMMMMMMMMMMMMWXkdd0WMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+\
+  '..,OMMMMMMMMMMMMWXklco0WMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+\
+  ...oNMMMMMMMMMWXkl;:dKWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+\
+  ...xWMMMMMMN0xc,,ckXMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+\
+  ...lKNXKOxl;.':dKWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+\
+  o...',,...,cxKWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+\
+  Nx;....':xKWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+\
+\
+\
+  pretty cool ascii art up above ^^ uh?\
+\
+  -->\
+\
+   <meta name='viewport' content='width=device-width, initial-scale=1'>\
+\
+ 	 <title>The Wright Stuff Badge</title>\
+\
+\
+\
+   <style>\
+\
+    .button { background-color: #00FF00; border: none; color: black; padding: 8px 8px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; }\
+\
+	  body { background: black;}\
+\
+    h1 {color: #00FF00}\
+\
+    h2 {color: #00FF00}\
+\
+    h3 {color: #00FF00; text-decoration: underline;}\
+\
+    p, li {color: #00FF00}\
+\
+    a {color: #00FF00}\
+\
+    em {font-weight:bold;}\
+\
+    strong { font-weight:bold; }\
+\
+    div.container {\
+\
+      width: 90%;\
+\
+      outline: 2px solid green;\
+\
+      padding: 10px;\
+\
+      margin: 5px;\
+\
+    }\
+\
+    div.ep {\
+\
+      width: 90%;\
+\
+      outline: 2px dashed green;\
+\
+      text-align: center;\
+\
+      margin: 5px;\
+\
+      padding: 5px;\
+\
+    }\
+\
+    div.ep.p{align: center;}\
+\
+\
+\
+   </style>\
+\
+</head>\
+\
+<body>\
+\
+\
+\
+  <h1>Aerospace Village</h1>\
+\
+      <p>Celebrating 120 years of aviation and 5 years of the <a href='https://www.aerospacevillage.org/'>Aerospace Village</a>! Did you know that the first flgiht made by the Wright brothers attained an altitude of 10' and that within 65 years we sent astronauts to the moon? What's more, a small pience of canvas was sent to Mars on the Martian Helicopter Ingenuity!</p>\
+\
+\
+\
+      <p style='color:black;font-size:5px;'>The Aerospace Village would not be where it is without the founding fathers of Pete and Spanky. We are thankful they briefly stopped telling 'so there I was' stories that are less than 10% true in order to turn the idea of the Aerospace Village into reality. This text is black on black for a reason. We knew that highlighting text to reveal a message is about as much hacking as you can expect from some ex-fighter pilots. And even then we're pretty sure someone will have to point this out to them.</p>\
+\
+\
+\
+      <div class='container'>\
+\
+        <h2>Inspiriation</h2>\
+\
+        <p>The artwork was inspired by the intersection of history and pop-culture, highlighting both the Wright brothers contribution to aviation and also the recent gains made by SpaceX and the exploration of space.\
+\
+          Artwork was made possible by <a href='https://www.flysurreal.com/'>FlySurreal Art Studio</a>. Check out a sample of his work <a href='wrightX.html'>here</a>.</p>\
+\
+      </div>\
+\
+\
+\
+\
+\
+\
+\
+    <div class='container'>\
+\
+      <h2>Badge Controls</h2>\
+\
+      <form action='' method='post'><p>Change the Color of the Satellite <input type='color' id='favcolor' name='favcolor' value='#ff0000'> <input type='submit' class='button' value='Change Center Color'></p></form>\
+\
+      <form action='' method='post'><p><input type='hidden' name='GPIO_1' value='1'><input type='submit' class='button' value='Toggle GPIO #1'></p></form>\
+\
+      <form action='' method='post'><p><input type='hidden' name='GPIO_2' value='1'><input type='submit' class='button' value='Toggle GPIO #2'></p></form>\
+\
+    </div>\
+\
+</body>\
+\
+</html>\
+\
+";

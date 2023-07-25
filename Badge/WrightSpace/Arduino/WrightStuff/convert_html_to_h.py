@@ -28,4 +28,4 @@ def convert_html(input_file, output_file, array_name):
 if __name__ == '__main__':
 
     convert_html("index.html", "index_html.h", "index_html_code")
-    convert_html("blueprint.html", "blueprint_html.h", "blueprint_html_code")
+    convert_html("wrightX.html", "wrightX_html.h", "wrigthX_html_code")
