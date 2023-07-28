@@ -1,4 +1,4 @@
-22324032874377727
+22337504326481577
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -54305,6 +54305,13 @@ Fuse Fuseholder TR5 Littelfuse/Wickmann No. 460 No560
 0
 2
 2
+HAS4_images
+HAS4_bug
+Converted using: svg2mod -i HAS4_bug.svg -c --format latest -d 164
+svg2mod
+0
+0
+0
 Heatsink
 Heatsink_35x26mm_1xFixation3mm_Fischer-SK486-35
 Heatsink, 35mm x 26mm, 1x Fixation 3mm, Fischer SK486-35
@@ -59319,6 +59326,13 @@ LED handsolder
 2
 LED_SMD
 LED_0805_2012Metric
+LED SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator
+LED
+0
+2
+2
+LED_SMD
+LED_0805_2012Metric_1
 LED SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator
 LED
 0
@@ -89817,7 +89831,21 @@ FSMCTTR
 4
 4
 aerospace_badge
+JS203011SCQN
+
+
+0
+8
+4
+aerospace_badge
 NCD0805W2
+
+
+0
+2
+2
+aerospace_badge
+PD3S140Q
 
 
 0
@@ -89838,6 +89866,13 @@ QRCode_to_Wright_Flyer_wiki
 0
 0
 aerospace_badge
+R1170X-SOT-89-5
+SOT-89-5, http://www.e-devices.ricoh.co.jp/en/products/product_power/pkg/sot-89-5.pdf
+SOT-89-5
+0
+5
+5
+aerospace_badge
 SMT_Tooling_hole
 
 
@@ -89851,6 +89886,13 @@ SOT-23
 0
 3
 3
+aerospace_badge
+Wright X3
+Converted using: svg2mod -c -p 1 --format latest 'Wright X3.svg'
+svg2mod
+0
+0
+0
 aerospace_badge
 aerospace_logo_new
 Converted using: svg2mod -i aerospace_logo_new.svg
@@ -89908,6 +89950,13 @@ svg2mod
 0
 0
 aerospace_badge
+esp32_programming_connector
+
+
+0
+6
+6
+aerospace_badge
 led_in-s124ar
 
 
@@ -89928,6 +89977,13 @@ qrc
 0
 0
 0
+aerospace_badge
+sao_1.69
+
+
+0
+6
+6
 aerospace_badge
 serialConnector
 
