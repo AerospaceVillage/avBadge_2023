@@ -136,21 +136,19 @@ const char *index_html_code =  "<html><head>\
 \
    <style>\
 \
-    .button { background-color: #00FF00; border: none; color: black; padding: 8px 8px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; }\
+    .button { background-color: #FFFFFF; border: none; color: black; padding: 8px 8px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; }\
 \
 	  body { background: black;}\
 \
-    h1 {color: #00FF00}\
+    h1, h2 {color: #FFFFFF}\
 \
-    h2 {color: #00FF00}\
+    h3 {color: #FFFFFF; text-decoration: underline;}\
 \
-    h3 {color: #00FF00; text-decoration: underline;}\
+    h4 {color: #FFFFFF; text-decoration: underline; text-decoration-style: wavy}\
 \
-    h4 {color: #00FF00; text-decoration: underline; text-decoration-style: wavy}\
+    p, li, pre {color: #FFFFFF}\
 \
-    p, li {color: #00FF00}\
-\
-    a {color: #00FF00}\
+    a {color: #FFFFFF}\
 \
     em {font-weight:bold;}\
 \
@@ -160,7 +158,7 @@ const char *index_html_code =  "<html><head>\
 \
       width: 90%;\
 \
-      outline: 2px solid green;\
+      outline: 2px solid white;\
 \
       padding: 10px;\
 \
@@ -168,17 +166,17 @@ const char *index_html_code =  "<html><head>\
 \
     }\
 \
-    div.ep {\
+    div.extra {\
 \
       width: 90%;\
 \
-      outline: 2px dashed green;\
+      outline: 2px dashed white;\
 \
       text-align: center;\
 \
       margin: 5px;\
 \
-      padding: 5px;\
+      padding: 10px;\
 \
     }\
 \
@@ -196,27 +194,31 @@ const char *index_html_code =  "<html><head>\
 \
   <h1>Aerospace Village</h1>\
 \
-      <p>Celebrating 120 years of aviation and 5 years of the <a href='https://www.aerospacevillage.org/'>Aerospace Village</a>! Did you know that the first flgiht made by the Wright brothers attained an altitude of 10' and that within 65 years we sent astronauts to the moon? What's more, a small pience of canvas was sent to Mars on the Martian Helicopter Ingenuity!</p>\
+  <p>Celebrating 120 years of aviation and 5 years of the <a href='https://www.aerospacevillage.org/'>Aerospace Village</a>!\
+\
+    Did you know that the first flgiht made by the Wright brothers attained an altitude of 10' and that within 65 years we sent\
+\
+    astronauts to the moon? What's more, a small piece of canvas was sent to Mars on the Martian Helicopter Ingenuity!</p>\
 \
 \
 \
-      <p style='color:black;font-size:5px;'>The Aerospace Village would not be where it is without the founding fathers of Pete and Spanky. We are thankful they briefly stopped telling 'so there I was' stories that are less than 10% true in order to turn the idea of the Aerospace Village into reality. This text is black on black for a reason. We knew that highlighting text to reveal a message is about as much hacking as you can expect from some ex-fighter pilots. And even then we're pretty sure someone will have to point this out to them.</p>\
+  <p style='color:black;font-size:5px;'>The Aerospace Village would not be where it is without the founding fathers of Pete\
+\
+    and Spanky. We are thankful they briefly stopped telling 'so there I was' stories that are less than 10% true in order to\
+\
+    turn the idea of the Aerospace Village into reality. This text is black on black for a reason. We knew that highlighting text\
+\
+    to reveal a message is about as much hacking as you can expect from some ex-fighter pilots. And even then we're pretty sure\
+\
+    someone will have to point this out to them.</p>\
 \
 \
 \
-      <div class='container'>\
+  <h2>Inspiriation</h2>\
 \
-        <h2>Inspiriation</h2>\
+  <p>The artwork was inspired by the intersection of history and pop-culture, highlighting both the Wright brothers contribution to aviation and also the recent gains made by SpaceX and the exploration of space.\
 \
-        <p>The artwork was inspired by the intersection of history and pop-culture, highlighting both the Wright brothers contribution to aviation and also the recent gains made by SpaceX and the exploration of space.\
-\
-          Artwork was made possible by <a href='https://www.flysurreal.com/'>FlySurreal Art Studio</a>. Check out a sample of his work <a href='wrightX.html'>here</a>.</p>\
-\
-      </div>\
-\
-\
-\
-\
+    Artwork was made possible by <a href='https://www.flysurreal.com/'>FlySurreal Art Studio</a>. Check out a sample of his work <a href='wrightX.html'>here</a>.</p>\
 \
 \
 \
@@ -227,6 +229,8 @@ const char *index_html_code =  "<html><head>\
       <p>Here you can change different aspects of how your badge is displayed.</p>\
 \
       <form action='' method='post'><p>Change the Color of the Satellite <input type='color' id='favcolor' name='favcolor' value='#ff0000'> <input type='submit' class='button' value='Change Center Color'></p></form>\
+\
+      <form action='' method='post'><p><input type='hidden' name='DEMO' value='1'><input type='submit' class='button' value='Toggle Demo Mode'></p></form>\
 \
 \
 \
@@ -275,6 +279,36 @@ const char *index_html_code =  "<html><head>\
         </select>\
 \
         <input type='submit' class='button' value='Submit Flux Track'></p></form>\
+\
+    </div>\
+\
+\
+\
+    <div class='extra'>\
+\
+      <h2>Village Challenge</h2>\
+\
+        <p>Any good badge has hidden things inside. You've been able to make it this far, how about we give you a clue for the next one:</p>\
+\
+		    <p>In a badge with circuits concealed,<br>An alien's presence was revealed,<br>With a blink and a spark,<br>It glowed in the dark,<br>A tech secret, the pilots couldn't shield!</p>\
+\
+        <p>Do you know who's image is depicted on the lanyard?</p>\
+\
+      <h2>External Challenges</h2>\
+\
+      <p>We're excited to work closely this year with some other villages and Def Con participants to present these following challenges.</p>\
+\
+        <p>Hac-Man wants to know what the current altimeter reading for the Las Vegas airport is!</p>\
+\
+<p>\
+\
+Behind bytes and bits,<br>\
+\
+Cyber strategy's secret,<br>\
+\
+Key reveals the path.\
+\
+</p>\
 \
     </div>\
 \

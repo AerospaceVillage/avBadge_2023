@@ -64,6 +64,8 @@ void process_client() {
             // Process/handle the POST requests as evidenced by the requestBody string
             if(requestBody.indexOf("favcolor=%23") > 0){
               process_custom_color(requestBody);
+            }else if(requestBody.indexOf("DEMO") > 0){
+              demo_mode = !demo_mode;
             }else if(requestBody.indexOf("GPIO_1") > 0){
               Serial.println("GPIO 1 Toggled");
               GPIO_1_isOn = !GPIO_1_isOn;
@@ -197,8 +199,9 @@ void send_header(WiFiClient client, boolean withCookie){
   client.println("HTTP/1.1 200 OK");
   client.println("Content-type:text/html");
   if(withCookie == true){
-    client.println("Set-Cookie:aerospacevillage=Still need last years badge? Find @cybertestpilot and inform him \"The Eagle Has Landed\"");
-    with_cookie = false;
+    client.println("Set-Cookie:aerospacevillage=Still need SAOs? Find @cybertestpilot and inform him \"The Eagle Has Landed\"");
+    //Always send the cookie... slightly easier to find
+    //with_cookie = false;
   }  
   client.println(); // Finish the header on the newline
 }

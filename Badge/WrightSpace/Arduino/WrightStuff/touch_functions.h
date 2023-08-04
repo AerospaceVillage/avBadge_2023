@@ -96,7 +96,7 @@ void service_touch_events(){
 
 	else if(touch2_released == true){
 		pulse = !pulse;
-   touch2_released = false;
+    touch2_released = false;
    
 	}
 

@@ -38,6 +38,9 @@ int flux_print_count = 0;
 void flux_change_track();
 void flux_stop();
 
+boolean demo_mode = false;
+int demo_mode_counter = 0;
+int demo_mode_limit = 500;
 
 #include "led_functions.h"
 #include "touch_functions.h"
@@ -51,7 +54,6 @@ hw_timer_t *Timer1_Cfg = NULL;
 hw_timer_t *Timer2_Cfg = NULL;
 
 void IRAM_ATTR Timer0_ISR() {
-  // This function is called as freqently as the
   twinkle_stars(percentage);  
 }
 
@@ -72,8 +74,6 @@ void setup() {
 
   Serial.begin(115200);
   delay(500); // allow time for the Serial line to get up to speed
-
-  //Serial.println(APB_CLK);
 
   setup_LEDs();
   setup_WiFi();
@@ -154,6 +154,19 @@ void loop() {
         //As a way to slow down the send command, just look for it again
         flux_capacitor_present = false;
       }
+    }    
+  }
+
+  if(demo_mode == true){
+    demo_mode_counter+= 1;
+    if(demo_mode_counter >= demo_mode_limit){
+      percentage = random(0,20);
+      demo_mode_counter = 0;
+      color_index += 1;
+      if(color_index > sizeof(color_array)/sizeof(RGB)){
+        color_index = 0;
+      }
+      color_ring_color = color_array[color_index];
     }    
   }
 }
