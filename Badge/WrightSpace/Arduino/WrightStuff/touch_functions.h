@@ -15,6 +15,16 @@
 #define threshold_5 20000
 
 volatile short touch_sum = 0;
+
+volatile boolean pulse_lock = false;
+volatile boolean touch2_released = false;
+
+volatile boolean track_lock = false;
+volatile boolean touch3_released = false;
+
+volatile boolean play_stop = false;
+volatile boolean touch4_released = false;
+
 volatile boolean color_lock = false;
 volatile boolean touch5_released = false;
 
@@ -26,19 +36,38 @@ void process_touch1(){
 
 void process_touch2(){  
   touch_sum = touch_sum ^ 2;
+  if( (touch_sum & 2) == 0 and pulse_lock == false){
+    touch2_released = true;
+  }else{
+    touch2_released = false;
+  }
 }
 
 void process_touch3(){  
   touch_sum = touch_sum ^ 4;
-  if(percentage >= 80){
-    percentage -= 1;
-  }  
+  
+  track_lock = !track_lock;
+  if( (touch_sum & 4) == 0 and track_lock == false){
+    touch3_released = true;
+    if(percentage >= 80){
+      percentage -= 1;
+    }
+  }else{
+    touch3_released = false;
+  }
 }
 
 void process_touch4(){    
   touch_sum = touch_sum ^ 8;
-  if(percentage <= 100){
-    percentage += 1;
+
+  play_stop = !play_stop;
+  if( (touch_sum & 8) == 0 and play_stop == false){
+    touch4_released = true;
+    if(percentage <= 100){
+      percentage += 1;
+    }  
+  }else{
+    touch4_released = false;
   }  
 }
 
@@ -65,9 +94,28 @@ void service_touch_events(){
       alienFound = false;
 	}
 
-	else if(touch_sum == 2){
-		pulse = true;
+	else if(touch2_released == true){
+		pulse = !pulse;
+   touch2_released = false;
+   
 	}
+
+ else if(touch3_released == true){
+  flux_track+= 1;
+  if(flux_track > flux_track_limit){
+    flux_track = 0;
+  }
+  touch3_released = false;
+  flux_change_track();
+ }
+
+ else if(touch4_released == true){
+  flux_play_track = !flux_play_track;
+  if(flux_play_track == false){
+    flux_stop();
+  }
+  touch4_released = false;
+ }
 
 	else if(touch_sum == 18){
 		// Means both touch 2 & 5 pressed

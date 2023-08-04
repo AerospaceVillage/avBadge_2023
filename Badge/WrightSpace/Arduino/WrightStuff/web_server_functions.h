@@ -20,6 +20,7 @@ boolean with_cookie = true;
 
 // Function Calls
 void process_custom_color(String requestBody);
+void process_track_request(String requestBody);
 void send_header(WiFiClient client, boolean withCookie);
 
 #include "index_html.h"
@@ -71,6 +72,18 @@ void process_client() {
               Serial.println("GPIO 2 Toggled");
               GPIO_2_isOn = !GPIO_2_isOn;
               digitalWrite(GPIO_2, GPIO_2_isOn);
+            }else if(requestBody.indexOf("FLUX_PLAY") > 0){
+              Serial.println("Flux Playing Track Toggled");
+              flux_play_track = !flux_play_track;
+              if(flux_play_track == false){
+                flux_stop();
+              }else{
+                flux_change_track();
+              }
+            }else if(requestBody.indexOf("FLUX_track") > 0){
+              Serial.println("Got a FLUX Track request!");
+              //Serial.println(requestBody);
+              process_track_request(requestBody);
             }
 
             //Possibly set a cookie
@@ -188,4 +201,17 @@ void send_header(WiFiClient client, boolean withCookie){
     with_cookie = false;
   }  
   client.println(); // Finish the header on the newline
+}
+
+void process_track_request(String requestBody){
+  Serial.println("Processing a new track request");
+  
+  int _start = requestBody.indexOf("FLUX_track") + 11;
+  String tmp = requestBody.substring(_start, _start+2);
+  short track = (short)tmp.toInt();
+  Serial.print("Track being changed to: ");
+  Serial.println(track);
+  flux_track = track;
+  flux_change_track();
+  
 }

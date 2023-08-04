@@ -27,14 +27,23 @@
 boolean GPIO_1_isOn = false;
 boolean GPIO_2_isOn = false;
 
+#define FLUX_ADR 0x70
+volatile boolean scan_i2c = false;
+volatile boolean flux_capacitor_present = false;
+volatile boolean flux_play_track = true;
+volatile short flux_track = 0x7;
+#define flux_track_limit 11
+int flux_print_count = 0;
+
+void flux_change_track();
+void flux_stop();
+
 
 #include "led_functions.h"
 #include "touch_functions.h"
 #include "web_server_functions.h"
 
-#define FLUX_ADR 0x70
-volatile boolean scan_i2c = false;
-volatile boolean flux_capacitor_present = false;
+
 
 
 hw_timer_t *Timer0_Cfg = NULL;
@@ -123,21 +132,51 @@ void loop() {
     Wire.beginTransmission (FLUX_ADR);
     if(Wire.endTransmission() == 0){
       flux_capacitor_present = true; //Yeah we found a connected Flux!
-      Serial.println("Oh my goodness... is a Flux Capacitor attached?");
+      flux_print_count++;
+
+      if(flux_print_count >= 50){
+        Serial.println("Oh my goodness... is a Flux Capacitor attached?");
+        flux_print_count = 0;
+      }
     }else{
       flux_capacitor_present = false; //Bummer... but maybe something else is connected?
     }
 
 
-    if(flux_capacitor_present == true){    
-      Wire.beginTransmission(FLUX_ADR); // Address 'F' in ASCII for Flux
-      Wire.write(0x01); //Play command
-      Wire.write(0x07); //Top Gun song!
-      Wire.endTransmission(true);
-      Serial.println("You're in for a treat listening to this sick song!");
-      
-      //As a way to slow down the send command, just look for it again
-      flux_capacitor_present = false;
+    if(flux_capacitor_present == true){
+      if(flux_play_track == true){
+        Wire.beginTransmission(FLUX_ADR); // Address 'F' in ASCII for Flux
+        Wire.write(0x81); //Play command... or the Play command (0x01) with 0x80
+        Wire.write(flux_track); //Top Gun song be default!
+        Wire.endTransmission(true);
+        //Serial.println("You're in for a treat listening to this sick song!");
+        
+        //As a way to slow down the send command, just look for it again
+        flux_capacitor_present = false;
+      }
     }    
+  }
+}
+
+void flux_stop(){
+  Serial.println("Flux stop being sent");
+  //Regarxless of connection or not, presence or not... send the STOP command... 0x82 and an extra padding byte
+  Wire.beginTransmission(FLUX_ADR); // Address 'F' in ASCII for Flux
+  Wire.write(0x82); //Stop command... OR with 0x80
+  Wire.write(0x82); // Fill the buffer up
+  Wire.endTransmission(true);
+}
+
+void flux_change_track(){
+  Serial.println("Flux change detection being processed.");
+  flux_stop();
+  if(flux_capacitor_present == true){
+    Wire.beginTransmission(FLUX_ADR); // Address 'F' in ASCII for Flux
+    Wire.write(0x81); //Play command... OR the Play command (0x01) with 0x80
+    Wire.write(flux_track);
+    Wire.endTransmission(true);
+          
+    //As a way to slow down the send command, just look for it again
+    flux_capacitor_present = false;
   }
 }

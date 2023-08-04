@@ -146,6 +146,8 @@ const char *index_html_code =  "<html><head>\
 \
     h3 {color: #00FF00; text-decoration: underline;}\
 \
+    h4 {color: #00FF00; text-decoration: underline; text-decoration-style: wavy}\
+\
     p, li {color: #00FF00}\
 \
     a {color: #00FF00}\
@@ -222,11 +224,57 @@ const char *index_html_code =  "<html><head>\
 \
       <h2>Badge Controls</h2>\
 \
+      <p>Here you can change different aspects of how your badge is displayed.</p>\
+\
       <form action='' method='post'><p>Change the Color of the Satellite <input type='color' id='favcolor' name='favcolor' value='#ff0000'> <input type='submit' class='button' value='Change Center Color'></p></form>\
+\
+\
+\
+      <h3>SAO v1.69 Features</h3>\
+\
+      <p>Control the GPIO pins on your badge with the following interface.</p>\
 \
       <form action='' method='post'><p><input type='hidden' name='GPIO_1' value='1'><input type='submit' class='button' value='Toggle GPIO #1'></p></form>\
 \
       <form action='' method='post'><p><input type='hidden' name='GPIO_2' value='1'><input type='submit' class='button' value='Toggle GPIO #2'></p></form>\
+\
+\
+\
+      <h4>Flux Capacitor SAO</h4>\
+\
+      <p>Did you happen to get a Flux Capacitor SAO from the Car Hacking Village? If so, you are in for a treat! Control the Flux Capacitor using the commands below.</p>\
+\
+      <form action='' method='post'><p><input type='hidden' name='FLUX_PLAY' value='1'><input type='submit' class='button' value='Start/Stop'></p></form>\
+\
+      <form action='' method='post'><p><label for='FLUX'>Flux Capacitor Track:</label>\
+\
+        <select name='FLUX_track'>\
+\
+          <option value='0'>1</option>\
+\
+          <option value='1'>2</option>\
+\
+          <option value='2'>3</option>\
+\
+          <option value='3'>4</option>\
+\
+          <option value='4'>5</option>\
+\
+          <option value='5'>6</option>\
+\
+          <option value='6'>7</option>\
+\
+          <option value='7' selected>8</option>\
+\
+          <option value='8'>9</option>\
+\
+          <option value='9'>10</option>\
+\
+          <option value='10'>11</option>\
+\
+        </select>\
+\
+        <input type='submit' class='button' value='Submit Flux Track'></p></form>\
 \
     </div>\
 \
