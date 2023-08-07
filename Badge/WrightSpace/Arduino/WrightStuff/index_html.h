@@ -1,130 +1,156 @@
 const char *index_html_code =  "<html><head>\
 \
-  <!-- Email wrightstuff@aerospacevillage.org so that we can thank you for your sponsorship of the village. -->\
+  <!-- Email pirep@aerospacevillage.org with any Pilot Reports to on unusual activity. -->\
 \
   <!--\
 \
-  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWN0xo:'......:OWMMM\
+                                 .do-''''''-o..\
 \
-  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWXkl;.....,cooc..'kWMM\
+                              .o''            ''..\
 \
-  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWXkl,....,cx0NWMMNo..lNMM\
+                           ,,''                 ``b.\
 \
-  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNOl,....'lkXWMMMMMMWx..oWMM\
+                          d'                      ``b\
 \
-  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWKd;.....:xXWMMMMMMMMMNl.'kMMM\
+                        d`d:                       `b.\
 \
-  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNkc'....,o0WMMMMMMMMMMMM0;.lNMMM\
+                       ,,dP                         `Y.\
 \
-  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWWNXXKKKKKKKXXNNWWMMMMMMMMMWKd;.....;xXWMMMMMMMMWWMMMWd.;0MMMM\
+                      d`88                           `8.\
 \
-  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWXKOxolc;,,'......''',,:cldONMMMW0o'.....ckNMMMMMMMMMMWxlOWMO,'kWMMMM\
+ooooooooooooooooood888`88'                            `88888888888bo,\
 \
-  MMMMMMMMMMMMMMMMMMMMMMMMMMWN0xo:,........................cOWMNOc'.....lOWMMMMMMMMMMMMNl.'okc'xWMMMMM\
+d'''    `''''''''''''Y:d8P                              8,          `b\
 \
-  MMMMMMMMMMMMMMMMMMMMMMMNKxc,...........................lOWMNOc.....'l0WMMMMMMMMMMMMMMXc.....,dkkO0NM\
+8                    P,88b                             ,`8           8\
 \
-  MMMMMMMMMMMMMMMMMMMMN0d:.............','.............l0WMNk:.....'l0WMN0KWMMMMMMMMMMMK:.........ckNM\
+8                   ::d888,                           ,8:8.          8\
 \
-  MMMMMMMMMMMMMMMMMWXx:..........':ldk00d,.........',l0WMNk:.....'l0WMXx;.'ckNMMMMMMMMM0,......'lONMMM\
+:                   dY88888                           `' ::          8\
 \
-  MMMMMMMMMMMMMMMWKo,.........:oOKWMMW0c....;o,...lKNWMNk:.....'l0WMNk;......;xXMMMMMMMO'....;dKWMMMMM\
+:                   8:8888                               `b          8\
 \
-  MMMMMMMMMMMMMWKo'........:xKWMMMMMNx,...'oXK:.:ONMMNO:......c0WMMMXx;........,xXWMMMWx...ckNMMMMMMMM\
+:                   Pd88P',...                     ,d888o.8          8\
 \
-  MMMMMMMMMMMMXd,.......,o0WMMMMMMMKc....:OWMXxkNMWOdc......cOWMMMMMMMNOl'.......;kNMMWx;o0WMMMMMMMMMM\
+:                   :88'dd888888o.                d8888`88:          8\
 \
-  MMMMMMMMMMWO:.......,dXWMMMMMMMWO;....oXMMMWWMW0l.......:kNMWNWMMMMMMMWKo,.......cKWWXXWMMMMMMMMMMMM\
+:                  ,:Y:d8888888888b             ,d88888:88:          8\
 \
-  MMMMMMMMMNd'......,dXWMMMMMMMMNd'...,kWMMMMMWKo'......,xXMW0l:kWMMMMMMMMWKo'......,kWMMMMMMMMMMMMMMM\
+:                  :::b88d888888888b.          ,d888888bY8b          8\
 \
-  MMMMMMMMXl.......cKWMMMMMMMMMXo....:0WMMMMMXd,......'oKWMWk'..'xNMMMMMMMMMWO:.......dNMMMMMMMMMMMMMM\
+                    b:P8;888888888888.        ,88888888888P          8\
 \
-  MMMMMMMKc......'xNMMMMMMMMMMXl....lXMMMMMNk;......,l0WMMMMK:....dNMMMMMMMMMMXo.......oXMMMMMMMMMMMMM\
+                    8:b88888888888888:        888888888888'          8\
 \
-  MMMMMMKc......;OWMMMMMMMMMMXc....oNMMMMW0c......:OXWMMMMMMMXl....oNMMMMMMMMMMWk,......oNMMMMMMMMMMMM\
+                    8:8.8888888888888:        Y8888888888P           8\
 \
-  MMMMMXl......;0WMMMMMMMMMMXl....oNMMMWKo'.....,xXMMMMMMMMMMMXl....dNMMMMMMMMMMWk,......dWMMMMMMMMMMM\
+,                   YP88d8888888888P'          ''888888'Y            8\
 \
-  MMMMWx......,OWMMMMMMMMMMNd....lNMMMNx,......oKWMMMMMMMMMMMMMXc...'kWMMMMMMMMMMWk'.....'kWMMMMMMMMMM\
+:                   :bY8888P'''''''                     :            8\
 \
-  MMMM0;.....'xWMMMMMMMMMMWk'...cXMMW0c......:OWMNXWMMMMMMMMMMMM0;...;0MMMMMMMMMMMNd......:KMMMMMMMMMM\
+:                    8'8888'                            d            8\
 \
-  MMMNo......lNMMMMMMMMMMMXc...cKMMXo'.....,xNMWO:lXMMMMMMMMMMMMWk'...lNMMMMMMMMMMMX:......xWMMMMMMMMM\
+:                    :bY888,                           ,P            8\
 \
-  MMM0;.....,OMMMMMMMMMMMWx..,xNMWO;......lKWWKo..cXMMMMMMMMMMMMMNl...,OMMMMMMMMMMMWx......cXMMMMMMMMM\
+:                     Y,8888           d.  ,-         ,8'            8\
 \
-  MMMx......cXMMMMMMMMMMMXc.c0WMKl......;kNMMXc...cXMMMMMMMMMMMMMMO'...oNMMMMMMMMMMMK:.....,OMMMMMMMMM\
+:                     `8)888:           '            ,P'             8\
 \
-  MMNo......dWMMMMMMMMMMM0lxNMNk;.....'oXMMMMK;...cXMMMMMMMMMMMMMMX:...:KMMMMMMMMMMMNo......xWMMMMMMMM\
+:                      `88888.          ,...        ,P               8\
 \
-  MMXc......:dddddddddddx0XWMKl......:OWMXkddl'...,lddddddddddddddo,....cdddddddddddo;......oWMMMMMMMM\
+:                       `Y8888,       ,888888o     ,P                8\
 \
-  MMXc.................'xNMNk;.....'dXMWO:..................................................oWMMMMMMMM\
+:                         Y888b      ,88888888    ,P'                8\
 \
-  MMXc......',,;;,,;;;l0WMXo......:0WMWOc;;;,'.....,;;;;,;;;;;;;;;,.....';;;;;;;;;;;,.......oWMMMMMMMM\
+:                          `888b    ,888888888   ,,'                 8\
 \
-  MMNl......dNNNNNNNNNWMWO;.....'dNMMMMWNNNNN0;...:KNNNNNNNNNNNNNNK:...;ONNNNNNNNNNNXl......dWMMMMMMMM\
+:                           `Y88b  dPY888888OP   :'                  8\
 \
-  MMWd......oNMMMMMMMMMXd'.....c0WMMMMMMMMMMMK:...cXMMMMMMMMMMMMMM0,...cNMMMMMMMMMMMXc.....'kMMMMMMMMM\
+:                             :88.,'.   `' `8P-'b.                   8\
 \
-  MMMO,.....;KMMMMMMMW0c.....'dNMMMMMMMMMMMMMK:...cXMMMMMMMMMMMMMWd....xWMMMMMMMMMMMO,.....;KMMMMMMMMM\
+:.                             )8P,   ,b '  -   ``b                  8\
 \
-  MMMXc......dWMMMMMNk,.....;OWMMMMMMMMMMMMMMK:...cXMMMMMMMMMMMMM0;...:KMMMMMMMMMMMNl......oWMMMMMMMMM\
+::                            :':   d,'d`b, .  - ,db                 8\
 \
-  MMMWk'.....,0MMMMXo......oXMW0ONMMMMMMMMMMMK:...cXMMMMMMMMMMMMXl...'kWMMMMMMMMMMWk'.....,0MMMMMMMMMM\
+::                            `b. dP' d8':      d88'                 8\
 \
-  MMMMNl......dWMM0:.....,kWMNd''kWMMMMMMMMMMK:...cXMMMMMMMMMMMNd....oNMMMMMMMMMMMK:......dWMMMMMMMMMM\
+::                             '8P' d8P' 8 -  d88P'                  8\
 \
-  MMMMM0;....oXWWk,.....cKWMWd...,OWMMMMMMMMMK:...cXMMMMMMMMMMWx'...cXMMMMMMMMMMMKc......cXMMMMMMMMMMM\
+::                            d,' ,d8'  ''  dd88'                    8\
 \
-  MMMMMWO,.'xNMNx'....'dNMMMWO;...,OWMMMMMMMMK:...cXMMMMMMMMMWx'...:KMMMMMMMMMMMKc......:0MMMMMMMMMMMM\
+::                           d'   8P'  d' dd88'8                     8\
 \
-  MMMMMMWklkWMXo.....;OWMMMMMWO;...,kWMMMMMMMK:...cXMMMMMMMMNd'...:0MMMMMMMMMMW0:......;0WMMMMMMMMMMMM\
+:                          ,:   `'   d:ddO8P' `b.                   8\
 \
-  MMMMMMMWWWMKc.....lKWMMMMMMMW0;...'dNMMMMMMK:...cXMMMMMMMXo....cKMMMMMMMMMMNx,......:0WMMMMMMMMMMMMM\
+:                  ,dooood88: ,    ,d8888''    ```b.                8\
 \
-  MMMMMMMMMW0:....'dNMMMMMMMMMMWKc....lXMMMMMK:...cXMMMMMW0c....lXMMMMMMMMMW0c.......lKMMMMMMMMMMMMMMM\
+:               .o8''''''''Y8.b    8 `'''    .o'  `'''ob.           8\
 \
-  MMMMMMMMWO;....,kWMXOKWMMMMMMMMXl....:OWMMMK;...cXMMMMNk,...'dNMMMMMMMMW0l'......'dNMMMMMMMMMMMMMMMM\
+:              dP'         `8:     K       dP''        '`Yo.        8\
 \
-  MMMMMMMWk,....:0WWKc.'o0WMMMMMMMNx,...'dXMMK:...cXMMMXo....;OWMMMMMMMNOl'.......c0WMMMMMMMMMMMMMMMMM\
+:             dP            88     8b.   ,d'              ``b       8\
 \
-  MMMMMMWk'....cKMWO;.....:xKWMMMMMW0c....:0WK:...cXMWk;....lKMMMMMMWKx:........;kNMMMMMMMMMMMMMMMMMMM\
+:             8.            8P     8'''  `'                 :.      8\
 \
-  MMMMMWx'....oXMMXl........'cx0NMMMMNd'...'dO;...cOOo....,xNMMMWN0d:'........;xNMMMMMMMMMMMMMMMMMMMMM\
+:            :8:           :8'    ,:                        ::      8\
 \
-  MMMMWx'....dNMMMMXk:..........;lxOXNW0c....'.....'.....lKWNKOdc,.........'ckNMMMMMMMMMMMMMMMMMMMMMMM\
+:            :8:           d:    d'                         ::      8\
 \
-  MMMWk'...'xWMMMMMMMN0o;...........';col,..............;loc;'...........:dKWMMMMMMMMMMMMMMMMMMMMMMMMM\
+:            :8:          dP   ,,'                          ::      8\
 \
-  MMWO,...,kWMMMMMMMMMMMN0d:'........................................':d0NMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+:            `8:     :b  dP   ,,                            ::      8\
 \
-  MM0;...,kWMMMMMMMMMMMMMMMWKko:'................................,cokXWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+:            ,8b     :8 dP   ,,                             d       8\
 \
-  MXc...'kWMMMMMMMMMMMMMMMMMMMWNX0xol:,'..................',:ldk0XWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+:            :8P     :8dP    d'                       d     8       8\
 \
-  Nd...'xWMMMMMMMMMMMMMMMMMMNKKNMMMMMWNK0OkxdddooodddxxkO0XNWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+:            :8:     d8P    d'                      d88    :P       8\
 \
-  O,...dNMMMMMMMMMMMMMMMMWKkOKWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+:            d8'    ,88'   ,P                     ,d888    d'       8\
 \
-  c...cXMMMMMMMMMMMMMMWXkdd0WMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+:            88     dP'   ,P                      d8888b   8        8\
 \
-  '..,OMMMMMMMMMMMMWXklco0WMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+'           ,8:   ,dP'    8.                     d8''88'  :8        8\
 \
-  ...oNMMMMMMMMMWXkl;:dKWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+            :8   d8P'    d88b                   d''  88   :8        8\
 \
-  ...xWMMMMMMN0xc,,ckXMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+            d: ,d8P'    ,8P'''.                      88   :P        8\
 \
-  ...lKNXKOxl;.':dKWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+            8 ,88P'     d'                           88   ::        8\
 \
-  o...',,...,cxKWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+           ,8 d8P       8                            88   ::        8\
 \
-  Nx;....':xKWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+           d: 8P       ,:  -hrr-                    :88   ::        8\
 \
+           8',8:,d     d'                           :8:   ::        8\
 \
+          ,8,8P'8'    ,8                            :8'   ::        8\
 \
-  pretty cool ascii art up above ^^ uh?\
+          :8`' d'     d'                            :8    ::        8\
+\
+          `8  ,P     :8                             :8:   ::        8\
+\
+           8, `      d8.                            :8:   8:        8\
+\
+           :8       d88:                            d8:   8         8\
+\
+,          `8,     d8888                            88b   8         8\
+\
+:           88   ,d::888                            888   Y:        8\
+\
+:           YK,oo8P :888                            888.  `b        8\
+\
+:           `8888P  :888:                          ,888:   Y,       8\
+\
+:            ``''   `888b                          :888:   `b       8\
+\
+:                    8888                           888:    ::      8\
+\
+:                    8888:                          888b     Y.     8,\
+\
+:                    8888b                          :888     `b     8:\
+\
+:                    88888.                         `888,     Y     8:\
 \
   -->\
 \
@@ -136,17 +162,19 @@ const char *index_html_code =  "<html><head>\
 \
    <style>\
 \
-    .button { background-color: #FFFFFF; border: none; color: black; padding: 8px 8px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; }\
+    .button { background-color: #FFFFFF; border: none; color: black; padding: 4px 4px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 4px; cursor: pointer; }\
+\
+    form { display: inline-block;, padding: 0px; margin: 0px; }\
 \
 	  body { background: black;}\
 \
-    h1, h2 {color: #FFFFFF}\
+    h1, h2 {color: #FFFFFF; line-height: 0.7em; padding:0px;}\
 \
-    h3 {color: #FFFFFF; text-decoration: underline;}\
+    h3 {color: #FFFFFF; text-decoration: underline;line-height: 0.7em;}\
 \
-    h4 {color: #FFFFFF; text-decoration: underline; text-decoration-style: wavy}\
+    h4 {color: #FFFFFF; text-decoration: underline; text-decoration-style: wavy; line-height: 0.7em;}\
 \
-    p, li, pre {color: #FFFFFF}\
+    p, li, pre {color: #FFFFFF; line-height: 1.2em;}\
 \
     a {color: #FFFFFF}\
 \
@@ -180,10 +208,6 @@ const char *index_html_code =  "<html><head>\
 \
     }\
 \
-    div.ep.p{align: center;}\
-\
-\
-\
    </style>\
 \
 </head>\
@@ -196,9 +220,41 @@ const char *index_html_code =  "<html><head>\
 \
   <p>Celebrating 120 years of aviation and 5 years of the <a href='https://www.aerospacevillage.org/'>Aerospace Village</a>!\
 \
-    Did you know that the first flgiht made by the Wright brothers attained an altitude of 10' and that within 65 years we sent\
+    <br><br>\
 \
-    astronauts to the moon? What's more, a small piece of canvas was sent to Mars on the Martian Helicopter Ingenuity!</p>\
+    The Wright Flyer made the first sustained flight by a manned heavier-than-air powered and controlled aircraft on December 17, 1903.\
+\
+    Invented and flown by brothers Orville and Wilbur Wright, it marked the beginning of the pioneer era of aviation. Thier younger sister\
+\
+    Katharine Wright Haskell worked closely with her brothers, managing their bicycle shop in Dayton, Ohio, when they were away; acting as\
+\
+    their right-hand woman and general factotum in Europe; assisting with their voluminous correspondence and business affairs; and providing\
+\
+    a sounding board for their far-ranging ideas.\
+\
+    <br><br>\
+\
+    66 Years after that first flight Apollo 11 was the American spaceflight that first landed humans on the Moon. Commander Neil Armstrong and lunar\
+\
+    module pilot Buzz Aldrin landed the Apollo Lunar Module Eagle on July 20, 1969, at 20:17 UTC, and Armstrong became the first person\
+\
+    to step onto the Moon's surface six hours and 39 minutes later, on July 21 at 02:56 UTC. Aldrin joined him 19 minutes later, and they\
+\
+    spent about two and a quarter hours together exploring the site they had named Tranquility Base upon landing. Armstrong and Aldrin\
+\
+    collected 47.5 pounds of lunar material to bring back to Earth as pilot Michael Collins flew the Command Module Columbia in\
+\
+    lunar orbit, and were on the Moon's surface for 21 hours, 36 minutes before lifting off to rejoin Columbia.\
+\
+    <br><br>\
+\
+    Incredible to think that the first flight made by the Wright brothers attained an altitude of just 10' and that only 66 years later we sent\
+\
+    astronauts to the moon! What's more, a small piece of canvas from the original Wright Flyer was sent to Mars on the Martian\
+\
+    Helicopter Ingenuity!\
+\
+  </p>\
 \
 \
 \
@@ -214,7 +270,7 @@ const char *index_html_code =  "<html><head>\
 \
 \
 \
-  <h2>Inspiriation</h2>\
+  <h2>Inspiration</h2>\
 \
   <p>The artwork was inspired by the intersection of history and pop-culture, highlighting both the Wright brothers contribution to aviation and also the recent gains made by SpaceX and the exploration of space.\
 \
@@ -228,9 +284,13 @@ const char *index_html_code =  "<html><head>\
 \
       <p>Here you can change different aspects of how your badge is displayed.</p>\
 \
-      <form action='' method='post'><p>Change the Color of the Satellite <input type='color' id='favcolor' name='favcolor' value='#ff0000'> <input type='submit' class='button' value='Change Center Color'></p></form>\
+      <form action='' method='post'><p>Change the Color of the Satellite <input type='color' id='favcolor' name='favcolor' value='#ff0000' class='button'> <input type='submit' class='button' value='Change Center Color'></p></form>\
 \
       <form action='' method='post'><p><input type='hidden' name='DEMO' value='1'><input type='submit' class='button' value='Toggle Demo Mode'></p></form>\
+\
+      <form action='' method='post'><p><input type='hidden' name='TWINKLE_MORE' value='1'><input type='submit' class='button' value='Twinkle More'></p></form>\
+\
+      <form action='' method='post'><p><input type='hidden' name='TWINKLE_LESS' value='1'><input type='submit' class='button' value='Twinkle Less'></p></form>\
 \
 \
 \
@@ -250,9 +310,9 @@ const char *index_html_code =  "<html><head>\
 \
       <form action='' method='post'><p><input type='hidden' name='FLUX_PLAY' value='1'><input type='submit' class='button' value='Start/Stop'></p></form>\
 \
-      <form action='' method='post'><p><label for='FLUX'>Flux Capacitor Track:</label>\
+      <form action='' method='post'><p><label for='FLUX_TRACK'>Flux Capacitor Track:</label>\
 \
-        <select name='FLUX_track'>\
+        <select name='FLUX_track' class='button'>\
 \
           <option value='0'>1</option>\
 \
@@ -286,13 +346,13 @@ const char *index_html_code =  "<html><head>\
 \
     <div class='extra'>\
 \
-      <h2>Village Challenge</h2>\
+      <h2>Village Challenges</h2>\
 \
         <p>Any good badge has hidden things inside. You've been able to make it this far, how about we give you a clue for the next one:</p>\
 \
 		    <p>In a badge with circuits concealed,<br>An alien's presence was revealed,<br>With a blink and a spark,<br>It glowed in the dark,<br>A tech secret, the pilots couldn't shield!</p>\
 \
-        <p>Do you know who's image is depicted on the lanyard?</p>\
+        <p>Do you know who's image is depicted on the lanyard? If so, strike up a conversation with one of the Aerospace Village volunteers about it.</p>\
 \
       <h2>External Challenges</h2>\
 \

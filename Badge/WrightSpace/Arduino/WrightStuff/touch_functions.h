@@ -11,7 +11,7 @@
 #define threshold_1 20000     // These need to perhaps be set/tuned to the actual fabricated board once completed.
 #define threshold_2 20000
 #define threshold_3 20000
-#define threshold_4 20000
+#define threshold_4 10000
 #define threshold_5 20000
 
 volatile short touch_sum = 0;
@@ -86,6 +86,7 @@ void service_touch_events(){
 	if(touch_sum == 1){
 	    // Reset all the things.
 	    percentage = 100;
+      demo_mode = false;
 	    color_index = 0;
       color_ring_color = color_array[color_index];
       alien_color = color_array[color_index];
@@ -120,7 +121,7 @@ void service_touch_events(){
 	else if(touch_sum == 18){
 		// Means both touch 2 & 5 pressed
 		alienFound = true;
-    Serial.println("Do you believe in aliens?");
+    Serial.println("You found an ALIEN! Ensure to report on pirep@aerospacevillage.org {\"XOR\":\"GLENN CURTISS\"}");
 	}else if(touch_sum == 24){
 		// Means both touch 4 & 5 pressed
 		alienFound = false;

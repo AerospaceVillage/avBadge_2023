@@ -9,7 +9,7 @@ const char* ssid = "WrightStuff";
 const char* password = "1SmallStep";
 
 // The webserver specifications, ipv4
-IPAddress Ip(7, 20, 19, 69);  // Date of first moon landing
+IPAddress Ip(7, 21, 19, 69);  // Date of first moon landing
 IPAddress NMask(255, 255, 255, 0);
 WiFiServer server(80);
 
@@ -74,6 +74,12 @@ void process_client() {
               Serial.println("GPIO 2 Toggled");
               GPIO_2_isOn = !GPIO_2_isOn;
               digitalWrite(GPIO_2, GPIO_2_isOn);
+            }else if(requestBody.indexOf("TWINKLE_MORE") > 0){
+              Serial.println("Twinkle Harder");
+              percentage-=1;
+            }else if(requestBody.indexOf("TWINKLE_LESS") > 0){
+              Serial.println("Twinkle Less");
+              percentage+=1;              
             }else if(requestBody.indexOf("FLUX_PLAY") > 0){
               Serial.println("Flux Playing Track Toggled");
               flux_play_track = !flux_play_track;
@@ -139,6 +145,7 @@ void enableWiFi(){
     
     server.begin();
     Serial.println("Server started");
+    Serial.println(Ip);
 }
 
 void check_wifi_state(){
