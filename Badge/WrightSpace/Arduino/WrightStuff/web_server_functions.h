@@ -9,7 +9,7 @@ const char* ssid = "WrightStuff";
 const char* password = "1SmallStep";
 
 // The webserver specifications, ipv4
-IPAddress Ip(7, 20, 19, 69);  // Date of first moon landing
+IPAddress Ip(7, 21, 19, 69);  // Date of first moon landing
 IPAddress NMask(255, 255, 255, 0);
 WiFiServer server(80);
 
@@ -20,6 +20,7 @@ boolean with_cookie = true;
 
 // Function Calls
 void process_custom_color(String requestBody);
+void process_track_request(String requestBody);
 void send_header(WiFiClient client, boolean withCookie);
 
 #include "index_html.h"
@@ -63,6 +64,8 @@ void process_client() {
             // Process/handle the POST requests as evidenced by the requestBody string
             if(requestBody.indexOf("favcolor=%23") > 0){
               process_custom_color(requestBody);
+            }else if(requestBody.indexOf("DEMO") > 0){
+              demo_mode = !demo_mode;
             }else if(requestBody.indexOf("GPIO_1") > 0){
               Serial.println("GPIO 1 Toggled");
               GPIO_1_isOn = !GPIO_1_isOn;
@@ -71,6 +74,24 @@ void process_client() {
               Serial.println("GPIO 2 Toggled");
               GPIO_2_isOn = !GPIO_2_isOn;
               digitalWrite(GPIO_2, GPIO_2_isOn);
+            }else if(requestBody.indexOf("TWINKLE_MORE") > 0){
+              Serial.println("Twinkle Harder");
+              percentage-=1;
+            }else if(requestBody.indexOf("TWINKLE_LESS") > 0){
+              Serial.println("Twinkle Less");
+              percentage+=1;              
+            }else if(requestBody.indexOf("FLUX_PLAY") > 0){
+              Serial.println("Flux Playing Track Toggled");
+              flux_play_track = !flux_play_track;
+              if(flux_play_track == false){
+                flux_stop();
+              }else{
+                flux_change_track();
+              }
+            }else if(requestBody.indexOf("FLUX_track") > 0){
+              Serial.println("Got a FLUX Track request!");
+              //Serial.println(requestBody);
+              process_track_request(requestBody);
             }
 
             //Possibly set a cookie
@@ -124,6 +145,7 @@ void enableWiFi(){
     
     server.begin();
     Serial.println("Server started");
+    Serial.println(Ip);
 }
 
 void check_wifi_state(){
@@ -184,8 +206,22 @@ void send_header(WiFiClient client, boolean withCookie){
   client.println("HTTP/1.1 200 OK");
   client.println("Content-type:text/html");
   if(withCookie == true){
-    client.println("Set-Cookie:aerospacevillage=Still need last years badge? Find @cybertestpilot and inform him \"The Eagle Has Landed\"");
-    with_cookie = false;
+    client.println("Set-Cookie:aerospacevillage=Still need SAOs? Find @cybertestpilot and inform him \"The Eagle Has Landed\"");
+    //Always send the cookie... slightly easier to find
+    //with_cookie = false;
   }  
   client.println(); // Finish the header on the newline
+}
+
+void process_track_request(String requestBody){
+  Serial.println("Processing a new track request");
+  
+  int _start = requestBody.indexOf("FLUX_track") + 11;
+  String tmp = requestBody.substring(_start, _start+2);
+  short track = (short)tmp.toInt();
+  Serial.print("Track being changed to: ");
+  Serial.println(track);
+  flux_track = track;
+  flux_change_track();
+  
 }

@@ -37,7 +37,7 @@ void set_center_color(RGB value, float scale);
 
 short white_leds [7] = {led1, led2, led3, led4, led5, led6, led7};
 
-RGB color_array[] = {{125,0,0}, {0,125,0}, {0,0,125}, {125,125,0}, {0,125,125}, {125,0,125}, {125,90,0}};
+RGB color_array[] = {{255,0,0}, {0,255,0}, {0,0,255}, {125,125,0}, {0,125,125}, {125,0,125}, {255,255,255}};
 
 RGB color_ring_color = color_array[0];
 RGB alien_color = RGB {255,0,255};
